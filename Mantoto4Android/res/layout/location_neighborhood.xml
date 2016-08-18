@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/common_back"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:orientation="horizontal" >
+        <Button
+            android:id="@+id/topbar_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/style_topbar_left"
+             />
+        <TextView
+            android:id="@+id/find_nehborhoodId"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_weight="1"
+            android:text="小区管理"
+            android:gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:layout_marginRight="20dp"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="#dbd7d4" />
+    <!--提示内容-->
+    <LinearLayout
+        android:id="@+id/ll_RemindMessage"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_RemindMessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="如已开启定位服务，请在小区范围内使用"
+            android:textColor="@color/gray"
+            android:textSize="14sp"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+    <!--定位-->
+    <LinearLayout
+         android:id="@+id/ll_Location_Neiborhood"
+         android:layout_width="match_parent"
+         android:layout_height="50dp"
+         android:gravity="center"
+          >
+
+         <Button
+            android:id="@+id/Location_Neborhood"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="50dp"
+            android:background="@drawable/plotcontrol_btnbg"
+            android:text="定   位"
+            android:textColor="@color/plot_control_txt"
+            android:textSize="@dimen/button_text_size" />
+  </LinearLayout>
+    <!--查询-->
+    <LinearLayout
+        android:id="@+id/ll_FindNorhood"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        >
+
+        <Button
+            android:id="@+id/Find_Neborhood"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="50dp"
+            android:background="@drawable/plotcontrol_btnbg"
+            android:text="查   询"
+            android:textColor="@color/plot_control_txt"
+            android:textSize="@dimen/button_text_size" />
+    </LinearLayout>
+    <!--输入门牌号-->
+    <LinearLayout
+         android:id="@+id/ll_InputNeiborHoodName"
+         android:layout_width="match_parent"
+         android:layout_height="50dp"
+         android:gravity="center"
+         android:focusable="true"
+         android:focusableInTouchMode="true"
+         android:layout_marginTop="20dp"
+          >
+
+    <EditText
+            android:id="@+id/et_InputNeiborhoodNameId"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="50dp"
+            android:hint="请输入门牌号"
+            android:textColorHint="@color/gray"
+            android:paddingLeft="15dp"
+            android:background="@drawable/bg_editext"
+            android:textSize="18sp" />
+  </LinearLayout>
+
+    <include
+        android:id="@+id/view_network_error"
+        layout="@layout/network_error"
+        android:visibility="gone" />
+
+</LinearLayout>

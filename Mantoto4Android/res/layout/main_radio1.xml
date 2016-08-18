@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/view"
+        layout="@layout/include_main_weather" />
+
+    <com.wuxianyingke.property.views.IndicationDotList
+        android:id="@+id/index_indication"
+        android:background="@color/background_color"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="15dp"/>
+    
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" 
+        android:background="#ffffff"
+        >
+
+        <ScrollView
+            android:id="@+id/main_sv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fadingEdge="none"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingBottom="10dip"
+                android:paddingTop="10dip" >
+
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dip"
+                    android:layout_gravity="top"
+                    android:layout_marginBottom="15dip"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                 	android:padding="50dp"
+                    android:textColor="@color/white" >
+
+                    <com.wuxianyingke.property.views.MyGallery
+                        android:id="@+id/my_gallery"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="top"
+                        android:minHeight="300dip"
+                        android:textColor="#666666"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <include
+            android:id="@+id/view_network_error"
+            layout="@layout/network_error"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+    <include
+        android:id="@+id/view"
+        layout="@layout/include_main_bottom_press" />
+
+</LinearLayout>

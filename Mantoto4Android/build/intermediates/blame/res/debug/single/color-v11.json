@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "E:\\sport1\\last\\Mantoto4Android\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "E:\\sport1\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\last\\appcompat_v7\\unspecified\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "E:\\sport1\\last\\Mantoto4Android\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "E:\\sport1\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\last\\appcompat_v7\\unspecified\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+    }
+]

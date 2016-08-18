@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/IncludeMainTopBarInclude"
+        layout="@layout/include_main_topbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#dfdfdf" >
+    </LinearLayout>
+
+    <include
+        android:id="@+id/view_network_error"
+        layout="@layout/network_error"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/PropertyMessageListView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:cacheColorHint="#00000000"
+            android:divider="@drawable/list_line"
+            android:fadingEdge="none"
+            android:listSelector="#00000000" />
+
+        <LinearLayout
+            android:id="@+id/add_message_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#cccccc"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="13dp"
+            android:visibility="visible" >
+
+            <LinearLayout
+                android:id="@+id/message_btn_linearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#cccccc"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#cccccc" />
+
+            <TextView
+                android:id="@+id/txt_btn3"
+                android:layout_width="fill_parent"
+                android:layout_height="43dip"
+                android:layout_gravity="center"
+                android:background="@drawable/style_edittext_white"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/status_bar_color"
+                android:textSize="18.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

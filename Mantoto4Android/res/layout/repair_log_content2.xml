@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:layout_width="fill_parent"
+			  android:layout_height="wrap_content"
+			  android:orientation="vertical"
+			  android:layout_marginTop="15dip"
+			  android:paddingBottom="20dip"
+			  android:paddingRight="10dip"
+			  android:gravity="left"
+		>
+	<LinearLayout android:layout_width="wrap_content"
+				  android:layout_height="wrap_content"
+				  android:paddingLeft="50dip"
+				  android:paddingTop="20dip"
+				  android:orientation="vertical"
+				  android:background="@drawable/repair_log_2"
+			>
+		<TextView
+				android:id="@+id/repair_log_time"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="#999999"
+				android:textSize="14sp"
+				android:text="2014年10月29日00:32:34">
+		</TextView>
+		<TextView
+				android:id="@+id/repair_log_content"
+				android:layout_width="260dip"
+				android:layout_height="wrap_content"
+				android:autoLink="all"
+				android:paddingTop="5dip"
+				android:textColor="#444444"
+				android:textSize="20sp"
+				android:text="您提交了报修,请等受理:135982112121 "
+				>
+		</TextView>
+	</LinearLayout>
+
+</LinearLayout>

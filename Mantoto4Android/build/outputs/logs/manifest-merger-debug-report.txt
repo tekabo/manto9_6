@@ -1,0 +1,1183 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:2:1-945:12
+	package
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:3:5-35
+	android:versionName
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:5:5-32
+		INJECTED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml
+		INJECTED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml
+	android:versionCode
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:4:5-29
+		INJECTED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml
+		INJECTED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:2:11-69
+uses-sdk
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:7:5-44
+MERGED from [last:appcompat_v7:unspecified] E:\sport1\last\Mantoto4Android\build\intermediates\exploded-aar\last\appcompat_v7\unspecified\AndroidManifest.xml:20:5-43
+	android:minSdkVersion
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:7:15-41
+uses-permission#android.permission.INTERNET
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:9:5-67
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:9:22-64
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:10:5-80
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:10:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:11:5-81
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:11:22-78
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:14:5-79
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:14:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:20:5-76
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:20:22-73
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:21:5-79
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:21:22-76
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:22:5-76
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:22:22-73
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:23:5-75
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:23:22-72
+uses-permission#android.permission.WAKE_LOCK
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:25:5-68
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:25:22-65
+uses-permission#android.permission.VIBRATE
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:26:5-66
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:26:22-63
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:27:5-73
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:27:22-70
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:28:5-81
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:28:22-78
+uses-permission#android.permission.BROADCAST_PACKAGE_ADDED
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:31:5-82
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:31:22-79
+uses-permission#android.permission.BROADCAST_PACKAGE_CHANGED
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:32:5-84
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:32:22-81
+uses-permission#android.permission.BROADCAST_PACKAGE_INSTALL
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:33:5-84
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:33:22-81
+uses-permission#android.permission.BROADCAST_PACKAGE_REPLACED
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:34:5-85
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:34:22-82
+uses-permission#android.permission.RESTART_PACKAGES
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:35:5-75
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:35:22-72
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:36:5-71
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:36:22-68
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:51:5-84
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:51:22-81
+uses-permission#android.permission.CALL_PHONE
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:53:5-69
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:53:22-66
+permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:55:5-76
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:55:17-73
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:57:5-81
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:57:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:58:5-79
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:58:22-76
+uses-permission#android.permission.READ_LOGS
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:66:5-68
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:66:22-65
+uses-permission#android.permission.CAMERA
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:70:5-65
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:70:22-62
+uses-feature#android.hardware.camera
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:72:5-60
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:72:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:73:5-70
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:73:19-67
+uses-permission#android.permission.CHANGE_CONFIGURATION
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:86:5-79
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:86:22-76
+uses-permission#android.permission.ACCESS_LOCATION_EXTRA_COMMANDS
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:90:5-89
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:90:22-86
+uses-permission#android.permission.GET_TASKS
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:100:5-68
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:100:22-65
+uses-permission#android.permission.RECEIVE_SMS
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:107:5-70
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:107:22-67
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:110:5-80
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:110:22-77
+application
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:112:5-943:19
+MERGED from [last:appcompat_v7:unspecified] E:\sport1\last\Mantoto4Android\build\intermediates\exploded-aar\last\appcompat_v7\unspecified\AndroidManifest.xml:22:5-20
+	android:label
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:115:9-41
+	android:icon
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:114:9-38
+	android:persistent
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:116:9-34
+	android:theme
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:117:9-56
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:113:9-69
+meta-data#com.baidu.lbsapi.API_KEY
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:118:9-120:56
+	android:value
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:120:13-53
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:119:13-52
+meta-data#com.amap.api.v2.apikey
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:123:9-125:64
+	android:value
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:125:13-61
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:124:13-50
+meta-data#UMENG_MESSAGE_SECRET
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:129:9-131:64
+	android:value
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:131:13-61
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:130:13-48
+meta-data#UMENG_APPKEY
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:133:9-135:56
+	android:value
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:135:13-53
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:134:13-40
+meta-data#UMENG_CHANNEL
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:136:9-138:42
+	android:value
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:138:13-39
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:137:13-41
+service#com.umeng.update.net.DownloadingService
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:144:9-146:53
+	android:process
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:146:13-50
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:145:13-67
+activity#com.umeng.update.UpdateDialogActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:148:9-150:75
+	android:theme
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:150:13-72
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:149:13-65
+receiver#com.umeng.message.NotificationProxyBroadcastReceiver
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:154:9-156:40
+	android:exported
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:156:13-37
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:155:13-80
+receiver#com.umeng.message.SystemReceiver
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:159:9-173:20
+	android:process
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:161:13-36
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:160:13-60
+intent-filter#android.intent.action.BOOT_COMPLETED
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:162:13-164:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:163:17-79
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:163:25-76
+intent-filter#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:165:13-167:29
+action#android.net.conn.CONNECTIVITY_CHANGE
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:166:17-79
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:166:25-76
+intent-filter#android.intent.action.PACKAGE_REMOVED
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:168:13-172:29
+action#android.intent.action.PACKAGE_REMOVED
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:169:17-80
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:169:25-77
+data
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:171:17-50
+	android:scheme
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:171:23-47
+receiver#com.umeng.message.MessageReceiver
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:176:9-183:20
+	android:process
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:179:13-36
+	android:exported
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:178:13-37
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:177:13-61
+intent-filter#org.agoo.android.intent.action.RECEIVE
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:180:13-182:29
+action#org.agoo.android.intent.action.RECEIVE
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:181:17-81
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:181:25-78
+receiver#com.umeng.message.ElectionReceiver
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:186:9-194:20
+	android:process
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:188:13-36
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:187:13-62
+intent-filter#org.agoo.android.intent.action.ELECTION_RESULT_V4+umeng
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:189:13-193:29
+action#org.agoo.android.intent.action.ELECTION_RESULT_V4
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:190:17-92
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:190:25-89
+category#umeng
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:192:17-50
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:192:27-47
+receiver#com.umeng.message.RegistrationReceiver
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:197:9-203:20
+	android:exported
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:199:13-37
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:198:13-66
+intent-filter#com.mantoto.property.intent.action.COMMAND
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:200:13-202:29
+action#com.mantoto.property.intent.action.COMMAND
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:201:17-85
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:201:25-82
+receiver#com.umeng.message.UmengMessageBootReceiver
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:204:9-208:20
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:204:19-76
+service#com.umeng.message.UmengService
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:210:9-226:19
+	android:process
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:214:13-36
+	android:label
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:213:13-40
+	android:exported
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:212:13-36
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:211:13-58
+intent-filter#com.mantoto.property.intent.action.START
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:215:13-217:29
+action#com.mantoto.property.intent.action.START
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:216:17-83
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:216:25-80
+intent-filter#com.mantoto.property.intent.action.COCKROACH
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:218:13-220:29
+action#com.mantoto.property.intent.action.COCKROACH
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:219:17-87
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:219:25-84
+intent-filter#org.agoo.android.intent.action.PING_V4+umeng
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:221:13-225:29
+action#org.agoo.android.intent.action.PING_V4
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:222:17-81
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:222:25-78
+service#com.umeng.message.UmengIntentService
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:229:9-231:39
+	android:process
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:231:13-36
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:230:13-64
+service#com.wuxianyingke.property.service.MyService
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:234:9-79
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:234:18-76
+service#com.umeng.message.UmengMessageIntentReceiverService
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:235:9-245:19
+	android:process
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:238:13-36
+	android:exported
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:237:13-36
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:236:13-79
+intent-filter#org.android.agoo.client.MessageReceiverService
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:239:13-241:29
+action#org.android.agoo.client.MessageReceiverService
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:240:17-89
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:240:25-86
+intent-filter#org.android.agoo.client.ElectionReceiverService
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:242:13-244:29
+action#org.android.agoo.client.ElectionReceiverService
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:243:17-90
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:243:25-87
+service#com.umeng.message.UmengMessageCallbackHandlerService
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:248:9-263:19
+	android:exported
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:250:13-37
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:249:13-80
+intent-filter#com.umeng.messge.registercallback.action
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:251:13-253:29
+action#com.umeng.messge.registercallback.action
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:252:17-83
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:252:25-80
+intent-filter#com.umeng.message.unregistercallback.action
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:254:13-256:29
+action#com.umeng.message.unregistercallback.action
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:255:17-86
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:255:25-83
+intent-filter#com.umeng.message.message.handler.action
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:257:13-259:29
+action#com.umeng.message.message.handler.action
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:258:17-83
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:258:25-80
+intent-filter#com.umeng.message.autoupdate.handler.action
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:260:13-262:29
+action#com.umeng.message.autoupdate.handler.action
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:261:17-86
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:261:25-83
+service#com.umeng.message.UmengDownloadResourceService
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:266:9-82
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:266:18-79
+service#com.umeng.message.local.UmengLocalNotificationService
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:270:9-272:40
+	android:exported
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:272:13-37
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:271:13-81
+activity#com.wuxianyingke.property.activities.SplashActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:284:9-304:20
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:288:13-49
+	android:label
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:287:13-45
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:286:13-63
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:285:13-79
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:289:13-293:29
+action#android.intent.action.MAIN
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:290:17-69
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:290:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:292:17-77
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:292:27-74
+intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:294:13-303:29
+action#android.intent.action.VIEW
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:295:17-69
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:295:25-66
+category#android.intent.category.DEFAULT
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:297:17-76
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:297:27-73
+category#android.intent.category.BROWSABLE
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:298:17-78
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:298:27-75
+activity#com.wuxianyingke.property.activities.WIFILoginActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:307:9-328:20
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:309:13-49
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:308:13-82
+activity#com.wuxianyingke.property.activities.SplashActivity2
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:329:9-332:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:332:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:331:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:330:13-80
+activity#com.wuxianyingke.property.activities.WelcomeActivty
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:334:9-337:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:337:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:336:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:335:13-79
+activity#com.wuxianyingke.property.activities.LocationActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:339:9-342:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:342:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:341:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:340:13-81
+activity#com.wuxianyingke.property.activities.PropertyListActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:344:9-347:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:347:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:346:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:345:13-85
+activity#com.wuxianyingke.property.activities.LocationPropertyListActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:349:9-352:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:352:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:351:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:350:13-93
+activity#com.wuxianyingke.property.activities.Register1Activity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:354:9-357:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:357:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:356:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:355:13-82
+activity#com.wuxianyingke.property.activities.NoPropertyActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:364:9-367:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:367:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:366:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:365:13-83
+activity#com.wuxianyingke.property.activities.MainActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:368:9-371:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:371:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:370:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:369:13-77
+activity#com.wuxianyingke.property.activities.TextInputActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:372:9-375:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:375:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:374:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:373:13-82
+activity#com.wuxianyingke.property.activities.LifePayDetails
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:377:9-380:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:380:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:379:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:378:13-79
+activity#com.wuxianyingke.property.activities.AddressEditActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:381:9-384:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:384:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:383:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:382:13-84
+activity#com.wuxianyingke.property.activities.AddressDetailActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:386:9-389:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:389:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:388:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:387:13-86
+activity#com.wuxianyingke.property.activities.PayFailActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:391:9-394:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:394:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:393:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:392:13-80
+activity#com.wuxianyingke.property.activities.PaySuccessActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:396:9-399:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:399:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:398:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:397:13-83
+activity#com.mantoto.property.wxapi.WXPayEntryActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:400:9-403:46
+	android:launchMode
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:403:13-43
+	android:exported
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:402:13-36
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:401:13-53
+activity#com.wuxianyingke.property.activities.CouponActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:405:9-408:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:408:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:407:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:406:13-79
+activity#com.wuxianyingke.property.activities.BalenceActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:409:9-412:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:412:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:411:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:410:13-80
+activity#com.wuxianyingke.property.activities.PayActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:413:9-416:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:416:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:415:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:414:13-76
+activity#com.wuxianyingke.property.activities.RechargeActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:417:9-420:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:420:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:419:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:418:13-81
+activity#com.wuxianyingke.property.activities.AddressListActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:421:9-424:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:424:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:423:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:422:13-84
+activity#com.wuxianyingke.property.activities.ModifyPasswordActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:425:9-428:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:428:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:427:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:426:13-87
+activity#com.wuxianyingke.property.activities.CommitOrderListActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:430:9-433:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:433:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:432:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:431:13-88
+activity#com.wuxianyingke.property.activities.UnCompleteOrderActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:435:9-438:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:438:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:437:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:436:13-88
+activity#com.wuxianyingke.property.activities.CommitVoucherActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:440:9-443:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:443:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:442:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:441:13-86
+activity#com.wuxianyingke.property.activities.CommitVoucherListActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:445:9-448:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:448:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:447:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:446:13-90
+activity#com.wuxianyingke.property.activities.CommitPayOrderActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:450:9-453:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:453:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:452:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:451:13-87
+activity#com.wuxianyingke.property.activities.CommitVoucherContentDetailsActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:455:9-458:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:458:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:457:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:456:13-100
+activity#com.wuxianyingke.property.activities.WebPayActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:459:9-462:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:462:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:461:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:460:13-79
+activity#com.wuxianyingke.property.activities.RepairListActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:463:9-466:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:466:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:465:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:464:13-83
+activity#com.wuxianyingke.property.activities.RepairInfoActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:467:9-470:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:470:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:469:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:468:13-83
+activity#com.wuxianyingke.property.activities.RepairLogActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:471:9-474:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:474:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:473:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:472:13-82
+activity#com.wuxianyingke.property.activities.RepairActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:475:9-478:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:478:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:477:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:476:13-79
+activity#com.wuxianyingke.property.activities.MipcaActivityCapture
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:479:9-482:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:482:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:481:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:480:13-85
+activity#com.wuxianyingke.property.activities.CommitVoucherContentActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:483:9-486:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:486:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:485:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:484:13-93
+activity#com.wuxianyingke.property.activities.AddressActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:487:9-490:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:490:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:489:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:488:13-80
+activity#com.wuxianyingke.property.activities.FindPasswordActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:491:9-494:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:494:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:493:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:492:13-85
+activity#com.wuxianyingke.property.activities.Radio1Activity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:527:9-530:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:530:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:529:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:528:13-79
+activity#com.wuxianyingke.property.activities.Radio1InfoActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:531:9-534:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:534:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:533:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:532:13-83
+activity#com.wuxianyingke.property.activities.Radio2Activity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:535:9-539:55
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:538:13-49
+	android:windowSoftInputMode
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:539:13-52
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:537:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:536:13-79
+activity#com.wuxianyingke.property.activities.Radio3Activity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:540:9-543:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:543:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:542:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:541:13-79
+activity#com.wuxianyingke.property.activities.AddMessageActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:544:9-547:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:547:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:546:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:545:13-83
+activity#com.wuxianyingke.property.activities.MessageActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:548:9-551:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:551:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:550:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:549:13-80
+activity#com.wuxianyingke.property.activities.MessageInfoActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:552:9-555:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:555:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:554:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:553:13-84
+activity#com.wuxianyingke.property.activities.Radio4Activity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:556:9-559:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:559:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:558:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:557:13-79
+activity#com.wuxianyingke.property.activities.Radio5Activity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:560:9-563:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:563:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:562:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:561:13-79
+activity#com.wuxianyingke.property.activities.LivingCircleActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:564:9-567:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:567:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:566:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:565:13-85
+activity#com.wuxianyingke.property.activities.AppPopularizeActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:568:9-571:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:571:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:570:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:569:13-86
+activity#com.wuxianyingke.property.activities.WifiPasswordActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:572:9-575:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:575:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:574:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:573:13-85
+activity#com.wuxianyingke.property.activities.InvitationCodeActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:576:9-579:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:579:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:578:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:577:13-87
+activity#com.wuxianyingke.property.activities.CommonInfomationActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:580:9-583:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:583:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:582:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:581:13-89
+activity#com.wuxianyingke.property.activities.PaidServicesActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:584:9-587:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:587:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:586:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:585:13-85
+activity#com.wuxianyingke.property.activities.ContactPublisherActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:588:9-591:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:591:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:590:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:589:13-89
+activity#com.wuxianyingke.property.activities.ReleaseGoodsActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:592:9-595:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:595:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:594:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:593:13-85
+activity#com.wuxianyingke.property.activities.FleaOwnerActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:596:9-599:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:599:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:598:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:597:13-82
+activity#com.wuxianyingke.property.activities.SettingActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:600:9-603:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:603:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:602:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:601:13-80
+activity#com.wuxianyingke.property.activities.LoginActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:604:9-607:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:607:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:606:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:605:13-78
+activity#com.wuxianyingke.property.activities.AboutActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:639:9-642:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:642:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:641:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:640:13-78
+activity#com.wuxianyingke.property.activities.HelpActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:643:9-646:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:646:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:645:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:644:13-77
+activity#com.wuxianyingke.property.activities.LifePayActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:660:9-663:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:663:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:662:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:661:13-80
+activity#com.wuxianyingke.property.activities.LifePayContentActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:665:9-668:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:668:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:667:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:666:13-87
+activity#com.wuxianyingke.property.activities.RegisterActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:712:9-715:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:715:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:714:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:713:13-81
+activity#com.wuxianyingke.property.activities.Register1Activity2
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:716:9-719:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:719:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:718:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:717:13-83
+activity#com.wuxianyingke.property.activities.ProductDetailActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:726:9-729:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:729:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:728:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:727:13-86
+activity#com.wuxianyingke.property.activities.ProductListActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:766:9-770:67
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:769:13-49
+	android:windowSoftInputMode
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:770:13-64
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:768:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:767:13-84
+activity#com.wuxianyingke.property.activities.UserCenterActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:784:9-787:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:787:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:786:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:785:13-83
+activity#com.wuxianyingke.property.activities.PropertyNotificationInfoActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:788:9-791:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:791:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:790:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:789:13-97
+activity#com.wuxianyingke.property.activities.StickerActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:816:9-819:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:819:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:818:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:817:13-80
+activity#com.wuxianyingke.property.activities.AddBianqianActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:820:9-823:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:823:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:822:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:821:13-84
+activity#com.wuxianyingke.property.activities.JiaoTongActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:824:9-827:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:827:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:826:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:825:13-81
+activity#com.wuxianyingke.property.activities.lukuangActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:828:9-831:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:831:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:830:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:829:13-80
+activity#com.wuxianyingke.property.activities.YiLiaoActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:832:9-835:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:835:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:834:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:833:13-79
+activity#com.wuxianyingke.property.activities.DizhiActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:836:9-839:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:839:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:838:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:837:13-78
+activity#com.wuxianyingke.property.activities.CanYinListActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:840:9-843:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:843:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:842:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:841:13-83
+activity#com.wuxianyingke.property.activities.GouWuListActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:844:9-847:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:847:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:846:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:845:13-82
+activity#com.wuxianyingke.property.activities.ShengHuoFuWuListActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:848:9-851:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:851:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:850:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:849:13-89
+activity#com.wuxianyingke.property.activities.CanyinDetailActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:852:9-855:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:855:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:854:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:853:13-85
+activity#com.wuxianyingke.property.activities.CanyinDetailTuanListActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:856:9-859:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:859:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:858:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:857:13-93
+activity#com.wuxianyingke.property.activities.LivingAddressActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:860:9-863:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:863:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:862:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:861:13-86
+activity#com.wuxianyingke.property.activities.CanyinDetailOwnActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:864:9-867:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:867:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:866:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:865:13-88
+service#com.wuxianyingke.property.push.AlarmService
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:869:9-871:41
+	android:process
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:871:13-38
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:870:13-71
+activity#com.wuxianyingke.property.push.PushActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:873:9-876:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:876:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:875:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:874:13-71
+activity#com.wuxianyingke.gaode.RouteActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:877:9-880:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:880:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:879:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:878:13-64
+activity#com.wuxianyingke.property.activities.CollectionListActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:881:9-884:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:884:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:883:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:882:13-87
+activity#com.wuxianyingke.property.activities.CommitOrderActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:893:9-896:52
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:896:13-49
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:895:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:894:13-84
+activity#com.alipay.sdk.app.H5PayActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:899:9-904:70
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:903:13-47
+	android:exported
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:902:13-37
+	android:windowSoftInputMode
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:904:13-67
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:901:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:900:13-60
+activity#com.alipay.sdk.auth.AuthActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:905:9-909:50
+	android:screenOrientation
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:909:13-47
+	android:exported
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:908:13-37
+	android:configChanges
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:907:13-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:906:13-60
+receiver#com.wuxianyingke.property.push.BootReceiver
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:912:9-916:20
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:912:19-77
+service#com.baidu.location.f
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:918:9-926:19
+	android:enabled
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:920:13-35
+	android:process
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:922:13-38
+	android:permission
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:921:13-75
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:919:13-48
+intent-filter#com.baidu.location.service_v2.3
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:923:13-925:29
+action#com.baidu.location.service_v2.3
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:924:17-74
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:924:25-71
+receiver#com.wuxianying.alipay.sdk.pay.AppRegister
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:928:9-932:20
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:928:19-75
+intent-filter#com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:929:13-931:29
+action#com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:930:17-100
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:930:25-97
+activity#com.wuxianyingke.property.activities.UcenterActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:934:9-89
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:934:19-86
+activity#com.wuxianyingke.property.activities.SetActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:935:9-85
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:935:19-82
+activity#com.wuxianyingke.property.activities.SetMessageActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:936:9-92
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:936:19-89
+activity#com.wuxianyingke.property.activities.PlotControlActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:937:9-93
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:937:19-90
+activity#com.wuxianyingke.property.activities.PlotLocationActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:938:9-94
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:938:19-91
+activity#com.wuxianyingke.property.activities.CallActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:939:9-86
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:939:19-83
+activity#com.wuxianyingke.property.activities.SearchShopActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:940:9-92
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:940:19-89
+activity#com.wuxianyingke.property.activities.CanyinOwnDetailActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:941:9-97
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:941:19-94
+activity#com.wuxianyingke.property.activities.ShopGoodsActivity
+ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:942:9-100
+	android:name
+		ADDED from E:\sport1\last\Mantoto4Android\AndroidManifest.xml:942:19-88

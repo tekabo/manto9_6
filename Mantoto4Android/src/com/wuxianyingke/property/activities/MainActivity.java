@@ -116,7 +116,6 @@ public class MainActivity extends BaseActivity {
 					case Constants.MSG_LOCATION_READY: {//用户地理位置定位
 						SendLocation obj = (SendLocation) msg.obj;
 						LogUtil.d(TAG, "MSG_LOCATION_READY");
-		
 						LogUtil.d(TAG, "obj.city=" + obj.city);
 						LogUtil.d(TAG, "obj.longitude=" + obj.longitude);
 						LogUtil.d(TAG, "obj.latitude=" + obj.latitude);

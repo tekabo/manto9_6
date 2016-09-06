@@ -2,9 +2,9 @@ package com.wuxianyingke.property.activities;
 
 import java.util.ArrayList;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -19,6 +19,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mantoto.property.R;
@@ -49,6 +50,7 @@ public class PropertyListActivity extends BaseActivity {
 	// private ArrayList<Propertys> propertyList=new ArrayList<Propertys>();
 	private String[] propertys = new String[] {};
 	private Button topbar_left;
+	private TextView topRightTxt;
 	private ArrayAdapter<String> adapter = null;
 	private GetPropertyByNameListThread mByNameThread;
 	private ArrayList<Propertys> mList=new ArrayList<Propertys>();
@@ -206,20 +208,29 @@ private String description;
 			}
 		});
 		
-		
-		topbar_left=(Button) findViewById(R.id.topbar_left);
-		topbar_left.setVisibility(View.VISIBLE);
-		topbar_left.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				finish();
-				
-			}
-		});
+
+
+
 	}
 
 	private void initWidgets() {
+
+		topbar_left=(Button) findViewById(R.id.topbar_left);
+		topbar_left.setVisibility(View.VISIBLE);
+		topbar_left.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				finish();
+
+			}
+		});
+
+		topRightTxt = (TextView) findViewById(R.id.topbar_right);
+		topRightTxt.setVisibility(View.VISIBLE);
+		topRightTxt.setText("保存");
+		topRightTxt.setTextColor(Color.rgb(255,165,0));
+
 		inputProperty = (EditText) findViewById(R.id.et_InputNeiborhoodNameId);
 		propertyListView = (ListView) findViewById(R.id.lv_PropertyList);
 

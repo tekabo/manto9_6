@@ -1,3 +1,4 @@
+/*
 package com.wuxianyingke.property.threads;
 
 import android.content.Context;
@@ -68,9 +69,11 @@ public class RepairListThread extends Thread
 			msg.what = Constants.MSG_GET_REPAIR_LIST_FINSH;
 			handler.sendMessage(msg);
 			
-			/*if (!running) 
+			*/
+/*if (!running)
 				return;
-			Radio3Activity.setAllowGetBoxAgain();*/
+			Radio3Activity.setAllowGetBoxAgain();*//*
+
 			
 		} catch(Exception ex) {
 			LogUtil.d(TAG, "ActivityThread::Run() error = "+ex.getMessage());
@@ -83,3 +86,4 @@ public class RepairListThread extends Thread
 		}
 	}
 }
+*/

@@ -5,33 +5,9 @@
     android:background="@color/background_color"
     android:orientation="vertical" >
 
-    <LinearLayout
+    <include
         android:id="@+id/common_back"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#fff"
-        android:orientation="horizontal" >
-
-        <Button
-            android:id="@+id/topbar_left"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/style_topbar_left" />
-
-        <TextView
-            android:id="@+id/find_nehborhoodId"
-            android:layout_width="wrap_content"
-            android:layout_height="22dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginRight="20dp"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:text="查找小区"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
-    </LinearLayout>
+        layout="@layout/include_main_topbar"/>
     
     <LinearLayout
          android:id="@+id/ll_InputNeiborHoodName"
@@ -39,8 +15,9 @@
          android:layout_height="40dp"
          android:focusable="true"
          android:focusableInTouchMode="true"
-          android:layout_marginTop="20dp"
+         android:layout_marginTop="20dp"
          android:orientation="horizontal"
+            android:visibility="gone"
           >
         <LinearLayout
             android:layout_width="0dp"
@@ -80,25 +57,27 @@
   </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="match_parent"
         android:background="#f7f2ed"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
 
         <TextView
             android:id="@+id/NotFound"
             android:layout_width="wrap_content"
-            android:layout_height="22dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:text="未找到合适的小区！"
+            android:text=" 未找到合适小区  请点击查询"
             android:textColor="@color/bcblue"
-            android:textSize="13sp" />
+            android:textSize="20sp" />
         
     </LinearLayout>
     
-<Button
+    <Button
             android:id="@+id/btn_Next"
             android:layout_width="120dp"
             android:layout_height="50dp"

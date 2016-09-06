@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.util.Property;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +33,7 @@ import com.umeng.message.proguard.L;
 import com.wuxianyingke.property.common.Constants;
 import com.wuxianyingke.property.common.LocalStore;
 import com.wuxianyingke.property.common.UpdateManger;
+import com.wuxianyingke.property.remote.RemoteApi;
 import com.wuxianyingke.property.remote.RemoteApi.UpdateInfo;
 import com.wuxianyingke.property.remote.RemoteApiImpl;
 import com.wuxianyingke.property.views.StatusBarCompat;
@@ -44,7 +46,7 @@ public class UserCenterActivity extends BaseActivity {
 	private Button mBohaoLinearLayout;
 	private Button mtuichudengluButton;
 	private Button topbar_left;
-	private TextView topbar_txt;
+	private TextView topbar_txt,userName,userPlot;
 	private ImageView remindImg;
 	private UpdateInfo updateInfo;
 	private String desc;
@@ -78,15 +80,21 @@ public class UserCenterActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.user_center);
 		super.init(1);
+		userPlot = (TextView) findViewById(R.id.user_plot);
+		userName = (TextView) findViewById(R.id.user_name);
 		initWidget();
+		String username= LocalStore.getUserInfo().userName;
+		userName.setText(username);
 
-		StatusBarCompat.compat(this,getResources().
-				getColor(R.color.status_bar_color));
-		setImmerseLayout(findViewById(R.id.common_back));
+
+
+
+
 	}
+
+
 
 	public void initWidget() {
 		//底栏
@@ -178,8 +186,10 @@ public class UserCenterActivity extends BaseActivity {
 				Intent intent = new Intent();
 				intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT|
 						Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				/*intent.setClass(UserCenterActivity.this,
+						CommitOrderListActivity.class);*/
 				intent.setClass(UserCenterActivity.this,
-						CommitOrderListActivity.class);
+						CommitOrderTestActivity.class);
 				startActivity(intent);
 
 			}
@@ -198,31 +208,37 @@ public class UserCenterActivity extends BaseActivity {
 		});
 
 		//完善信息
+		//
 		wanshanxinxiLinearLayout = (LinearLayout) findViewById(R.id.wanshanxinxiLinearLayout);
 		wanshanxinxiLinearLayout.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+
 				Intent intent = new Intent();
 				intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
 						| Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				intent.setClass(UserCenterActivity.this, SetMessageActivity.class);
 				startActivity(intent);
-
 			}
 		});
 
+
+
+
+
 		//标题
+
 		topbar_left = (Button) findViewById(R.id.topbar_left);
+		topbar_left.setBackgroundResource(R.drawable.arrow_left);
 		topbar_left.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent();
-				intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
-						| Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				intent.setClass(UserCenterActivity.this, MainActivity.class);
-				startActivity(intent);
+				finish();
 			}
 		});
+		topbar_txt = (TextView) findViewById(R.id.topbar_txt);
+		topbar_txt.setText("我");
+		topbar_txt.setTextColor(Color.parseColor("#ffffff"));
 
 
 
@@ -283,7 +299,7 @@ public class UserCenterActivity extends BaseActivity {
 	private int getVersionCode() {
 		int versionCode = 0;
 		try {
-			// 获取软件版本号，对应AndroidManifest.xml下android:versionCode
+			//对应AndroidManifest.xml下android:versionCode
 			versionCode = getPackageManager().getPackageInfo(
 					"com.mantoto.property", 0).versionCode;
 		} catch (NameNotFoundException e) {

@@ -1,3 +1,4 @@
+/*
 package com.wuxianyingke.property.threads;
 
 import java.util.ArrayList;
@@ -43,7 +44,8 @@ public class GetCateThread extends Thread {
 			mHandler.sendEmptyMessage(Constants.MSG_GET_CATE_NET_ERROR) ;
 			return ;
 		}
-		/*
+		*/
+/*
 		int count = mCateList.size() ;
 		
 		for(int i = 0 ; i < count ; ++i){
@@ -61,6 +63,8 @@ public class GetCateThread extends Thread {
 					mHandler.sendEmptyMessage(Constants.MSG_GET_CATE_IMG_FINISH) ;
 				}
 			}
-		}*/
+		}*//*
+
 	}
 }
+*/

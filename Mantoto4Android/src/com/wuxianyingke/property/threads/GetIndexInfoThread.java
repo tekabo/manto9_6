@@ -1,3 +1,4 @@
+/*
 package com.wuxianyingke.property.threads;
 
 import android.content.Context;
@@ -44,3 +45,4 @@ public class GetIndexInfoThread extends Thread{
 	}
 	
 }
+*/

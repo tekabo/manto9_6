@@ -1,3 +1,4 @@
+/*
 package com.wuxianyingke.property.threads;
 
 import java.io.IOException;
@@ -80,3 +81,4 @@ public class FleaOwnerThread extends Thread {
 	}
 
 }
+*/

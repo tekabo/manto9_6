@@ -1,3 +1,4 @@
+/*
 package com.wuxianyingke.property.threads;
 
 import android.content.Context;
@@ -127,3 +128,4 @@ public class SearchThread extends Thread
 		}
 	}
 }
+*/

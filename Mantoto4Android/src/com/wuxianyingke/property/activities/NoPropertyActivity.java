@@ -2,7 +2,6 @@ package com.wuxianyingke.property.activities;
 
 import java.util.ArrayList;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -35,8 +34,8 @@ import com.wuxianyingke.property.threads.GetPropertyByNameListThread;
 
 public class NoPropertyActivity extends BaseActivity {
 	private Button topbar_left, next;
-	private EditText et_FindNebohood;
-	private TextView notFound;
+	//private EditText et_FindNebohood;
+	private TextView notFound,topTxt;
 	private GetPropertyByNameListThread mByNameThread;
 	private ArrayList<Propertys> propertysList = new ArrayList<Propertys>();
 	private int flag =1;
@@ -50,44 +49,7 @@ public class NoPropertyActivity extends BaseActivity {
 				mProgressBar = null;
 			}
 			switch (msg.what) {
-			// 查找小区
-			case Constants.MSG_GET_PRODUCT_LIST_FINISH:
-				if (flag==1) {
-					propertysList = mByNameThread.getPropertyList();
-					propertyId = (int)propertysList.get(0).PropertyID;
-					Log.i("MyLog", "当前小区信息为-----" + propertyId);
-				}else{
-				propertysList = mByNameThread.getPropertyList();
-				Log.i("MyLog", "当前小区信息为-----" + propertysList);
-				/*
-				 * llRemindMessage.setVisibility(View.GONE);
-				 * llLocation.setVisibility(View.GONE);
-				 * llFindName.setVisibility(View.GONE);
-				 * mListView.setVisibility(View.VISIBLE);
-				 */
-				Intent intent = new Intent();
-				intent.putExtra("key", propertysList);
-				intent.putExtra("et_InputContent", et_FindNebohood.getText().toString());
-				if (propertysList.size()!=0) {
-					intent.setClass(NoPropertyActivity.this,
-							PropertyListActivity.class);
-				}else {
-					intent.setClass(NoPropertyActivity.this, NoPropertyActivity.class);
-				}
-				startActivity(intent);
-				finish();
-				}
-				break;
 
-			// 登陆成功
-			case 1:
-				// Toast.makeText(LocationActivity.this, "小区验证码验证成功",
-				// Toast.LENGTH_SHORT).show();
-				// Intent intent = new Intent();
-				// intent.setClass(LocationActivity.this, LoginActivity.class);
-				// startActivity(intent);
-				// finish();
-				break;
 
 			default:
 				break;
@@ -110,17 +72,7 @@ public class NoPropertyActivity extends BaseActivity {
 		 */
 		initWidgets();
 
-		topbar_left.setOnClickListener(new OnClickListener() {
 
-			@Override
-			public void onClick(View arg0) {
-				Intent intent = new Intent();
-				intent.setClass(NoPropertyActivity.this,LocationActivity.class);
-				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				startActivity(intent);
-                finish();
-			}
-		});
 		/**
 		 * 为查找到小区
 		 */
@@ -129,7 +81,7 @@ public class NoPropertyActivity extends BaseActivity {
 			@Override
 			public void onClick(View arg0) {
 				
-				// 1. 布局文件转换为View对象
+				/*// 1. 布局文件转换为View对象
 				LayoutInflater inflater = LayoutInflater.from(getApplicationContext());
 				LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.unfind_property_dialog, null);
 				final Dialog dialog = new AlertDialog.Builder(NoPropertyActivity.this).create();
@@ -172,13 +124,17 @@ public class NoPropertyActivity extends BaseActivity {
 				       startActivity(intent);
 				       finish();
 				    }
-				});
-				
-			
+				});*/
+
+				Intent intent = new Intent();
+				intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
+						| Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				intent.setClass(NoPropertyActivity.this, LocationActivity.class);
+				startActivity(intent);
 		
 			}
 		});
-		et_FindNebohood.setOnFocusChangeListener(new OnFocusChangeListener() {
+	/*	et_FindNebohood.setOnFocusChangeListener(new OnFocusChangeListener() {
 
 			@Override
 			public void onFocusChange(View arg0, boolean arg1) {
@@ -193,8 +149,8 @@ public class NoPropertyActivity extends BaseActivity {
 				}
 
 			}
-		});
-		et_FindNebohood.setOnEditorActionListener(new OnEditorActionListener() {
+		});*/
+	/*	et_FindNebohood.setOnEditorActionListener(new OnEditorActionListener() {
 			
 			@Override
 			public boolean onEditorAction(TextView arg0, int arg1, KeyEvent arg2) {
@@ -210,21 +166,9 @@ public class NoPropertyActivity extends BaseActivity {
 				mByNameThread.start();
 				return false;
 			}
-		});
+		});*/
 
-		/**
-		 * 跳转到注册界面
-		 */
-		// next.setOnClickListener(new OnClickListener() {
-		//
-		// @Override
-		// public void onClick(View arg0) {
-		// Intent intent=new Intent();
-		// intent.setClass(NoPropertyActivity.this, RegisterActivity.class);
-		// startActivity(intent);
-		//
-		// }
-		// });
+
 	}
 
 	/**
@@ -232,8 +176,24 @@ public class NoPropertyActivity extends BaseActivity {
 	 */
 	private void initWidgets() {
 		topbar_left = (Button) findViewById(R.id.topbar_left);
+		topbar_left.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent();
+				intent.setClass(NoPropertyActivity.this,LocationActivity.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
+				finish();
+			}
+		});
+		topTxt = (TextView) findViewById(R.id.topbar_txt);
+		topTxt.setText("小区管理");
+
+
+
 		// next=(Button) findViewById(R.id.btn_Next);
-		et_FindNebohood = (EditText) findViewById(R.id.et_InputNeiborhoodNameId);
+		//et_FindNebohood = (EditText) findViewById(R.id.et_InputNeiborhoodNameId);
 		notFound = (TextView) findViewById(R.id.NotFound);
 	}
 }

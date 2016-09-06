@@ -67,7 +67,7 @@ public class PropertyNotificationThread extends Thread
 			
 			/*if (!running) 
 				return;
-			Radio2Activity.setAllowGetPageAgain();*/
+			InformDetailActivity.setAllowGetPageAgain();*/
 			
 		} catch(Exception ex) {
 			LogUtil.d(TAG, "ActivityThread::Run() error = "+ex.getMessage());

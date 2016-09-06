@@ -17,7 +17,8 @@ import android.widget.TextView;
 import com.mantoto.property.R;
 import com.wuxianyingke.property.activities.PushDialog;
 import com.wuxianyingke.property.activities.PushDialog.pushDialogListener;
-import com.wuxianyingke.property.activities.SplashActivity1;
+import com.wuxianyingke.property.activities.SplashActivity;
+
 import com.wuxianyingke.property.adapter.PushListItemAdapter;
 import com.wuxianyingke.property.common.LogUtil;
 import com.wuxianyingke.property.common.Util;
@@ -117,7 +118,7 @@ public class PushActivity extends Activity{
 //                   
 //						}
 						if (view.getId()==R.id.dialog_button_1) {
-							Intent intent = new Intent(PushActivity.this , SplashActivity1.class) ;
+							Intent intent = new Intent(PushActivity.this , SplashActivity.class) ;
 							startActivity(intent) ;
 						}else if (view.getId()==R.id.dialog_button_2) {
 							

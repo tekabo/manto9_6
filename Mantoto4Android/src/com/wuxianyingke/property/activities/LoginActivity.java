@@ -1,6 +1,7 @@
 package com.wuxianyingke.property.activities;
 
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -30,11 +31,10 @@ import com.wuxianyingke.property.common.LocalStore;
 import com.wuxianyingke.property.common.MD5;
 import com.wuxianyingke.property.common.Util;
 import com.wuxianyingke.property.remote.RemoteApi;
-import com.wuxianyingke.property.remote.RemoteApi.InvitationCode;
 import com.wuxianyingke.property.remote.RemoteApi.User;
 import com.wuxianyingke.property.remote.RemoteApiImpl;
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends Activity {
 	private CheckBox mLoginCheckBox;
 	private ProgressDialog mProgressBar = null;
 	private String mErrorInfo = "";
@@ -104,15 +104,15 @@ public class LoginActivity extends BaseActivity {
 						RemoteApi.LoginInfo logininfo = new RemoteApi.LoginInfo();
 						logininfo.U_ID=U_ID;
 						logininfo.U_PASS=U_PASS;
-						logininfo.autoLogin = false;
 						LocalStore.setLoginInfo(LoginActivity.this,logininfo )	;
 						LocalStore.setIsVisitor(getApplicationContext(), false);
 						Log.i("MyLog","Login visitor="+LocalStore.getIsVisitor(getApplicationContext()));
 						LocalStore.setUserStatus(LoginActivity.this,true);
-		//				LocalStore.setIsVisitor(LoginActivity.this,false);
+						//				LocalStore.setIsVisitor(LoginActivity.this,false);
 						Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT)
 								.show();
 						Intent intent = new Intent();
+						logininfo.autoLogin = false;
 						intent.setClass(LoginActivity.this, MainActivity.class);
 						intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 						startActivity(intent);
@@ -312,7 +312,7 @@ public class LoginActivity extends BaseActivity {
 				mLoginButton.setOnClickListener(mLoginNormalListener);
 		
 				
-				Button mtouristButton = (Button) findViewById(R.id.touristButton);
+				/*Button mtouristButton = (Button) findViewById(R.id.touristButton);
 				mtouristButton.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v) {
@@ -327,7 +327,7 @@ public class LoginActivity extends BaseActivity {
 						startActivity(intent);
 						finish();
 					}
-				});
+				});*/
 		
 				login_register = (TextView) findViewById(R.id.login_register);
 				login_register.setClickable(true);
@@ -337,7 +337,7 @@ public class LoginActivity extends BaseActivity {
 					public void onClick(View arg0) {
 						// TODO Auto-generated method stub
 						Intent intent = new Intent(LoginActivity.this,
-								Register1Activity.class);
+								RegisterActivity.class);
 		//				intent.putExtra(Constants.REGISTER_TYPE_TAG, 1);
 						startActivity(intent);
 					}

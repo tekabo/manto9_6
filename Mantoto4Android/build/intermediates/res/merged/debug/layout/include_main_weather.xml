@@ -70,11 +70,11 @@
         android:background="#35000000"
         android:orientation="horizontal"
         >
-       	<LinearLayout 
+      <!-- 	<LinearLayout
        	    android:layout_height="match_parent"
        	    android:layout_width="0dp"
-       	    android:layout_weight="0.5"
-         />
+       	    android:layout_weight="0.2"
+         />-->
        	
        	<LinearLayout 
        	    android:layout_height="match_parent"

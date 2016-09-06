@@ -5,6 +5,8 @@
     android:background="@color/background_color"
     android:orientation="vertical"
     android:id="@+id/app_info_all_ll"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="true"
    >
 
 
@@ -41,7 +43,7 @@
             <RelativeLayout
                 android:id="@+id/common_back"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="50dp"
                 >
 
                 <Button
@@ -59,7 +61,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:textColor="#000000"
+                    android:textColor="#ffffff"
                     android:textSize="18sp"
                     />
 
@@ -170,7 +172,7 @@
 
     <!--商家活动-->
     <LinearLayout
-        android:id="@+id/huodongButton"
+        android:id="@+id/shop_activity"
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:orientation="horizontal"
@@ -225,7 +227,7 @@
 
         <ImageView
             android:id="@+id/peisongImg"
-            android:layout_width="90dp"
+            android:layout_width="60dp"
             android:layout_height="25dp"
             android:layout_marginRight="17dp"
             android:src="@drawable/support_distribution" />
@@ -260,7 +262,7 @@
         <ImageView
             android:id="@+id/dianhuaImg"
             android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_height="20dp"
             android:layout_marginRight="17dp"
             android:src="@drawable/style_dianhua" />
     </LinearLayout>

@@ -56,7 +56,7 @@ public class GetPropertyListThread extends Thread {
 			if (propertyList != null) {
 				
 				mPropertyList = propertyList;
-				mHandler.sendEmptyMessage(2);
+				mHandler.sendEmptyMessage(2);//列表正常显示
 			} else {
 				if (!running)
 					return;

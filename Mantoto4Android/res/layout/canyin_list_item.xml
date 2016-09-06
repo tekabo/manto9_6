@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/product_list_item_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:orientation="horizontal"
     >
 
     <ImageView
@@ -13,123 +14,152 @@
             android:layout_marginLeft="17dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
+            android:scaleType="fitXY"
             />
     <!--商店名-->
-
-    <TextView
-            android:layout_toRightOf="@id/item_icon"
-            android:id="@+id/item_name"
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:singleLine="true"
+            android:orientation="horizontal"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
-            android:text="商店名"
-            android:textColor="@color/wifi_pay"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            >
+             <TextView
+                android:layout_toRightOf="@id/item_icon"
+                android:id="@+id/item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="商店名"
+                android:textColor="@color/wifi_pay"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
-    <ImageView
-            android:layout_toRightOf="@id/item_name"
-            android:id="@+id/support_distribution"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="80dp"
-            android:background="@drawable/support_distribution"
-                    />
-    <ImageView
-        android:id="@+id/JuanImageView"
-        android:layout_toRightOf="@id/item_icon"
-        android:layout_below="@id/item_name"
-        android:layout_alignLeft="@id/item_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/juan"
+            android:layout_marginLeft="10dp"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                >
 
-        />
+            <ImageView
+                android:id="@+id/JuanImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/juan"
+                android:visibility="gone"
+                />
 
-    <ImageView
-        android:id="@+id/TuanImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/JuanImageView"
-        android:layout_below="@id/item_name"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:background="@drawable/tuan"
-
-        />
+            <ImageView
+                android:id="@+id/TuanImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/tuan"
+                android:visibility="gone"
+                />
 
 
-    <ImageView
-        android:id="@+id/HuiImageView"
-        android:layout_below="@id/item_name"
-        android:layout_toRightOf="@id/TuanImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/hui"
+            <ImageView
+                android:id="@+id/HuiImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/hui"
+                android:visibility="gone"
+                />
+            </LinearLayout>
+            <ImageView
+                android:id="@+id/support_distribution"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/support_distribution"
+                android:layout_marginRight="17dp"
+                android:visibility="gone"
+                  />
+            </LinearLayout>
 
-        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                >
 
+                <TextView
+                    android:id="@+id/item_leixing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="烤鱼"
+                    android:textColor="#646464"
+                    android:textSize="14sp" />
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/item_leixing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:layout_below="@id/JuanImageView"
-        android:layout_alignLeft="@id/JuanImageView"
-        android:layout_marginTop="5dp"
-        android:text="烤鱼"
-        android:textColor="#646464"
-        android:textSize="14sp" />
+            <TextView
+                android:id="@+id/item_renjun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="17dp"
+                android:singleLine="true"
+                android:text="¥ 39/人"
+                android:textColor="#646464"
+                android:textSize="14sp" />
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/item_renjun"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/item_leixing"
-        android:layout_below="@id/JuanImageView"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="100dp"
-        android:layout_alignRight="@id/support_distribution"
-        android:singleLine="true"
-        android:text="¥ 39/人"
-        android:textColor="#646464"
-        android:textSize="14sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                >
 
-    <TextView
-        android:id="@+id/item_dizhi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:singleLine="true"
-        android:layout_below="@id/item_leixing"
-        android:layout_alignLeft="@id/item_name"
-        android:layout_alignBottom="@id/item_icon"
-        android:layout_marginTop="5dp"
-        android:text="地址"
-        android:textColor="#646464"
-        android:textSize="14sp" />
-    <TextView
-        android:id="@+id/item_juli"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="right"
-        android:singleLine="true"
-        android:layout_below="@id/item_renjun"
-        android:layout_toRightOf="@id/item_dizhi"
-        android:layout_marginTop="5dp"
-        android:layout_alignRight="@id/item_renjun"
-        android:layout_alignLeft="@id/item_renjun"
-        android:layout_alignBottom="@id/item_icon"
-        android:text="距离"
-        android:textColor="#646464"
-        android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/item_dizhi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="地址"
+                    android:textColor="#646464"
+                    android:textSize="14sp" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/item_juli"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:singleLine="true"
+                    android:layout_marginRight="17dp"
+                    android:text="距离"
+                    android:textColor="#646464"
+                    android:textSize="14sp" />
+            </LinearLayout>
 
+    </LinearLayout>
 
-
-</RelativeLayout>
+</LinearLayout>

@@ -73,7 +73,7 @@ public class CanyinOwnDetailActivity extends BaseActivity implements View.OnClic
     private int favorite_flag;
     private String source = "";
 
-    private LinearLayout shopGoods;
+    private LinearLayout shopGoods,shopActivity,shopCoupon;
 
 
 
@@ -82,6 +82,8 @@ public class CanyinOwnDetailActivity extends BaseActivity implements View.OnClic
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what){
+
+
                 case Constants.MSG_GET_PRODUCT_DETAIL_FINISH:
                     if(mWaitLoading != null && mWaitLoading.isShowing()){
                         mWaitLoading.dismiss() ;
@@ -153,8 +155,8 @@ public class CanyinOwnDetailActivity extends BaseActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_canyin_own_detail);
+        mLivingItemID = getIntent().getIntExtra(Constants.CANYIN_ID_ACTION , 0) ;
 
-        setImmerseLayout(findViewById(R.id.common_back));
         propertyid=LocalStore.getUserInfo().PropertyID;
 
         // 左侧返回按钮
@@ -205,21 +207,23 @@ public class CanyinOwnDetailActivity extends BaseActivity implements View.OnClic
             }
         });
 
+
+
         mLivingItemID = getIntent().getIntExtra(Constants.CANYIN_ID_ACTION , 0) ;
         shoucang_flag= getIntent().getIntExtra(Constants.SHOUCANG_FLAT , 0) ;
         source = getIntent().getStringExtra(Constants.CANYIN_SOURCE_ACTION);
 
         if(savedInstanceState != null){
             mLivingItemID=savedInstanceState.getInt("mLivingItemID");
-           // shoucang_flag=savedInstanceState.getInt("shoucang_flag");
-           // source=savedInstanceState.getString("source");
-            //favorite_flag=savedInstanceState.getInt("favorite_flag");
+            shoucang_flag=savedInstanceState.getInt("shoucang_flag");
+            source=savedInstanceState.getString("source");
+            favorite_flag=savedInstanceState.getInt("favorite_flag");
         }else{
             mLivingItemID = getIntent().getIntExtra(Constants.CANYIN_ID_ACTION, 0);
-            //shoucang_flag = getIntent().getIntExtra(Constants.SHOUCANG_FLAT, 0);
-           // source = getIntent().getStringExtra(Constants.CANYIN_SOURCE_ACTION);
+            shoucang_flag = getIntent().getIntExtra(Constants.SHOUCANG_FLAT, 0);
+            source = getIntent().getStringExtra(Constants.CANYIN_SOURCE_ACTION);
 
-           // favorite_flag = getIntent().getIntExtra(Constants.FAVORITE_FLAT, 0);
+            favorite_flag = getIntent().getIntExtra(Constants.FAVORITE_FLAT, 0);
         }
 
         mMyGallery = (MyGallery) findViewById(R.id.detail_gallery) ;
@@ -237,8 +241,34 @@ public class CanyinOwnDetailActivity extends BaseActivity implements View.OnClic
         LianxiButton = (Button) findViewById(R.id.LianxiButton) ;
         dizhiImg = (ImageView) findViewById(R.id.dizhiImg);//小标记
         shopGoods = (LinearLayout) findViewById(R.id.shop_goods);//商家商品
+        shopCoupon = (LinearLayout) findViewById(R.id.shop_coupon);//商家劵
+        shopActivity = (LinearLayout) findViewById(R.id.shop_activity);//商家活动
 
+        shopActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
+                |Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra(Constants.CANYIN_ID_ACTION, mLivingItemID);
+                intent.setClass(CanyinOwnDetailActivity.this,SalesPromotionActivity.class);
+                startActivity(intent);
+            }
+        });
 
+        /*shopCoupon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
+                |Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+                intent.setClass(CanyinOwnDetailActivity.this,GoodsCauponListActivity.class);
+                startActivity(intent);
+
+            }
+        });*/
+        //商家商品
         shopGoods.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -247,8 +277,9 @@ public class CanyinOwnDetailActivity extends BaseActivity implements View.OnClic
                         | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.putExtra("latitude", latitude);
                 intent.putExtra("longitude", longitude);
+                intent.putExtra(Constants.CANYIN_ID_ACTION, mLivingItemID);
                 intent.setClass(CanyinOwnDetailActivity.this,
-                        ShopGoodsActivity.class);
+                        TestActivity.class);
                 startActivity(intent);
             }
         });
@@ -299,6 +330,29 @@ public class CanyinOwnDetailActivity extends BaseActivity implements View.OnClic
         mThread.start() ;
 
 
+
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        //propertyid = (int) saving.getLong(LocalStore.PROPERTY_ID, 0);
+        //mLivingItemID = getIntent().getIntExtra(Constants.CANYIN_ID_ACTION, 0);
+        //shoucang_flag = getIntent().getIntExtra(Constants.SHOUCANG_FLAT, 0);
+        //source = getIntent().getStringExtra(Constants.CANYIN_SOURCE_ACTION);
+        //favorite_flag = getIntent().getIntExtra(Constants.FAVORITE_FLAT, 0);
+        outState.putInt("mLivingItemID", mLivingItemID);
+        outState.putInt("shoucang_flag", shoucang_flag);
+        outState.putString("source", source);
+        outState.putInt("favorite_flag", favorite_flag);
+    }
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        mLivingItemID=savedInstanceState.getInt("mLivingItemID");
+        shoucang_flag=savedInstanceState.getInt("shoucang_flag");
+        source=savedInstanceState.getString("source");
+        favorite_flag=savedInstanceState.getInt("favorite_flag");
     }
 
     private void showDialog(){
@@ -380,7 +434,7 @@ public class CanyinOwnDetailActivity extends BaseActivity implements View.OnClic
         mPopDownloadBtn = (Button) mImgView.findViewById(R.id.pop_download_btn);
         mPopDownloadBtn.setOnClickListener(CloseClickListener);
 
-        RelativeLayout popRl = (RelativeLayout) mImgView.findViewById(R.id.app_pop_rl);
+       /* RelativeLayout popRl = (RelativeLayout) mImgView.findViewById(R.id.app_pop_rl);
         popRl.setOnClickListener(new View.OnClickListener()
         {
 
@@ -395,7 +449,7 @@ public class CanyinOwnDetailActivity extends BaseActivity implements View.OnClic
                 }
             }
         });
-
+*/
         mImgPop.setAnimationStyle(R.style.AnimationPreview);
 
         Gallery.LayoutParams params = new Gallery.LayoutParams(/*410, 520*/

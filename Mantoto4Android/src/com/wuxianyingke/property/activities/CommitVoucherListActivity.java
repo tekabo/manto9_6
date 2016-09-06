@@ -30,7 +30,7 @@ import com.wuxianyingke.property.remote.RemoteApi.User;
 import com.wuxianyingke.property.threads.GetUnusePromotionListThread;
 
 /**
-优惠券列表
+优惠券
  *
  */
 public class CommitVoucherListActivity extends BaseActivity {
@@ -52,11 +52,6 @@ public class CommitVoucherListActivity extends BaseActivity {
 	private int flags=5;
 	private ArrayList<OrderItem> mData = new ArrayList<OrderItem>();
 	private ArrayList<PromotionCode> promotionCode = new ArrayList<PromotionCode>();
-	// private long OrderSequenceNumber;
-	// /**券码*/
-	// private String Code="A2Q1V1Q7I5G9";
-	// /**券码id*/
-	// private long PromotionCodeID=152;
 	private Handler mHandler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
@@ -201,7 +196,7 @@ public class CommitVoucherListActivity extends BaseActivity {
 	private void initViews() {
 		// 顶部导航
 		topbar_txt = (TextView) findViewById(R.id.topbar_txt);
-		topbar_txt.setText("我的优惠券");
+		topbar_txt.setText("优惠券");
 		topbar_left = (Button) findViewById(R.id.topbar_left);
 		topbar_left.setVisibility(View.VISIBLE);
 		mTextview=(TextView) findViewById(R.id.empty_tv);

@@ -1,3 +1,4 @@
+/*
 package com.wuxianyingke.property.threads;
 
 import android.content.Context;
@@ -45,10 +46,12 @@ public class SetDefaultAddressThread extends Thread
 		    running = true;
 			RemoteApiImpl remoteApi = new RemoteApiImpl();
 			mErrorInfo = remoteApi.setDefaultAddress(ctx, uid, addressid);
-			/*remoteApi.loginByMobile(ctx, "13556565658");
+			*/
+/*remoteApi.loginByMobile(ctx, "13556565658");
 			remoteApi.registerByMobile(ctx, "13556565658");
 			
-			remoteApi.getCheckCode(ctx, "13556565658",0);*/
+			remoteApi.getCheckCode(ctx, "13556565658",0);*//*
+
 			if (mErrorInfo == null) 
 			{
 				Message msg = new Message();
@@ -71,3 +74,4 @@ public class SetDefaultAddressThread extends Thread
 		}
 	}
 }
+*/

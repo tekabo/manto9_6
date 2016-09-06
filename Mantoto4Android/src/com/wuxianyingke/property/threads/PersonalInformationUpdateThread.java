@@ -1,3 +1,4 @@
+/*
 package com.wuxianyingke.property.threads;
 
 import android.content.Context;
@@ -63,3 +64,4 @@ public class PersonalInformationUpdateThread extends Thread {
 		}
 	}
 }
+*/

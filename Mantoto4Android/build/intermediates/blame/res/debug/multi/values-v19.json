@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "E:\\sport1\\last\\Mantoto4Android\\build\\intermediates\\res\\merged\\debug\\values-v19\\values-v19.xml",
+        "outputFile": "E:\\workspace\\8-26\\last\\Mantoto4Android\\build\\intermediates\\res\\merged\\debug\\values-v19\\values-v19.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 186
                 },
                 "from": {
-                    "file": "E:\\sport1\\last\\Mantoto4Android\\res\\values-v19\\styles.xml",
+                    "file": "E:\\workspace\\8-26\\last\\Mantoto4Android\\res\\values-v19\\styles.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -33,7 +33,7 @@
                     "endOffset": 450
                 },
                 "from": {
-                    "file": "E:\\sport1\\last\\Mantoto4Android\\res\\values-v19\\styles.xml",
+                    "file": "E:\\workspace\\8-26\\last\\Mantoto4Android\\res\\values-v19\\styles.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 5,

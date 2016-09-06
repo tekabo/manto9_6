@@ -1,3 +1,4 @@
+/*
 package com.wuxianyingke.property.fragment;
 
 import java.text.SimpleDateFormat;
@@ -37,21 +38,27 @@ public class DateUtils {
 //	}
 	
 //	private SimpleDateFormat sf = null;
-//	　　/*获取系统时间 格式为："yyyy/MM/dd "*/
+//	　　*/
+/*获取系统时间 格式为："yyyy/MM/dd "*//*
+
 //	　　public static String getCurrentDate() {
 //	　　Date d = new Date();
 //	　　sf = new SimpleDateFormat("yyyy年MM月dd日");
 //	　　return sf.format(d);
 //	　　}
 //	　　
-//	　　/*时间戳转换成字符窜*/
+//	　　*/
+/*时间戳转换成字符窜*//*
+
 //	　　public static String getDateToString(long time) {
 //	　　Date d = new Date(time);
 //	　　sf = new SimpleDateFormat("yyyy年MM月dd日");
 //	　　return sf.format(d);
 //	　　}
 //	　　
-//	　　/*将字符串转为时间戳*/
+//	　　*/
+/*将字符串转为时间戳*//*
+
 //	　　public static long getStringToDate(String time) {
 //	　　sdf = new SimpleDateFormat("yyyy年MM月dd日");
 //	　　Date date = newDate();
@@ -64,3 +71,4 @@ public class DateUtils {
 //	　　returndate.getTime();
 //	}
 }
+*/

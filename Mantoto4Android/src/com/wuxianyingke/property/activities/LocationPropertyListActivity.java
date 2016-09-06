@@ -2,7 +2,6 @@ package com.wuxianyingke.property.activities;
 
 import java.util.ArrayList;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -40,7 +39,6 @@ public class LocationPropertyListActivity extends BaseActivity {
 	 */
 	private int pageIndex = 1;
 	private int pageCount = 1;
-	// private ArrayList<Propertys> propertyList=new ArrayList<Propertys>();
 	private GetPropertyListThread mThread;
 	private String[] propertys = new String[] {};
 	private ArrayAdapter<String> adapter = null;
@@ -58,18 +56,25 @@ public class LocationPropertyListActivity extends BaseActivity {
 			switch (msg.what) {
 			// 查找小区
 			case 2:
+
 				propertysList = mThread.getPropertyList();
 				Log.i("MyLog", "当前小区信息为-----" + propertysList);
+
 				mList.addAll(propertysList);
+
 				String[] propertys = new String[mList.size()];
+
 				for (int i = 0; i < mList.size(); i++) {
+
 					propertys[i] = mList.get(i).PropertyName;
 					Log.i("MyLog", "当前集合的内容为————————"
 							+ mList.get(i).PropertyName);
 				}
+
 				adapter = new ArrayAdapter<String>(getApplicationContext(),
 						R.layout.activity_list_item, R.id.tv_ListItem,
 						propertys);
+
 				propertyListView.setAdapter(adapter);
 				adapter.notifyDataSetChanged();
 				propertyListView
@@ -78,17 +83,7 @@ public class LocationPropertyListActivity extends BaseActivity {
 							@Override
 							public void onItemClick(AdapterView<?> parent,
 									View view, int position, long id) {
-//								LocalStore.setPropertys(
-//										LocationPropertyListActivity.this,
-//										propertysList.get(position));
-//								if (propertysList.get(position).OrganizationID == 0) {
-//									Intent intent = new Intent();
-//									intent.setClass(
-//											LocationPropertyListActivity.this,
-//											RegisterActivity.class);
-//									startActivity(intent);
-//									finish();
-//								} else {
+
 								User user=new User();
 								user.userId=LocalStore.getUserInfo().userId;
 								user.userName=LocalStore.getUserInfo().userName;
@@ -142,20 +137,7 @@ public class LocationPropertyListActivity extends BaseActivity {
 		Log.i("MyLog", "当前的定位信息为-----）"+latitude+longitude);
 		// 初始化控件
 		initWidgets();
-		topbar_left=(Button) findViewById(R.id.topbar_left);
-		topbar_left.setVisibility(View.VISIBLE);
-		topbar_left.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				Intent intent=new Intent();
-				intent.setClass(LocationPropertyListActivity.this, LoginActivity.class);
-				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				startActivity(intent);
-				finish();
-				
-			}
-		});
+
 		// 获得小区列表数据源
 		final ArrayList<Propertys> propertysList = (ArrayList<Propertys>) getIntent()
 				.getSerializableExtra("key");
@@ -177,15 +159,7 @@ public class LocationPropertyListActivity extends BaseActivity {
 				@Override
 				public void onItemClick(AdapterView<?> parent, View view,
 						int position, long id) {
-//					LocalStore.setPropertys(LocationPropertyListActivity.this,
-//							propertysList.get(position));
-//					if (propertysList.get(position).OrganizationID == 0) {
-//						Intent intent = new Intent();
-//						intent.setClass(LocationPropertyListActivity.this,
-//								NoPropertyActivity.class);
-//						startActivity(intent);
-//						finish();
-//					} else {
+
 					User user=new User();
 					user.userId=LocalStore.getUserInfo().userId;
 					user.userName=LocalStore.getUserInfo().userName;
@@ -255,6 +229,20 @@ public class LocationPropertyListActivity extends BaseActivity {
 	}
 
 	private void initWidgets() {
+		topbar_left=(Button) findViewById(R.id.topbar_left);
+		topbar_left.setVisibility(View.VISIBLE);
+		topbar_left.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Intent intent=new Intent();
+				intent.setClass(LocationPropertyListActivity.this, LoginActivity.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
+				finish();
+
+			}
+		});
 
 		propertyListView = (ListView) findViewById(R.id.lv_PropertyList);
 

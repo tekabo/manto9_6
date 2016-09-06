@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mantoto.property"
-    android:versionCode="44"
-    android:versionName="2.4.1">
+    android:versionCode="47"
+    android:versionName="2.4.4">
 
     <uses-sdk android:minSdkVersion="14" />
 
@@ -120,9 +120,11 @@
             android:value="wn4hf0DqEXK9DLhzcOhXpOZB" />
         <!-- Product Key: wn4hf0DqEXK9DLhzcOhXpOZB -->
         <!-- Debug Key :  3CFDU2l6NmCYzGwNqZYHRkQM -->
+        <!-- 高德地图ysj -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="1e845eb322cf591e08b6dfd637d1ede3" />
+            android:value="a17cddec2dcb603cb6bad3592ebabf9e" />
+        <!-- android:value="1e845eb322cf591e08b6dfd637d1ede3" -->
         <!-- Product Key:  1e845eb322cf591e08b6dfd637d1ede3 -->
         <!-- Debug Key:    b10425e98f7ce46af2b2d7b18000801b -->
 
@@ -352,7 +354,7 @@
             android:screenOrientation="portrait" />
         <!-- 短信验证注册 -->
         <activity
-            android:name="com.wuxianyingke.property.activities.Register1Activity"
+            android:name="com.wuxianyingke.property.activities.RegisterActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:screenOrientation="portrait" />
         <!--
@@ -369,15 +371,9 @@
             android:name="com.wuxianyingke.property.activities.MainActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:screenOrientation="portrait" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.TextInputActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
+
         <!-- 支付返回按钮 -->
-        <activity
-            android:name="com.wuxianyingke.property.activities.LifePayDetails"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
+
         <activity
             android:name="com.wuxianyingke.property.activities.AddressEditActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
@@ -407,10 +403,6 @@
             android:configChanges="orientation|keyboardHidden|navigation"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.wuxianyingke.property.activities.BalenceActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="com.wuxianyingke.property.activities.PayActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:screenOrientation="portrait" />
@@ -422,10 +414,7 @@
             android:name="com.wuxianyingke.property.activities.AddressListActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:screenOrientation="portrait" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.ModifyPasswordActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
+
         <!-- 订单列表（我的订单） -->
         <activity
             android:name="com.wuxianyingke.property.activities.CommitOrderListActivity"
@@ -458,22 +447,6 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.wuxianyingke.property.activities.WebPayActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.RepairListActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.RepairInfoActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.RepairLogActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.RepairActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:screenOrientation="portrait" />
         <activity
@@ -524,77 +497,23 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateHidden"></activity>
         -->
-        <activity
+        <!--
+            <activity
             android:name="com.wuxianyingke.property.activities.Radio1Activity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:screenOrientation="portrait" />
+        -->
         <activity
-            android:name="com.wuxianyingke.property.activities.Radio1InfoActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.Radio2Activity"
+            android:name="com.wuxianyingke.property.activities.InformDetailActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.Radio3Activity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
         <activity
             android:name="com.wuxianyingke.property.activities.AddMessageActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.wuxianyingke.property.activities.MessageActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.MessageInfoActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.Radio4Activity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.Radio5Activity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.LivingCircleActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.AppPopularizeActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="com.wuxianyingke.property.activities.WifiPasswordActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.InvitationCodeActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.CommonInfomationActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.PaidServicesActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.ContactPublisherActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.ReleaseGoodsActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.FleaOwnerActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:screenOrientation="portrait" />
         <activity
@@ -657,76 +576,11 @@
             android:screenOrientation="portrait" />
         -->
         <!-- 生活缴费 -->
-        <activity
-            android:name="com.wuxianyingke.property.activities.LifePayActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
+
+
         <!-- 生活缴费详情 -->
-        <activity
-            android:name="com.wuxianyingke.property.activities.LifePayContentActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <!--
-            <activity
-            android:name="com.wuxianyingke.property.activities.FavoritesActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        -->
-        <!--
-            <activity
-            android:name="com.wuxianyingke.property.activities.MyOrderActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        -->
-        <!--
-            <activity
-            android:name="com.wuxianyingke.property.activities.OrderDetailActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        -->
 
 
-        <!--
-        <activity
-            android:name="com.wuxianyingke.property.activities.AddressActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.AddressDetailActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
-        -->
-        <!--
-            <activity
-            android:name="com.wuxianyingke.property.activities.InvoiceActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        -->
-        <!--
-            <activity
-            android:name="com.wuxianyingke.property.activities.PointRuleActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        -->
-        <activity
-            android:name="com.wuxianyingke.property.activities.RegisterActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="com.wuxianyingke.property.activities.Register1Activity2"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        <!--
-            <activity
-            android:name="com.wuxianyingke.property.activities.ProductDetailSimpleActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
-        -->
-        <activity
-            android:name="com.wuxianyingke.property.activities.ProductDetailActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait" />
         <!--
             <activity
             android:name="com.wuxianyingke.property.activities.OrderCarActivity"
@@ -763,11 +617,8 @@
             android:configChanges="orientation|keyboardHidden|navigation"
             android:screenOrientation="portrait"></activity>
         -->
-        <activity
-            android:name="com.wuxianyingke.property.activities.ProductListActivity"
-            android:configChanges="orientation|keyboardHidden|navigation"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateHidden" />
+
+
         <!--
             <activity
             android:name="com.wuxianyingke.property.activities.SecondCateActivity"
@@ -825,10 +676,12 @@
             android:name="com.wuxianyingke.property.activities.JiaoTongActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:screenOrientation="portrait" />
-        <activity
+        <!--
+            <activity
             android:name="com.wuxianyingke.property.activities.lukuangActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:screenOrientation="portrait" />
+        -->
         <activity
             android:name="com.wuxianyingke.property.activities.YiLiaoActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
@@ -931,15 +784,69 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name="com.wuxianyingke.property.activities.UcenterActivity" />
-        <activity android:name="com.wuxianyingke.property.activities.SetActivity" />
-        <activity android:name="com.wuxianyingke.property.activities.SetMessageActivity" />
-        <activity android:name="com.wuxianyingke.property.activities.PlotControlActivity" />
-        <activity android:name="com.wuxianyingke.property.activities.PlotLocationActivity" />
-        <activity android:name="com.wuxianyingke.property.activities.CallActivity" />
-        <activity android:name="com.wuxianyingke.property.activities.SearchShopActivity" />
-        <activity android:name="com.wuxianyingke.property.activities.CanyinOwnDetailActivity" />
-        <activity android:name="com.wuxianyingke.property.activities.ShopGoodsActivity"></activity>
+        <activity
+            android:name="com.wuxianyingke.property.activities.SetActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wuxianyingke.property.activities.SetMessageActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wuxianyingke.property.activities.PlotControlActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wuxianyingke.property.activities.PlotLocationActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wuxianyingke.property.activities.CallActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wuxianyingke.property.activities.SearchShopActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wuxianyingke.property.activities.CanyinOwnDetailActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wuxianyingke.property.activities.ShopGoodsActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wuxianyingke.property.activities.SalesPromotionActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wuxianyingke.property.activities.ShopCouponActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wuxianyingke.property.activities.TestActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wuxianyingke.property.activities.InformActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wuxianyingke.property.activities.GoodsCauponListActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wuxianyingke.property.activities.SearchPlotActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.wuxianyingke.property.activities.CommitOrderTestActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PageIndicatorDefaults" />
+        <activity android:name="com.wuxianyingke.property.activities.DiscountActivity" />
+        <activity android:name="com.wuxianyingke.property.activities.CouponCodeActivity"></activity>
     </application>
 
 </manifest>

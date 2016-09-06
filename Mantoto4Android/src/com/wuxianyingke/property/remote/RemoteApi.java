@@ -474,6 +474,7 @@ public interface RemoteApi {
 		public String header;//标题
 		public int Priority;//优先级
 		public boolean ForSal;//是否支持客户端支付
+		public int PromotionTypeID;
 	}
 	
 	/**订单状态*/
@@ -626,7 +627,7 @@ public interface RemoteApi {
 		public Coupon coupon;
 		public int has_deal;
 		public ArrayList<Deal> deals;
-		public String source;
+		public String source;//信息来源
 		public String Description;
 		public String Ctime;
 		public float latitude;
@@ -704,12 +705,6 @@ public interface RemoteApi {
 
 	/**
 	 * 获取生活项
-	 * 
-	 * @param c
-	 * @param propertyid
-	 * @param livingcategoryid
-	 * @param pageindex
-	 * @return
 	 */
 	public LivingItemInfo getLivingItems(Context c, int propertyid,
 			String livingcategoryid, int pageindex,double latitude,double longitude);

@@ -1,1 +1,2 @@
-include ':appcompat_v7', ':Mantoto4Android'
+include ':Mantoto4Android'
+include ':ViewPagerIndicator'

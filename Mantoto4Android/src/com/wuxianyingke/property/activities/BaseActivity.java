@@ -7,12 +7,14 @@ import com.mantoto.property.R;
 import com.umeng.message.proguard.B;
 import com.wuxianyingke.property.common.LocalStore;
 import com.wuxianyingke.property.common.ScreenUtil;
+import com.wuxianyingke.property.views.SystemBarTintManager;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
@@ -54,7 +56,37 @@ public class BaseActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         isStart = true;
 
+        // 4.4及以上版本开启
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            setTranslucentStatus(true);
+        }
+
+        SystemBarTintManager tintManager = new SystemBarTintManager(this);
+        tintManager.setStatusBarTintEnabled(true);
+        tintManager.setNavigationBarTintEnabled(true);
+
+        // 自定义颜色
+        tintManager.setTintColor(Color.parseColor("#FF7E00"));
+
+
     }
+
+
+
+    @TargetApi(19)
+    private void setTranslucentStatus(boolean on) {
+        Window win = getWindow();
+        WindowManager.LayoutParams winParams = win.getAttributes();
+        final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
+        if (on) {
+            winParams.flags |= bits;
+        } else {
+            winParams.flags &= ~bits;
+        }
+        win.setAttributes(winParams);
+    }
+
+
 
 
     @Override

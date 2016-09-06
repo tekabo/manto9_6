@@ -1,3 +1,4 @@
+/*
 package com.wuxianyingke.property.fragment;
 
 import java.text.SimpleDateFormat;
@@ -30,22 +31,32 @@ import com.wuxianyingke.property.threads.GetUnOrderListThread;
 
 public class UnCompleteOrderFragment3 extends ListFragment {
 	
-	/** 订单列表适配器 */
+	*/
+/** 订单列表适配器 *//*
+
 	private GetOrderListAdapter3 mAdapter;
-	/** 订单列表线程用于获得订单数据 */
+	*/
+/** 订单列表线程用于获得订单数据 *//*
+
 	private GetUnOrderListThread mThread;
-	/** 用于展示数据 */
+	*/
+/** 用于展示数据 *//*
+
 	private ListView mListView;
 	
-	/**
+	*/
+/**
 	 * 分页相关成员
-	 */
+	 *//*
+
 	private int pageIndex=1;
 	private int pageCount;
 
-	/**
+	*/
+/**
 	 * 加载数据相关成员
-	 */
+	 *//*
+
 	private boolean isLoading = false;
 
 	private LoadingDialog loadingDialog;
@@ -148,3 +159,4 @@ public class UnCompleteOrderFragment3 extends ListFragment {
 	}
 
 }
+*/

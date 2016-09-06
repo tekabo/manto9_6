@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "E:\\sport1\\last\\Mantoto4Android\\build\\intermediates\\res\\merged\\debug\\values-v17\\values-v17.xml",
+        "outputFile": "E:\\workspace\\8-26\\last\\Mantoto4Android\\build\\intermediates\\res\\merged\\debug\\values-v17\\values-v17.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 223
                 },
                 "from": {
-                    "file": "E:\\sport1\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\last\\appcompat_v7\\unspecified\\res\\values-v17\\values-v17.xml",
+                    "file": "E:\\workspace\\8-26\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-v17\\values-v17.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -33,7 +33,7 @@
                     "endOffset": 451
                 },
                 "from": {
-                    "file": "E:\\sport1\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\last\\appcompat_v7\\unspecified\\res\\values-v17\\values-v17.xml",
+                    "file": "E:\\workspace\\8-26\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-v17\\values-v17.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -49,82 +49,82 @@
                     "startLine": 9,
                     "startColumn": 4,
                     "startOffset": 456,
-                    "endLine": 12,
+                    "endLine": 11,
                     "endColumn": 12,
-                    "endOffset": 788
+                    "endOffset": 609
                 },
                 "from": {
-                    "file": "E:\\sport1\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\last\\appcompat_v7\\unspecified\\res\\values-v17\\values-v17.xml",
+                    "file": "E:\\workspace\\8-26\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-v17\\values-v17.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
                         "startOffset": 456,
-                        "endLine": 12,
+                        "endLine": 11,
                         "endColumn": 12,
-                        "endOffset": 788
+                        "endOffset": 609
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 13,
+                    "startLine": 12,
                     "startColumn": 4,
-                    "startOffset": 793,
-                    "endLine": 15,
+                    "startOffset": 614,
+                    "endLine": 14,
                     "endColumn": 12,
-                    "endOffset": 946
+                    "endOffset": 759
                 },
                 "from": {
-                    "file": "E:\\sport1\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\last\\appcompat_v7\\unspecified\\res\\values-v17\\values-v17.xml",
+                    "file": "E:\\workspace\\8-26\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-v17\\values-v17.xml",
                     "position": {
-                        "startLine": 13,
+                        "startLine": 12,
                         "startColumn": 4,
-                        "startOffset": 793,
-                        "endLine": 15,
+                        "startOffset": 614,
+                        "endLine": 14,
                         "endColumn": 12,
-                        "endOffset": 946
+                        "endOffset": 759
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 16,
+                    "startLine": 15,
                     "startColumn": 4,
-                    "startOffset": 951,
-                    "endLine": 18,
+                    "startOffset": 764,
+                    "endLine": 17,
                     "endColumn": 12,
-                    "endOffset": 1096
+                    "endOffset": 931
                 },
                 "from": {
-                    "file": "E:\\sport1\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\last\\appcompat_v7\\unspecified\\res\\values-v17\\values-v17.xml",
+                    "file": "E:\\workspace\\8-26\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-v17\\values-v17.xml",
                     "position": {
-                        "startLine": 16,
+                        "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 951,
-                        "endLine": 18,
+                        "startOffset": 764,
+                        "endLine": 17,
                         "endColumn": 12,
-                        "endOffset": 1096
+                        "endOffset": 931
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 19,
+                    "startLine": 18,
                     "startColumn": 4,
-                    "startOffset": 1101,
+                    "startOffset": 936,
                     "endLine": 21,
                     "endColumn": 12,
-                    "endOffset": 1268
+                    "endOffset": 1159
                 },
                 "from": {
-                    "file": "E:\\sport1\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\last\\appcompat_v7\\unspecified\\res\\values-v17\\values-v17.xml",
+                    "file": "E:\\workspace\\8-26\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-v17\\values-v17.xml",
                     "position": {
-                        "startLine": 19,
+                        "startLine": 18,
                         "startColumn": 4,
-                        "startOffset": 1101,
+                        "startOffset": 936,
                         "endLine": 21,
                         "endColumn": 12,
-                        "endOffset": 1268
+                        "endOffset": 1159
                     }
                 }
             },
@@ -132,20 +132,20 @@
                 "to": {
                     "startLine": 22,
                     "startColumn": 4,
-                    "startOffset": 1273,
+                    "startOffset": 1164,
                     "endLine": 25,
                     "endColumn": 12,
-                    "endOffset": 1496
+                    "endOffset": 1401
                 },
                 "from": {
-                    "file": "E:\\sport1\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\last\\appcompat_v7\\unspecified\\res\\values-v17\\values-v17.xml",
+                    "file": "E:\\workspace\\8-26\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-v17\\values-v17.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
-                        "startOffset": 1273,
+                        "startOffset": 1164,
                         "endLine": 25,
                         "endColumn": 12,
-                        "endOffset": 1496
+                        "endOffset": 1401
                     }
                 }
             },
@@ -153,83 +153,83 @@
                 "to": {
                     "startLine": 26,
                     "startColumn": 4,
-                    "startOffset": 1501,
-                    "endLine": 29,
+                    "startOffset": 1406,
+                    "endLine": 28,
                     "endColumn": 12,
-                    "endOffset": 1738
+                    "endOffset": 1572
                 },
                 "from": {
-                    "file": "E:\\sport1\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\last\\appcompat_v7\\unspecified\\res\\values-v17\\values-v17.xml",
+                    "file": "E:\\workspace\\8-26\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-v17\\values-v17.xml",
                     "position": {
                         "startLine": 26,
                         "startColumn": 4,
-                        "startOffset": 1501,
-                        "endLine": 29,
+                        "startOffset": 1406,
+                        "endLine": 28,
                         "endColumn": 12,
-                        "endOffset": 1738
+                        "endOffset": 1572
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 30,
+                    "startLine": 29,
                     "startColumn": 4,
-                    "startOffset": 1743,
-                    "endLine": 32,
+                    "startOffset": 1577,
+                    "endLine": 31,
                     "endColumn": 12,
-                    "endOffset": 1909
+                    "endOffset": 1746
                 },
                 "from": {
-                    "file": "E:\\sport1\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\last\\appcompat_v7\\unspecified\\res\\values-v17\\values-v17.xml",
+                    "file": "E:\\workspace\\8-26\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-v17\\values-v17.xml",
                     "position": {
-                        "startLine": 30,
+                        "startLine": 29,
                         "startColumn": 4,
-                        "startOffset": 1743,
-                        "endLine": 32,
+                        "startOffset": 1577,
+                        "endLine": 31,
                         "endColumn": 12,
-                        "endOffset": 1909
+                        "endOffset": 1746
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 33,
+                    "startLine": 32,
                     "startColumn": 4,
-                    "startOffset": 1914,
-                    "endLine": 35,
+                    "startOffset": 1751,
+                    "endLine": 34,
                     "endColumn": 12,
-                    "endOffset": 2083
+                    "endOffset": 1915
                 },
                 "from": {
-                    "file": "E:\\sport1\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\last\\appcompat_v7\\unspecified\\res\\values-v17\\values-v17.xml",
+                    "file": "E:\\workspace\\8-26\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-v17\\values-v17.xml",
                     "position": {
-                        "startLine": 33,
+                        "startLine": 32,
                         "startColumn": 4,
-                        "startOffset": 1914,
-                        "endLine": 35,
+                        "startOffset": 1751,
+                        "endLine": 34,
                         "endColumn": 12,
-                        "endOffset": 2083
+                        "endOffset": 1915
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 36,
+                    "startLine": 35,
                     "startColumn": 4,
-                    "startOffset": 2088,
+                    "startOffset": 1920,
                     "endLine": 38,
                     "endColumn": 12,
-                    "endOffset": 2252
+                    "endOffset": 2188
                 },
                 "from": {
-                    "file": "E:\\sport1\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\last\\appcompat_v7\\unspecified\\res\\values-v17\\values-v17.xml",
+                    "file": "E:\\workspace\\8-26\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-v17\\values-v17.xml",
                     "position": {
-                        "startLine": 36,
+                        "startLine": 35,
                         "startColumn": 4,
-                        "startOffset": 2088,
+                        "startOffset": 1920,
                         "endLine": 38,
                         "endColumn": 12,
-                        "endOffset": 2252
+                        "endOffset": 2188
                     }
                 }
             },
@@ -237,41 +237,41 @@
                 "to": {
                     "startLine": 39,
                     "startColumn": 4,
-                    "startOffset": 2257,
-                    "endLine": 42,
+                    "startOffset": 2193,
+                    "endLine": 41,
                     "endColumn": 12,
-                    "endOffset": 2525
+                    "endOffset": 2388
                 },
                 "from": {
-                    "file": "E:\\sport1\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\last\\appcompat_v7\\unspecified\\res\\values-v17\\values-v17.xml",
+                    "file": "E:\\workspace\\8-26\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-v17\\values-v17.xml",
                     "position": {
                         "startLine": 39,
                         "startColumn": 4,
-                        "startOffset": 2257,
-                        "endLine": 42,
+                        "startOffset": 2193,
+                        "endLine": 41,
                         "endColumn": 12,
-                        "endOffset": 2525
+                        "endOffset": 2388
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 43,
+                    "startLine": 42,
                     "startColumn": 4,
-                    "startOffset": 2530,
+                    "startOffset": 2393,
                     "endLine": 45,
                     "endColumn": 12,
-                    "endOffset": 2725
+                    "endOffset": 2592
                 },
                 "from": {
-                    "file": "E:\\sport1\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\last\\appcompat_v7\\unspecified\\res\\values-v17\\values-v17.xml",
+                    "file": "E:\\workspace\\8-26\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-v17\\values-v17.xml",
                     "position": {
-                        "startLine": 43,
+                        "startLine": 42,
                         "startColumn": 4,
-                        "startOffset": 2530,
+                        "startOffset": 2393,
                         "endLine": 45,
                         "endColumn": 12,
-                        "endOffset": 2725
+                        "endOffset": 2592
                     }
                 }
             },
@@ -279,20 +279,20 @@
                 "to": {
                     "startLine": 46,
                     "startColumn": 4,
-                    "startOffset": 2730,
-                    "endLine": 48,
+                    "startOffset": 2597,
+                    "endLine": 49,
                     "endColumn": 12,
-                    "endOffset": 2973
+                    "endOffset": 2921
                 },
                 "from": {
-                    "file": "E:\\sport1\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\last\\appcompat_v7\\unspecified\\res\\values-v17\\values-v17.xml",
+                    "file": "E:\\workspace\\8-26\\last\\Mantoto4Android\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-v17\\values-v17.xml",
                     "position": {
                         "startLine": 46,
                         "startColumn": 4,
-                        "startOffset": 2730,
-                        "endLine": 48,
+                        "startOffset": 2597,
+                        "endLine": 49,
                         "endColumn": 12,
-                        "endOffset": 2973
+                        "endOffset": 2921
                     }
                 }
             }

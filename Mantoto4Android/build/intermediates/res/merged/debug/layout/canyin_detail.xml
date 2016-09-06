@@ -4,7 +4,10 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/background_color"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="true"
+    >
 
 
     <FrameLayout
@@ -40,7 +43,7 @@
             <RelativeLayout
                 android:id="@+id/common_back"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="50dp"
                  >
 
                 <Button
@@ -58,7 +61,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:textColor="#000000"
+                    android:textColor="#ffffff"
                     android:textSize="18sp"
                     />
 

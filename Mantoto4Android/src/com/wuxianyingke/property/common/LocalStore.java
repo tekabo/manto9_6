@@ -79,6 +79,9 @@ public class LocalStore {
 	private final static String LATITUDE = "latitude";
 	private final static String LONGITUDE = "longitude";
 	private final static String TELNUMBER =	"telnumber";
+	//新增个人信息
+	private final static String PERSONAL_MESSAGE = "personal_message";
+
 	
 	public static void initFreeWifi(Context context){
 		SharedPreferences saving=context.getSharedPreferences(ADDRESS_INFO, 0);
@@ -189,7 +192,6 @@ public class LocalStore {
 	}
 	/**
 	 * 存储宽带账号
-	 * @param context
 	 */
 	public static void setBroadBand(Context context, String broadband){
 		SharedPreferences saving = context.getSharedPreferences(USER_INFO, 0);
@@ -678,5 +680,20 @@ public class LocalStore {
 	public static String getRepairContact(Context context) {
 		SharedPreferences saving = context.getSharedPreferences(USER_INFO, 0);
 		return saving.getString(REPAIR_CONTACT, "");
+	}
+
+	//新加
+	public  class personal{
+		public  String gender;
+		public  String age;
+		public  String plot;//小区
+	}
+	public void addPersonalMessage(Context context,String age,String gender){
+		SharedPreferences saving = context.getSharedPreferences(USER_INFO, 0);
+		personal persal = new personal();
+		saving.edit().putString("gender",persal.gender).commit();
+		saving.edit().putString("age",persal.age).commit();
+		saving.edit().putString("plot",persal.plot).commit();
+
 	}
 }

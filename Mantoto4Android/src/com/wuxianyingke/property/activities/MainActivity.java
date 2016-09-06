@@ -408,11 +408,7 @@ public class MainActivity extends BaseActivity {
 		
 				setContentView(R.layout.gridview_main);
 				super.init(0);
-				/*
-				 * Toolbar toolbar = (Toolbar) findViewById(R.id.id_toolbar);
-				 * setSupportActionBar(toolbar); StatusBarCompat.compat(this,
-				 * getResources().getColor(R.color.status_bar_color));
-				 */
+
 				//updateRemindImg = (ImageView) findViewById(R.id.updateRemindImg);
 				mGridView = (GridView) findViewById(R.id.MyGridView);
 				mGridView.setSelector(new ColorDrawable(Color.TRANSPARENT));
@@ -466,7 +462,7 @@ public class MainActivity extends BaseActivity {
 						(String) getResources().getText(R.string.gridview_tongzhi), ""
 								+ R.drawable.style_tongzhi);//通知
 				
-				imageRes.put((String) getResources().getText(R.string.gridview_xinxi),
+				/*imageRes.put((String) getResources().getText(R.string.gridview_xinxi),
 						"" + R.drawable.style_xinxi);//没有
 				imageRes.put(
 						(String) getResources().getText(
@@ -475,7 +471,7 @@ public class MainActivity extends BaseActivity {
 				imageRes.put(
 						(String) getResources()
 								.getText(R.string.gridview_daishoukuaidi), ""
-								+ R.drawable.style_daishoukuaidi);//没有
+								+ R.drawable.style_daishoukuaidi);//没有*/
 				imageRes.put((String) getResources().getText(R.string.gridview_canyin),
 						"" + R.drawable.style_canyin);//餐饮
 				imageRes.put((String) getResources().getText(R.string.gridview_gouwu),
@@ -492,21 +488,21 @@ public class MainActivity extends BaseActivity {
 						(String) getResources().getText(
 								R.string.gridview_shenghuobianqian), ""
 								+ R.drawable.style_shenghuobianqian);//生活便签
-				imageRes.put(
+				/*imageRes.put(
 						(String) getResources().getText(
 								R.string.gridview_changyongxinxi), ""
 								+ R.drawable.style_changyongxinxi);//没有
 				imageRes.put(
 						(String) getResources().getText(R.string.gridview_youchangfuwu),
-						"" + R.drawable.style_youchangfuwu);//没有
+						"" + R.drawable.style_youchangfuwu);//没有*/
 				imageRes.put((String) getResources().getText(R.string.gridview_wifi),
 						"" + R.drawable.style_wifi);//wifi
-				imageRes.put((String) getResources().getText(R.string.gridview_baoxiu),
+				/*imageRes.put((String) getResources().getText(R.string.gridview_baoxiu),
 						"" + R.drawable.style_repair);//没有
 				imageRes.put(
 						(String) getResources().getText(
 								R.string.gridview_shenghuojiaofei), ""
-								+ R.drawable.style_shenghuojiaofei);//没有
+								+ R.drawable.style_shenghuojiaofei);//没有*/
 	}
 	
 	
@@ -516,17 +512,10 @@ public class MainActivity extends BaseActivity {
 				activityRes = new HashMap<String, Object>();
 				activityRes.put(
 						(String) getResources().getText(R.string.gridview_tongzhi),
-						Radio2Activity.class);
-				activityRes.put((String) getResources()
-						.getText(R.string.gridview_xinxi), MessageActivity.class);
-				activityRes.put(
-						(String) getResources().getText(
-								R.string.gridview_tiaozhaoshichang),
-						ProductListActivity.class);
-				activityRes.put(
-						(String) getResources()
-								.getText(R.string.gridview_daishoukuaidi),
-						Radio4Activity.class);
+						InformActivity.class);//物业通知
+				/*activityRes.put((String) getResources()
+						.getText(R.string.gridview_xinxi), MessageActivity.class);*/
+
 				activityRes.put(
 						(String) getResources().getText(R.string.gridview_canyin),
 						CanYinListActivity.class);
@@ -545,29 +534,12 @@ public class MainActivity extends BaseActivity {
 				activityRes.put(
 						(String) getResources().getText(
 								R.string.gridview_shenghuobianqian),
-						StickerActivity.class);
-				activityRes.put(
-						(String) getResources().getText(
-								R.string.gridview_changyongxinxi),
-						CommonInfomationActivity.class);
-				activityRes
-						.put((String) getResources().getText(
-								R.string.gridview_youchangfuwu),
-								PaidServicesActivity.class);
+						StickerActivity.class);//生活便签
+
 				activityRes.put(
 						(String) getResources().getText(R.string.gridview_wifi),
 						WIFILoginActivity.class);
-				activityRes.put(
-						(String) getResources().getText(R.string.gridview_baoxiu),
-						RepairListActivity.class);
-				activityRes.put(
-						(String) getResources().getText(
-								R.string.gridview_shenghuojiaofei),
-						LifePayActivity.class);//没有
-				/*
-				 * activityRes.put("报修",RepairListActivity.class );
-				 * activityRes.put("生活缴费",LifePayActivity.class );
-				 */
+
 	}
 
 	// 获得首页小格子列表即菜单列表
@@ -609,19 +581,18 @@ public class MainActivity extends BaseActivity {
 			// 为mGridView添加点击事件监听器
 			mGridView.setOnItemClickListener(new GridViewItemOnClick());
 
-			LuKuangImage = (ImageView) findViewById(R.id.LuKuangImage);
+			/*LuKuangImage = (ImageView) findViewById(R.id.LuKuangImage);
 			LuKuangImage.setOnClickListener(new OnClickListener() {
 
 				@Override
 				public void onClick(View arg0) {
-					// TODO Auto-generated method stub
 					Intent intent = new Intent();
 					intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
 							| Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					intent.setClass(MainActivity.this, lukuangActivity.class);
 					startActivity(intent);
 				}
-			});
+			});*/
 	}
 
 	//方法:拨号弹出框Popwindow

@@ -146,10 +146,7 @@ public class WIFILoginActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		Log.i(TAG, "onCreate");
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_wifi_login);
-		//标题栏
-		setImmerseLayout(findViewById(R.id.common_back));
 
 		ssid = getIntent().getExtras().getStringArray("ssid");
 		Log.i("MyLog", "ssid[]=" + ssid[0]);
@@ -325,7 +322,9 @@ public class WIFILoginActivity extends BaseActivity {
 				new Thread(runnable2).start();
 			}
 		});
-		
+
+
+		//打开wifi时启动
 		runnableBalance = new Runnable() {
 			@Override
 			public void run() {
@@ -367,7 +366,9 @@ public class WIFILoginActivity extends BaseActivity {
 					e.printStackTrace();
 				}
 			}
+
 		};
+
 
 	}
 	@Override
@@ -429,6 +430,7 @@ public class WIFILoginActivity extends BaseActivity {
 		}
 		return result;
 	}
+
 
 	Handler handler = new Handler() {
 		@Override
@@ -699,7 +701,9 @@ public class WIFILoginActivity extends BaseActivity {
 			}
 		}
 	};
-	
+
+
+	//断开连接时启动
 	Runnable runnable2 = new Runnable() {
 		@Override
 		public void run() {			

@@ -29,25 +29,21 @@ import com.wuxianyingke.property.remote.RemoteApi.OrderItem;
 import com.wuxianyingke.property.remote.RemoteApi.User;
 import com.wuxianyingke.property.threads.GetUnderwayListThread;
 
-/**
- * @ClassName: CommitOrderListActivity
- * @Description:(支付订单列表)
- * @author Liudongdong
- * @date 2015-8-14 下午12:48:18
- *
+/*
+ *支付订单列表
  */
 public class CommitOrderListActivity extends BaseActivity {
 	// 顶部导航
 	private TextView topbar_txt;
 	private Button topbar_left;
 	private int favorite_flag;
-	private Button completedBtn, uncompleteBtn;
-	private LinearLayout titleLayout;
+	private Button completedBtn, uncompleteBtn,allOrder;
+	private LinearLayout titleLayout,orderLine1,orderLine2,orderLine3;
 	private ListView mListView;
 	/** 订单列表适配器 */
 	private static GetOrderListAdapter mAdapter;
 	/** 订单列表线程用于获得订单数据 */
-//	private GetUnOrderListThread mThread;
+    //private GetUnOrderListThread mThread;
 	private GetUnderwayListThread mThread;
 	private User use;
 	private int pagerIndex=1;
@@ -128,16 +124,23 @@ public class CommitOrderListActivity extends BaseActivity {
 		topbar_left = (Button) findViewById(R.id.topbar_left);
 		topbar_left.setVisibility(View.VISIBLE);
 		mTextView=(TextView)findViewById(R.id.empty_tv);
+		//三条底线
+		orderLine1 = (LinearLayout) findViewById(R.id.order_line1);
+		orderLine2 = (LinearLayout) findViewById(R.id.order_line2);
+		orderLine3 = (LinearLayout) findViewById(R.id.order_line3);
+
 		// 基础
 		uncompleteBtn = (Button) findViewById(R.id.btn_UncompletedId);// 未完成
 		completedBtn = (Button) findViewById(R.id.btn_CompletedId);// 已完成
-		uncompleteBtn.setTextColor(Color.parseColor("#ff7e00"));
-		completedBtn.setBackgroundResource(R.drawable.switch_button_right_on);// 初始化时将完成背景设置成蓝色
+		allOrder = (Button) findViewById(R.id.btn_all_order);//全部订单
+		//uncompleteBtn.setTextColor(Color.parseColor("#ff7e00"));
+		orderLine1.setVisibility(View.VISIBLE);
+		//completedBtn.setBackgroundResource(R.drawable.switch_button_right_on);// 初始化时将完成背景设置成蓝色
 
 		mListView=(ListView) findViewById(R.id.order_list);
 		mListView.setVerticalScrollBarEnabled(false);
-		mListView.setDivider(getResources().getDrawable(
-				R.drawable.list_line));
+		/*mListView.setDivider(getResources().getDrawable(
+				R.drawable.list_line));*/
 		mListView.setOnScrollListener(mScrollListner);
 		use=LocalStore.getUserInfo();
 		initResource();
@@ -167,24 +170,32 @@ public class CommitOrderListActivity extends BaseActivity {
 	// 选择某一标题，设置其字体颜色为红色
 	private void select(int position) {
 		for (int i = 0, len = titleLayout.getChildCount(); i < len; i++) {
-			completedBtn = (Button) titleLayout.getChildAt(i);
+			//completedBtn = (Button) titleLayout.getChildAt(i);
 			if (i == position) {
+				//完成按钮被点击
 				flag=1;
-				uncompleteBtn.setTextColor(Color.parseColor("#ffffff"));
+				uncompleteBtn.setTextColor(Color.parseColor("#000000"));
 				completedBtn.setTextColor(Color.parseColor("#ff7e00"));
-				uncompleteBtn
+				orderLine2.setVisibility(View.VISIBLE);
+				orderLine1.setVisibility(View.GONE);
+				orderLine3.setVisibility(View.GONE);
+				/*uncompleteBtn
 						.setBackgroundResource(R.drawable.switch_button_left_on);
 				completedBtn
-						.setBackgroundResource(R.drawable.switch_button_right_default);
+						.setBackgroundResource(R.drawable.switch_button_right_default);*/
 				initResource();
 			} else {
+				//未完成订单
 				flag=0;
 				uncompleteBtn.setTextColor(Color.parseColor("#ff7e00"));
-				completedBtn.setTextColor(Color.parseColor("#ffffff"));
-				uncompleteBtn
+				completedBtn.setTextColor(Color.parseColor("#000000"));
+				orderLine1.setVisibility(View.VISIBLE);
+				orderLine2.setVisibility(View.GONE);
+				orderLine3.setVisibility(View.GONE);
+				/*uncompleteBtn
 						.setBackgroundResource(R.drawable.switch_button_left_default);
 				completedBtn
-						.setBackgroundResource(R.drawable.switch_button_right_on);
+						.setBackgroundResource(R.drawable.switch_button_right_on);*/
 				initResource();
 			}
 		}
@@ -250,7 +261,7 @@ public class CommitOrderListActivity extends BaseActivity {
 					return;
 				mAllowGetLogAgain = false;
 				mPageNum++;
-				LogUtil.d("MyTag", "Radio2Activity.this onScrollStateChanged");
+				LogUtil.d("MyTag", "InformDetailActivity.this onScrollStateChanged");
 //				mThread=new GetUnOrderListThread(CommitOrderListActivity.this, mHandler, use.userId, pagerIndex);
 				mThread=new GetUnderwayListThread(CommitOrderListActivity.this, mHandler, mPageNum, use.userId,flag);
 				mThread.start();
@@ -309,12 +320,10 @@ public class CommitOrderListActivity extends BaseActivity {
 	}
 
 	void initResource() {
-		// TODO Auto-generated method stub
 		freeResource() ;
 		if (mThread == null)
 			mThread=new GetUnderwayListThread(CommitOrderListActivity.this, mHandler, mPageNum, use.userId,flag);
-//			mThread=new GetUnOrderListThread(CommitOrderListActivity.this, mHandler, use.userId, pagerIndex);
-		mThread.start();
+			mThread.start();
 	}
 
 }

@@ -1,3 +1,4 @@
+/*
 package com.wuxianyingke.property.threads;
 
 import java.util.List;
@@ -67,9 +68,11 @@ public class PropertyCollectionThread extends Thread
 			msg.what = Constants.MSG_PROPERTY_COLLECTION_FINISH;
 			handler.sendMessage(msg);
 			
-			/*if (!running) 
+			*/
+/*if (!running)
 				return;
-			Radio4Activity.setAllowGetPageAgain();*/
+			Radio4Activity.setAllowGetPageAgain();*//*
+
 			
 		} catch(Exception ex) {
 			LogUtil.d(TAG, "ActivityThread::Run() error = "+ex.getMessage());
@@ -81,3 +84,4 @@ public class PropertyCollectionThread extends Thread
 		}
 	}
 }
+*/

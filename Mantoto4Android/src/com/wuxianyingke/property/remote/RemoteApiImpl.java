@@ -2958,6 +2958,7 @@ public class RemoteApiImpl implements RemoteApi {
 			lastest.put("pageindex", pageindex);
 			lastest.put("latitude", latitude);
 			lastest.put("longitude", longitude);
+			//获取生活项列表
 			response = HttpComm.sendJSONToServer(Constants.LIVING_ITEMS,
 					lastest, Constants.HTTP_SO_TIMEOUT);
 
@@ -2984,6 +2985,7 @@ public class RemoteApiImpl implements RemoteApi {
 					livingItem.has_coupon = obj.getInt("has_coupon");
 					try {
 						if (livingItem.has_coupon > 0) {
+							//含优惠券
 							Coupon coupon = new Coupon();
 							JSONObject couObj = obj.getJSONObject("coupon");
 							coupon.coupon_id = couObj.getInt("coupon_id");
@@ -2999,6 +3001,7 @@ public class RemoteApiImpl implements RemoteApi {
 					try {
 						livingItem.has_deal = obj.getInt("has_deal");
 						if (livingItem.has_deal > 0) {
+							//有团购
 							ArrayList<Deal> deals = new ArrayList<Deal>();
 							JSONArray dealsArray = (JSONArray) obj.get("deals");
 							for (int j = 0; j < dealsArray.length(); j++) {

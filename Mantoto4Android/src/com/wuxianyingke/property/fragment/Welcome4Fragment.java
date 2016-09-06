@@ -9,14 +9,10 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import java.util.Timer;
-import java.util.TimerTask;
 
 import com.mantoto.property.R;
-import com.wuxianyingke.property.activities.InvitationCodeActivity;
 import com.wuxianyingke.property.activities.LoginActivity;
 import com.wuxianyingke.property.common.LocalStore;
-import com.wuxianyingke.property.common.SPUtils;
 
 public class Welcome4Fragment extends Fragment {
 	private ImageView image;

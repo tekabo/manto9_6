@@ -47,7 +47,6 @@ public class AddressEditActivity extends BaseActivity {
 	private TextView topbar_txt,topbar_right;
 	private Button topbar_left;
 	private int favorite_flag;
-	private Button commit;
 	// 输入姓名 号码 地区 详细地址
 	private EditText et_name, et_phoneNumber, et_area, et_address;
 
@@ -125,7 +124,7 @@ public class AddressEditActivity extends BaseActivity {
 		recipientAddressDetail = getIntent().getStringExtra("address");*/
 		// 初始化控件
 		initView();
-		setResult(0,getIntent());
+		//setResult(0,getIntent());
 
 		setImmerseLayout(findViewById(R.id.common_back));
 		// 初始化事件监听器
@@ -373,11 +372,11 @@ public class AddressEditActivity extends BaseActivity {
 		topbar_right.setVisibility(View.VISIBLE);
 		topbar_right.setText("保存");
 		topbar_right.setTextColor(Color.rgb(255,165,0));
+		et_name = (EditText) findViewById(R.id.user_Address_nameId);
 		et_phoneNumber = (EditText) findViewById(R.id.user_Address_PhoneNumberId);
 		et_area = (EditText) findViewById(R.id.user_Address_arerId);
 		et_address = (EditText) findViewById(R.id.user_Address_AddressId);
 
-		commit = (Button) findViewById(R.id.order_Commit2Id);//原来的提交按钮
 	}
 
 }

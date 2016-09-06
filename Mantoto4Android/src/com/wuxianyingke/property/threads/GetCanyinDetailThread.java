@@ -8,15 +8,11 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
-import com.wuxianyingke.property.activities.CanyinDetailOwnActivity;
 import com.wuxianyingke.property.common.Constants;
-import com.wuxianyingke.property.common.LocalStore;
 import com.wuxianyingke.property.common.Util;
-import com.wuxianyingke.property.remote.RemoteApi.FleaContent;
 import com.wuxianyingke.property.remote.RemoteApi.LivingItem;
 import com.wuxianyingke.property.remote.RemoteApi.LivingItemPictureInfo;
 import com.wuxianyingke.property.remote.RemoteApiImpl;
-import com.wuxianyingke.property.remote.RemoteApi.ProductDetailNew;
 
 public class GetCanyinDetailThread extends Thread {
 
@@ -30,8 +26,9 @@ public class GetCanyinDetailThread extends Thread {
 	private String source;
 	private double latitude,longitude;
 
+
 	public GetCanyinDetailThread(Context context, Handler handler,
-			int mPropertyid,int mFleaid,String mSource,double latitude,double longitude) {
+								 int mPropertyid,int mFleaid,String mSource,double latitude,double longitude) {
 		this.mContext = context;
 		this.mHandler = handler;
 		this.fleaid = mFleaid;
@@ -58,34 +55,39 @@ public class GetCanyinDetailThread extends Thread {
 			return;
 		if (mLivingItem != null ) {
 			mHandler.sendEmptyMessage(Constants.MSG_GET_PRODUCT_DETAIL_FINISH);
-			
+
 		} else {
 			mHandler.sendEmptyMessage(Constants.MSG_GET_PRODUCT_DETAIL_NET_ERROR);
 			return;
 		}
-		
-		int imgCount = mLivingItemPictureInfo.livingItemPicture.size() ;
+
+
 		mLivingItem.livingItemPicture=mLivingItemPictureInfo.livingItemPicture;
-		for (int i = imgCount - 1; i >= 0; --i) 
-			
-		{
-			if (!isRuning)
-				return;
-			if (mLivingItemPictureInfo.livingItemPicture.get(i).path != null) {
-				Drawable dw = null;
-				try {
-					dw = Util.getDrawableFromCache(mContext,
-							mLivingItemPictureInfo.livingItemPicture.get(i).path);
-				} catch (IOException e) {
-					e.printStackTrace();
+		if(mLivingItemPictureInfo.livingItemPicture!=null) {
+			int imgCount = mLivingItemPictureInfo.livingItemPicture.size();
+
+		if(imgCount>0) {
+
+			for (int i = imgCount - 1; i >= 0; --i) {
+				if (!isRuning)
+					return;
+				if (mLivingItemPictureInfo.livingItemPicture.get(i).path != null) {
+					Drawable dw = null;
+					try {
+						dw = Util.getDrawableFromCache(mContext,
+								mLivingItemPictureInfo.livingItemPicture.get(i).path);
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+					if (dw != null) {
+						mLivingItem.livingItemPicture.get(i).imgDw = dw;
+						Message msg = new Message();
+						msg.what = Constants.MSG_GET_PRODUCT_DETAIL_IMG_FINISH;
+						msg.arg1 = i;
+						mHandler.sendMessage(msg);
+					}
 				}
-				if (dw != null) {
-					mLivingItem.livingItemPicture.get(i).imgDw = dw;
-					Message msg = new Message();
-					msg.what = Constants.MSG_GET_PRODUCT_DETAIL_IMG_FINISH;
-					msg.arg1 = i;
-					mHandler.sendMessage(msg);
-				}
+			}
 			}
 		}
 	}

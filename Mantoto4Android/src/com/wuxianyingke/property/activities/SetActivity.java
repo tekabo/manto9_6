@@ -2,9 +2,11 @@ package com.wuxianyingke.property.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
@@ -24,17 +26,25 @@ import com.wuxianyingke.property.common.Constants;
 import com.wuxianyingke.property.common.LocalStore;
 import com.wuxianyingke.property.common.Util;
 
-public class SetActivity extends Activity {
+import java.io.File;
+import java.math.BigDecimal;
+
+public class SetActivity extends BaseActivity {
     protected static final String TAG = SetActivity.class.getSimpleName();
-    private LinearLayout set_modifypassword,set_btn_exit;
-    private  TextView  set_check_update_version;
+    private LinearLayout set_modifypassword,set_btn_exit,clearCache;
+    private  TextView  set_check_update_version,cacheSize;
     private ImageView set_notify_btn_enable;
     private PushAgent mPushAgent;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set);
+
         initWidget();
+        setImmerseLayout(findViewById(R.id.common_back));
         mPushAgent = PushAgent.getInstance(getApplicationContext());
         mPushAgent.enable();
         //mPushAgent.onAppStart();
@@ -46,6 +56,7 @@ public class SetActivity extends Activity {
 
 
     }
+
 
     public void initWidget(){
         //标题
@@ -76,6 +87,18 @@ public class SetActivity extends Activity {
         //通知提醒
         set_notify_btn_enable = (ImageView) findViewById(R.id.set_notify_btn_enable);
         set_notify_btn_enable.setOnClickListener(clickListener);
+
+        //清楚缓存
+
+        clearCache = (LinearLayout) findViewById(R.id.set_clear_cache);
+        clearCache.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               clearAllCache(SetActivity.this);
+            }
+        });
+
+
         //检查更新
          String version = Util.getPackageVersion(getApplicationContext(),
                 Constants.GET_PACKAGENAME(getApplicationContext()));
@@ -122,6 +145,90 @@ public class SetActivity extends Activity {
                 mPushAgent.enable(mRegisterCallback);
             }
         }
+    }
+
+    protected  String getToatalCacheSize(Context context) throws Exception{
+        long cacheSize = getFolderSize(context.getCacheDir());
+        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+            cacheSize += getFolderSize(context.getExternalCacheDir());
+        }
+
+
+
+        return getFormatSize(cacheSize);
+    }
+
+    // 获取文件
+    //Context.getExternalFilesDir() --> SDCard/Android/data/你的应用的包名/files/ 目录，一般放一些长时间保存的数据
+    //Context.getExternalCacheDir() --> SDCard/Android/data/你的应用包名/cache/目录，一般存放临时缓存数据
+    public static long getFolderSize(File file) throws Exception {
+        long size = 0;
+        try {
+            File[] fileList = file.listFiles();
+            for (int i = 0; i < fileList.length; i++) {
+                // 如果下面还有文件
+                if (fileList[i].isDirectory()) {
+                    size = size + getFolderSize(fileList[i]);
+                } else {
+                    size = size + fileList[i].length();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return size;
+    }
+
+
+    public static String getFormatSize(double size) {
+        double kiloByte = size / 1024;
+        if (kiloByte < 1) {
+//            return size + "Byte";
+            return "0K";
+        }
+
+        double megaByte = kiloByte / 1024;
+        if (megaByte < 1) {
+            BigDecimal result1 = new BigDecimal(Double.toString(kiloByte));
+            return result1.setScale(2, BigDecimal.ROUND_HALF_UP)
+                    .toPlainString() + "KB";
+        }
+
+        double gigaByte = megaByte / 1024;
+        if (gigaByte < 1) {
+            BigDecimal result2 = new BigDecimal(Double.toString(megaByte));
+            return result2.setScale(2, BigDecimal.ROUND_HALF_UP)
+                    .toPlainString() + "MB";
+        }
+
+        double teraBytes = gigaByte / 1024;
+        if (teraBytes < 1) {
+            BigDecimal result3 = new BigDecimal(Double.toString(gigaByte));
+            return result3.setScale(2, BigDecimal.ROUND_HALF_UP)
+                    .toPlainString() + "GB";
+        }
+        BigDecimal result4 = new BigDecimal(teraBytes);
+        return result4.setScale(2, BigDecimal.ROUND_HALF_UP).toPlainString()
+                + "TB";
+    }
+    protected static void clearAllCache(Context context){
+        deleteDir(context.getCacheDir());
+        if (Environment.getExternalStorageState().
+                equals(Environment.MEDIA_MOUNTED));
+        deleteDir(context.getExternalCacheDir());
+    }
+
+    protected static boolean deleteDir(File dir){
+        if(dir!=null && dir.isDirectory()){
+            String[] children = dir.list();
+            for(int i=0;i<children.length;i++){
+                boolean success = deleteDir(new File(dir,children[i]));
+                if(!success){
+                    return false;
+                }
+            }
+        }
+        return dir.delete();
     }
 
     protected void confirmLogouDialog(){

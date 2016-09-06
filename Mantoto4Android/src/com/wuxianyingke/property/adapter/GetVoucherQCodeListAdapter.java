@@ -8,6 +8,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Environment;
 import android.util.Log;
@@ -24,6 +25,8 @@ import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.mantoto.property.R;
+import com.wuxianyingke.property.activities.CommitVoucherContentActivity;
+import com.wuxianyingke.property.activities.CouponCodeActivity;
 import com.wuxianyingke.property.fragment.NetworkUtils;
 import com.wuxianyingke.property.remote.RemoteApi.PromotionCode;
 
@@ -70,20 +73,22 @@ public class GetVoucherQCodeListAdapter extends BaseAdapter {
 			vHolder.CodeId = (TextView) convertView.findViewById(R.id.order_Commit_CodeId);
 			vHolder.use = (TextView) convertView.findViewById(R.id.order_Commit_UsedId);
 			vHolder.imageView = (ImageView) convertView.findViewById(R.id.order_Commit_two_DimisionCodeId);
-
+			vHolder.userNow = (TextView)convertView.findViewById(R.id.use_now);
 			convertView.setTag(vHolder);
-		} else { // 复用ListView滚出屏幕的itemView
-
+		} else {
+			// 复用ListView滚出屏幕的itemView
 			vHolder = (ViewHolder) convertView.getTag(); // 获取到可复用的item中的所有控件对象
 			vHolder.imageView.setImageResource(R.drawable.code_logo); // 重置图片控件
 		}
+
 		vHolder.CodeId.setText(proArray.get(position).Code);
 		vHolder.use.setText(""+proArray.get(position).PromotionStatus.PromotionCodeStatusName);
+		//
 		
 		//生成二维码的方法
 				String content=orderId+"|"+proArray.get(position).PromotionCodeID+"|"+proArray.get(position).Code;
 				Log.i("MyLog", "ordersequencenumber="+orderId);
-//				 MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+				// MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
 				
 				   Hashtable<EncodeHintType, String> hints = new Hashtable<EncodeHintType, String>();
 				   hints.put(EncodeHintType.CHARACTER_SET, "UTF-8");
@@ -138,7 +143,8 @@ public class GetVoucherQCodeListAdapter extends BaseAdapter {
 		public TextView CodeId; // 标题
 		public ImageView imageView; // 图片
 		public TextView use; //是否使用
-		
+		public TextView userNow;//立即使用
+
 	}
 
 }

@@ -7,11 +7,15 @@
     <include 
         android:id="@+id/common_back"
         layout="@layout/include_main_topbar" />
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/list_line"
+        />
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="#ffffff"
+        android:background="@color/background_color"
         android:gravity="center"
         android:orientation="vertical" >
 

@@ -38,43 +38,44 @@ public class MessageOutBoxThread extends Thread
 		this.interrupt();
 
 	}
-	
+
 	public List<MessageInfo> getActivitys()
 	{
 		return mActivityList;
 	}
 
-	public void run() 
+	public void run()
 	{
-		try 
+		try
 		{
 			running = true;
 			RemoteApiImpl remoteApi = new RemoteApiImpl();
 			mActivityList = remoteApi.getMessageOutbox(ctx, propertyid, userId, pageIndex);
-			if (mActivityList == null) 
+			if (mActivityList == null)
 			{
-				if (!running) 
+				if (!running)
 					return;
 				Message msg = new Message();
 				msg.what = Constants.MSG_NETWORK_ERROR;
 				handler.sendMessage(msg);
 				return;
 			}
-			
-			if (!running) 
+
+			if (!running)
 				return;
 			Message msg = new Message();
 			msg.what = Constants.MSG_MESSAGE_OUT_BOX_FINISH;
 			handler.sendMessage(msg);
-			
-			/*if (!running) 
+
+if (!running)
 				return;
-			Radio3Activity.setAllowGetBoxAgain();*/
-			
+			//Radio3Activity.setAllowGetBoxAgain();
+
+
 		} catch(Exception ex) {
 			LogUtil.d(TAG, "ActivityThread::Run() error = "+ex.getMessage());
 			ex.getMessage();
-			if (!running) 
+			if (!running)
 				return;
 			Message msg = new Message();
 			msg.what = Constants.MSG_NETWORK_ERROR;

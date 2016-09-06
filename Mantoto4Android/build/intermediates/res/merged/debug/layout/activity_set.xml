@@ -5,14 +5,12 @@
     android:background="@color/background_color"
     android:orientation="vertical"
     >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp">
-        <include
+
+    <include
             android:id="@+id/common_back"
             layout="@layout/include_main_topbar" />
 
-    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="10dp"
@@ -61,6 +59,8 @@
             android:textSize="14sp"
             android:layout_marginLeft="20dp"
             />
+
+
         <ImageView
             android:id="@+id/set_notify_btn_enable"
             android:layout_width="wrap_content"
@@ -90,6 +90,7 @@
             android:layout_marginLeft="20dp"
             />
         <TextView
+            android:id="@+id/cache_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"

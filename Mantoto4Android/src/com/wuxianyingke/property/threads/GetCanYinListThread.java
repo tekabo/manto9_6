@@ -78,10 +78,11 @@ public class GetCanYinListThread extends Thread {
 			for (int i = 0; i < count; ++i) {
 				if (!isRunning)
 					return;
-				LivingItemPicture pic = mProductList.get(i).FrontCover;
+				LivingItemPicture pic = mProductList.get(i).FrontCover;//生活项图片
 				if (pic.path != null) {
 					Drawable dw = null;
 					try {
+						//缓存里面取图片
 						dw = Util.getDrawableFromCache(mContext, pic.path);
 						Log.d("MyTag", "Constants.URL pic.path/"+pic.path);
 					} catch (IOException e) {

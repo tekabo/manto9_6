@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Spinner;
@@ -23,6 +24,9 @@ import android.widget.Toast;
 
 
 import com.mantoto.property.R;
+import com.wuxianyingke.property.common.LocalStore;
+
+import java.io.FileOutputStream;
 
 
 public class SetMessageActivity extends BaseActivity {
@@ -39,6 +43,7 @@ public class SetMessageActivity extends BaseActivity {
     private LinearLayout plot_control;
     //弹出年龄按钮集合
     private Button[] agebtns = new Button[6];
+    private LocalStore localstore;
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -58,6 +63,23 @@ public class SetMessageActivity extends BaseActivity {
         initwidget();
 
 
+        topbar_right.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                /*Intent mIntent = new Intent(SetMessageActivity.this,UserCenterActivity.class);
+                mIntent.putExtra("gender",personalTxtGender.getText().toString());
+                mIntent.putExtra("age",personalTxtAge.getText().toString());
+                //设置结果并进行传送
+                SetMessageActivity.this.setResult(RESULT_OK,mIntent);
+*/
+            }
+
+
+
+        });
+
+
     }
 
     public void initwidget(){
@@ -69,6 +91,9 @@ public class SetMessageActivity extends BaseActivity {
         topbar_right.setVisibility(View.VISIBLE);
         topbar_right.setText("保存");
         topbar_right.setTextColor(Color.rgb(255,165,0));
+        personalTxtGender = (TextView) findViewById(R.id.personal_txt_gender);
+        personalTxtAge = (TextView) findViewById(R.id.personal_txt_age);
+
 
         //--中间标题
         topbar_txt.setText("个人信息");
@@ -90,16 +115,26 @@ public class SetMessageActivity extends BaseActivity {
                 }
             }
         });
-        //--右侧保存按钮
-      /*  //年龄
-        arrow_age = (TextView) findViewById(R.id.arrow_age);
-        arrow_age.setOnClickListener(new View.OnClickListener() {
+
+        topbar_right.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                showPopwindowAge();
+            public void onClick(View view) {
+                if(personalTxtGender.getText().toString().equals("")&&
+                        personalTxtAge.getText().toString().equals("")){
+                    Toast.makeText(getApplicationContext(),
+                            "性别/年龄不能为空",Toast.LENGTH_SHORT).show();
+                    return;
+                }else {
+                    localstore.addPersonalMessage(SetMessageActivity.this,
+                            personalTxtAge.getText().toString(),
+                            personalTxtGender.getText().toString());
+                    Toast.makeText(getApplicationContext(),
+                            "保存成功",Toast.LENGTH_SHORT);
+                }
+
 
             }
-        });*/
+        });
 
         //年龄下拉列表
         spinnerArrowAge = (Spinner) findViewById(R.id.spinner_arrow_age);
@@ -108,7 +143,6 @@ public class SetMessageActivity extends BaseActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 String[] ages = getResources().getStringArray(R.array.ages);
-                personalTxtAge = (TextView) findViewById(R.id.personal_txt_age);
                 personalTxtAge.setText(ages[position]);
 
             }
@@ -125,7 +159,7 @@ public class SetMessageActivity extends BaseActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String[] genders = getResources().getStringArray(R.array.genders);
-                personalTxtGender = (TextView) findViewById(R.id.personal_txt_gender);
+
                 personalTxtGender.setText(genders[position]);
             }
 
@@ -134,6 +168,11 @@ public class SetMessageActivity extends BaseActivity {
 
             }
         });
+
+
+
+
+
 
         //小区管理
         plot_control = (LinearLayout) findViewById(R.id.plot_control);

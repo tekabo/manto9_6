@@ -75,17 +75,17 @@ public class RouteActivity extends Activity implements OnMarkerClickListener,
 		OnPoiSearchListener, OnRouteSearchListener, OnClickListener
 		, LocationSource,AMapLocationListener{    
 	static final String TAG = "JiaoTongActivity";
-	    private TextView topbar_txt;
-	    private Button topbar_left;
+	private TextView topbar_txt;
+	private Button topbar_left;
 	private AMap aMap;
 	private MapView mapView;
 	private Button drivingButton;
 	private Button busButton;
 	private Button walkButton;
 
-	private ImageButton startImageButton;
-	private ImageButton endImageButton;
-	private ImageButton routeSearchImagebtn;
+	private Button startImageButton;
+	private Button endImageButton;
+	private Button routeSearchImagebtn;
 
 	private EditText startTextView;
 	private EditText endTextView;
@@ -140,24 +140,22 @@ public class RouteActivity extends Activity implements OnMarkerClickListener,
 			aMap = mapView.getMap();
 			registerListener();
 		}
-		
 
-		
 		routeSearch = new RouteSearch(this);
 		routeSearch.setRouteSearchListener(this);
-		startTextView = (EditText) findViewById(R.id.autotextview_roadsearch_start);
-		endTextView = (EditText) findViewById(R.id.autotextview_roadsearch_goals);
-		busButton = (Button) findViewById(R.id.imagebtn_roadsearch_tab_transit);
+		startTextView = (EditText) findViewById(R.id.autotextview_roadsearch_start);//起点输入框
+		endTextView = (EditText) findViewById(R.id.autotextview_roadsearch_goals);//目的的输入框
+		busButton = (Button) findViewById(R.id.imagebtn_roadsearch_tab_transit);//公交车
 		busButton.setOnClickListener(this);
-		drivingButton = (Button) findViewById(R.id.imagebtn_roadsearch_tab_driving);
+		drivingButton = (Button) findViewById(R.id.imagebtn_roadsearch_tab_driving);//自驾出行
 		drivingButton.setOnClickListener(this);
-		walkButton = (Button) findViewById(R.id.imagebtn_roadsearch_tab_walk);
+		walkButton = (Button) findViewById(R.id.imagebtn_roadsearch_tab_walk);//步行
 		walkButton.setOnClickListener(this);
-		startImageButton = (ImageButton) findViewById(R.id.imagebtn_roadsearch_startoption);
+		startImageButton = (Button) findViewById(R.id.imagebtn_roadsearch_startoption);//起点按钮
 		startImageButton.setOnClickListener(this);
-		endImageButton = (ImageButton) findViewById(R.id.imagebtn_roadsearch_endoption);
+		endImageButton = (Button) findViewById(R.id.imagebtn_roadsearch_endoption);//终点按钮
 		endImageButton.setOnClickListener(this);
-		routeSearchImagebtn = (ImageButton) findViewById(R.id.imagebtn_roadsearch_search);
+		routeSearchImagebtn = (Button) findViewById(R.id.imagebtn_roadsearch_search);//搜索按钮
 		routeSearchImagebtn.setOnClickListener(this);
 	}
 	
@@ -172,8 +170,7 @@ public class RouteActivity extends Activity implements OnMarkerClickListener,
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-                finish();
+               finish();
             }
         });
 
@@ -228,9 +225,9 @@ public class RouteActivity extends Activity implements OnMarkerClickListener,
 	private void busRoute() {
 		routeType = 1;// 标识为公交模式
 		busMode = RouteSearch.BusDefault;
-		drivingButton.setBackgroundResource(R.drawable.mode_driving_off);
-		busButton.setBackgroundResource(R.drawable.mode_transit_on);
-		walkButton.setBackgroundResource(R.drawable.mode_walk_off);
+		drivingButton.setBackgroundResource(R.color.white);
+		busButton.setBackgroundResource(R.color.primary);
+		walkButton.setBackgroundResource(R.color.white);
 	}
 
 	/**
@@ -239,9 +236,9 @@ public class RouteActivity extends Activity implements OnMarkerClickListener,
 	private void drivingRoute() {
 		routeType = 2;// 标识为驾车模式
 		drivingMode = RouteSearch.DrivingSaveMoney;
-		drivingButton.setBackgroundResource(R.drawable.mode_driving_on);
-		busButton.setBackgroundResource(R.drawable.mode_transit_off);
-		walkButton.setBackgroundResource(R.drawable.mode_walk_off);
+		drivingButton.setBackgroundResource(R.color.primary);
+		busButton.setBackgroundResource(R.color.white);
+		walkButton.setBackgroundResource(R.color.white);
 	}
 
 	/**
@@ -250,9 +247,9 @@ public class RouteActivity extends Activity implements OnMarkerClickListener,
 	private void walkRoute() {
 		routeType = 3;// 标识为步行模式
 		walkMode = RouteSearch.WalkMultipath;
-		drivingButton.setBackgroundResource(R.drawable.mode_driving_off);
-		busButton.setBackgroundResource(R.drawable.mode_transit_off);
-		walkButton.setBackgroundResource(R.drawable.mode_walk_on);
+		drivingButton.setBackgroundResource(R.color.white);
+		busButton.setBackgroundResource(R.color.white);
+		walkButton.setBackgroundResource(R.color.primary);
 	}
 
 	/**

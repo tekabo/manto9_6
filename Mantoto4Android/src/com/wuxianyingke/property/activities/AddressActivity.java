@@ -136,7 +136,7 @@ public class AddressActivity extends BaseActivity {
 										final int position, long id) {
 
 
-				/*	暂时删掉if(userInfo==1){
+					if(userInfo==1){
 						Intent intent=new Intent(AddressActivity.this,AddressDetailActivity.class);
 						intent.putExtra("aname", mThread.getAddress().get(position).Recipient);
 						Log.i("MyLog", "bundle.getString(aname)------------="+mThread.getAddress().get(position).Recipient);
@@ -157,7 +157,7 @@ public class AddressActivity extends BaseActivity {
 
 					setResult(1, intent);
 					finish();
-					}*/
+					}
 
 
 
@@ -271,11 +271,11 @@ public class AddressActivity extends BaseActivity {
 		topbar_left = (Button) findViewById(R.id.topbar_left);
 		topbar_left.setVisibility(View.VISIBLE);
 		//将此处按钮改为保存：
-		topbar_right = (TextView) findViewById(R.id.topbar_right);
+		/*topbar_right = (TextView) findViewById(R.id.topbar_right);
 		topbar_right.setVisibility(View.VISIBLE);
 		topbar_right.setText("保存");
 		topbar_right.setTextSize(16);
-		topbar_right.setTextColor(Color.rgb(255,165,0));
+		topbar_right.setTextColor(Color.rgb(255,165,0));*/
 		//新建
 		add_address = (LinearLayout)findViewById(R.id.add_address);
 		//地址是空的

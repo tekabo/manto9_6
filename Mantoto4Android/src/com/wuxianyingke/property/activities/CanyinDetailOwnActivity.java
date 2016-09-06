@@ -105,7 +105,7 @@ public class CanyinDetailOwnActivity extends BaseActivity implements
 		@Override
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
-			case Constants.MSG_GET_PRODUCT_DETAIL_FINISH:
+			case Constants.MSG_GET_PRODUCT_DETAIL_FINISH://11-GetCanyinDetailThread
 				if (mWaitLoading != null && mWaitLoading.isShowing()) {
 					mWaitLoading.dismiss();
 				}
@@ -137,11 +137,11 @@ public class CanyinDetailOwnActivity extends BaseActivity implements
 					longitude = mProductDetail.longitude;
 					dizhiImg.setVisibility(View.VISIBLE);
 
-					mOwnListThread.start();
+					mOwnListThread.start();//多余吗
 				}
 				break;
 			case Constants.MSG_GET_PRODUCT_DETAIL_FAILD:
-			case Constants.MSG_GET_PRODUCT_DETAIL_NET_ERROR:
+			case Constants.MSG_GET_PRODUCT_DETAIL_NET_ERROR://11-GetCanyinDetailThread
 				if (mWaitLoading != null && mWaitLoading.isShowing()) {
 					mWaitLoading.dismiss();
 				}
@@ -149,14 +149,14 @@ public class CanyinDetailOwnActivity extends BaseActivity implements
 				View view = (View) findViewById(R.id.view_network_error);
 				view.setVisibility(View.VISIBLE);
 				break;
-			case Constants.MSG_GET_PRODUCT_DETAIL_IMG_FINISH:
+			case Constants.MSG_GET_PRODUCT_DETAIL_IMG_FINISH://11-GetCanyinDetailThread
 				Log.d("MyTag", "mProductDetail.fleaPictureArray.get(i)"
 						+ mProductDetail.livingItemPicture.get(msg.arg1).path);
 				Log.d("MyTag", "msg.arg1" + msg.arg1);
 				mAdapter.addImg(mProductDetail.livingItemPicture.get(msg.arg1).imgDw);
 				mDotList.setCount(mDotList.getCount() + 1);
 				break;
-			case Constants.MSG_ADD_FAVORITE_FINISH:
+			case Constants.MSG_ADD_FAVORITE_FINISH://都没有
 				if (mWaitLoading != null && mWaitLoading.isShowing()) {
 					mWaitLoading.dismiss();
 				}
@@ -169,7 +169,7 @@ public class CanyinDetailOwnActivity extends BaseActivity implements
 							"读取失败，可能网络问题或服务器无反应", Toast.LENGTH_SHORT).show();
 				}
 				break;
-			case Constants.MSG_GET_PRODUCT_FINISH:
+			case Constants.MSG_GET_PRODUCT_FINISH://22-GetCanyinOwnListThread
 				
 //				Log.i("MyLog", "所有的活动商品信息-----PromotionID=" + mOwnListThread.getProductDetail().promotionList.get(0).PromotionID);
 				if (mOwnListThread != null
@@ -296,7 +296,7 @@ public class CanyinDetailOwnActivity extends BaseActivity implements
 
 				}
 				break;
-			case Constants.MSG_GET_ACTIVITY_FINISH:
+			case Constants.MSG_GET_ACTIVITY_FINISH://22-GetCanyinOwnListThread
 				if (mOwnListThread != null
 						&& mOwnListThread.getActivityDetail() != null) {
 					PromotionList list = mOwnListThread.getActivityDetail();
@@ -313,14 +313,14 @@ public class CanyinDetailOwnActivity extends BaseActivity implements
 						int serverImageHeight = promotion.Height;
 						// Log.i("MyTag", "服务器返回图片尺寸: 宽度 = " + serverImageWidth
 						// + "高度 = :" + serverImageHeight);
-
+						/*图片标题*/
 						TextView canyin_title = (TextView) v
 								.findViewById(R.id.canyin_title);
 						canyin_title.setText(promotion.header);
 
+						/*图片*/
 						ImageView canyinImg = (ImageView) v
 								.findViewById(R.id.canyinImg);
-
 						// Log.i("ACTIVITY_IMG_FINISH", "图片尺寸: 宽度 = " +
 						// canyinImg.getWidth() + "高度 = :" +
 						// canyinImg.getHeight());
@@ -397,8 +397,7 @@ public class CanyinDetailOwnActivity extends BaseActivity implements
 							});
 						}
 
-						TextView canyin_desc = (TextView) v
-								.findViewById(R.id.canyin_desc);
+						TextView canyin_desc = (TextView) v.findViewById(R.id.canyin_desc);
 						canyin_desc.setText(promotion.body);
 						huodonglist.addView(v);
 					}
@@ -406,26 +405,28 @@ public class CanyinDetailOwnActivity extends BaseActivity implements
 				}
 				
 				break;
-			case Constants.MSG_GET_PRODUCT_IMG_FINISH: {
-				ImageView canyinImg = productImgList.get(msg.arg1);
-				LayoutParams pr = canyinImg.getLayoutParams();
-				canyinImg
-						.setImageDrawable(mOwnListThread.getDrawable(msg.arg2));
-				canyinImg.setLayoutParams(pr);
-				canyinImg.setVisibility(View.VISIBLE);
-			}
+			case Constants.MSG_GET_PRODUCT_IMG_FINISH://22-GetCanyinOwnListThread
+				{
+					ImageView canyinImg = productImgList.get(msg.arg1);
+					LayoutParams pr = canyinImg.getLayoutParams();
+					canyinImg
+							.setImageDrawable(mOwnListThread.getDrawable(msg.arg2));
+					canyinImg.setLayoutParams(pr);
+					canyinImg.setVisibility(View.VISIBLE);
+				}
 				break;
-			case Constants.MSG_GET_ACTIVITY_IMG_FINISH: {
-				ImageView canyinImg = activityImgList.get(msg.arg1);
-				// Log.i("ACTIVITY_IMG_FINISH", "图片尺寸: 宽度 = " +
-				// canyinImg.getWidth() + "高度 = :" + canyinImg.getHeight());
-				LayoutParams pr = canyinImg.getLayoutParams();
+				case Constants.MSG_GET_ACTIVITY_IMG_FINISH://22-GetCanyinOwnListThread
+				{
+					ImageView canyinImg = activityImgList.get(msg.arg1);
+					// Log.i("ACTIVITY_IMG_FINISH", "图片尺寸: 宽度 = " +
+					// canyinImg.getWidth() + "高度 = :" + canyinImg.getHeight());
+					LayoutParams pr = canyinImg.getLayoutParams();
 
-				canyinImg
-						.setImageDrawable(mOwnListThread.getDrawable(msg.arg2));
-				canyinImg.setLayoutParams(pr);
-				canyinImg.setVisibility(View.VISIBLE);
-			}
+					canyinImg
+							.setImageDrawable(mOwnListThread.getDrawable(msg.arg2));
+					canyinImg.setLayoutParams(pr);
+					canyinImg.setVisibility(View.VISIBLE);
+				}
 				break;
 			}
 		}
@@ -500,7 +501,7 @@ public class CanyinDetailOwnActivity extends BaseActivity implements
 		dizhiTv = (TextView) findViewById(R.id.dizhiTv);
 		miaoshuTv = (TextView) findViewById(R.id.miaoshuTv);
 		dianmianLayout = (LinearLayout) findViewById(R.id.dianmianLayout);
-		img_ll = (LinearLayout) findViewById(R.id.img_ll);
+		img_ll = (LinearLayout) findViewById(R.id.img_ll);//最上方那个主图
 		shangpinglist = (LinearLayout) findViewById(R.id.shangpinglist);
 		huodonglist = (LinearLayout) findViewById(R.id.huodonglist);
 		peisongImg = (ImageView) findViewById(R.id.peisongImg);
@@ -610,10 +611,12 @@ public class CanyinDetailOwnActivity extends BaseActivity implements
 
 		showDialog();
 		changeTo(0);
+
 		mThread = new GetCanyinDetailThread(this, mHandler, propertyid,
-				mLivingItemID, source,LocalStore.getLatitude(getApplicationContext()),LocalStore.getLongitude(getApplicationContext()));
-		mOwnListThread = new GetCanyinOwnListThread(this, mHandler, propertyid,
-				mLivingItemID, source);
+				mLivingItemID, source,LocalStore.getLatitude(getApplicationContext()),
+				LocalStore.getLongitude(getApplicationContext()));
+		mOwnListThread = new GetCanyinOwnListThread(this, mHandler,
+				mLivingItemID);
 		mThread.start();
 
 	}
@@ -647,9 +650,9 @@ public class CanyinDetailOwnActivity extends BaseActivity implements
 	protected void onStart() {
 		super.onStart();
 	}
-
+    //根据不同按钮选择控件显示或隐蔽
 	private void changeTo(int i) {
-		if (i == 0) {
+		if (i == 0) {//点击商品按钮
 			shangpinButton.setTextColor(Color.parseColor("#ffffff"));
 			huodongButton.setTextColor(Color.parseColor("#ff7e00"));
 			shangpinButton
@@ -660,7 +663,7 @@ public class CanyinDetailOwnActivity extends BaseActivity implements
 			huodonglist.setVisibility(View.GONE);
 			dianmianLayout.setVisibility(View.VISIBLE);
 			img_ll.setVisibility(View.VISIBLE);
-		} else {
+		} else {//点击活动按钮
 			shangpinButton.setTextColor(Color.parseColor("#ff7e00"));
 			huodongButton.setTextColor(Color.parseColor("#ffffff"));
 			shangpinButton
@@ -743,15 +746,17 @@ public class CanyinDetailOwnActivity extends BaseActivity implements
 	};
 
 
-
+    //点击图片弹出的小图片框
 	private void initImagePopWindow() {
+
 		mImgView = getLayoutInflater().inflate(R.layout.appshare_app_pop, null);
 		mImgPop = new PopupWindow(mImgView, LayoutParams.FILL_PARENT,
 				LayoutParams.FILL_PARENT, true);
-
+		//点击图片弹出图片框下面那个关闭按钮
 		mPopDownloadBtn = (Button) mImgView.findViewById(R.id.pop_download_btn);
 		mPopDownloadBtn.setOnClickListener(CloseClickListener);
 
+		//点击图片弹出的那个图片框整个页面id
 		RelativeLayout popRl = (RelativeLayout) mImgView
 				.findViewById(R.id.app_pop_rl);
 		popRl.setOnClickListener(new OnClickListener() {
@@ -770,10 +775,10 @@ public class CanyinDetailOwnActivity extends BaseActivity implements
 
 		Gallery.LayoutParams params = new Gallery.LayoutParams(/* 410, 520 */
 
-		ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.FILL_PARENT);
-
+		LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+		//点击图片后弹出的图片id
 		mPopGallery = (MyGallery) mImgView.findViewById(R.id.pop_img_gallery);
-		mPopGallery.setSpacing(10);
+		mPopGallery.setSpacing(15);
 
 		mPopGallery.setOnItemClickListener(popGalleryClickListener);
 		mPopGallery.setOnItemSelectedListener(popGallerySelectListener);
@@ -801,6 +806,8 @@ public class CanyinDetailOwnActivity extends BaseActivity implements
 				.findViewById(R.id.pop_dot_list);
 		mPopIndicationDotList.setCount(mProductDetail.livingItemPicture.size());
 	}
+
+
 
 	OnClickListener CloseClickListener = new OnClickListener() {
 		public void onClick(View v) {

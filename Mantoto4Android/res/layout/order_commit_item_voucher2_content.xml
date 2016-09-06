@@ -5,85 +5,12 @@
     android:background="@color/background_color"
     android:orientation="vertical" >
 
-    
+
     <include android:id="@+id/common_back" layout="@layout/include_main_topbar" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="10dp"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:orientation="vertical"
-        android:background="@color/white"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="商品信息"
-            android:textColor="@color/base_color_text_black"
-            android:textSize="20sp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
-            />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@drawable/list_line"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
 
-     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-     >
-
-        <ImageView
-            android:id="@+id/image_NameId"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_margin="10dp"
-            android:src="@drawable/code_logo" />
-
-        <TextView
-            android:id="@+id/tv_goodId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/image_NameId"
-            android:text="标准小料"
-            android:textColor="@color/base_color_text_black"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/tv_TotalPriceId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_goodId"
-            android:layout_toRightOf="@id/image_NameId"
-            android:singleLine="true"
-            android:text="东来顺秘制小料，你值得拥有---"
-            android:textColor="@color/gray"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tv_PriceId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tv_TotalPriceId"
-            android:layout_toRightOf="@id/image_NameId"
-            android:text="￥40"
-            android:textColor="@color/blue"
-            android:textSize="16sp" />
-    </RelativeLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="10dp"
-        android:background="#dfdfdf" >
-    </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -92,7 +19,8 @@
         <ListView
             android:id="@+id/quan_Ma_listViewId"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+             >
         </ListView>
     </ScrollView>
 </LinearLayout>

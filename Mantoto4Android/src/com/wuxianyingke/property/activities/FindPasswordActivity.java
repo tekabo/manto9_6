@@ -1,6 +1,7 @@
 package com.wuxianyingke.property.activities;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -21,26 +22,69 @@ import android.widget.Toast;
 import com.mantoto.property.R;
 import com.umeng.message.PushAgent;
 import com.wuxianyingke.property.common.Constants;
+import com.wuxianyingke.property.common.LocalStore;
+import com.wuxianyingke.property.common.MD5;
 import com.wuxianyingke.property.common.Util;
 import com.wuxianyingke.property.remote.RSAEncryptor;
+import com.wuxianyingke.property.remote.RemoteApi;
 import com.wuxianyingke.property.remote.RemoteApiImpl;
 import com.wuxianyingke.property.remote.RemoteApi.NetInfos;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class FindPasswordActivity extends BaseActivity {
-	private Button mTopbarLeft, Register2_GetPhoneCode, mRegisterButton;
+	private Button mTopbarLeft, Register2_GetPhoneCode, mConfirmButton;
 	private TextView mTopbarTxt;
-	private EditText Register2_edit1, Register2_editcode;
+	private ProgressDialog mProgressBar = null;
+	private EditText Register2_edit1, Register2_editcode, mNewPassword, mNewPassword2;
 	private int i = 60;
 	private String phoneNumber;
 	private RSAEncryptor rsaEncryptor;
+	private String mErrorText;
+
+	private Handler mHandler = new Handler(){
+
+		@Override
+		public void handleMessage(Message msg) {
+			if (mProgressBar != null) {
+				mProgressBar.dismiss();
+				mProgressBar = null;
+			}
+			switch ((msg.what > 200 && msg.what < 999)?500:msg.what) {
+				// 登录失败
+				case 500:
+					Toast.makeText(FindPasswordActivity.this, mErrorText,
+							Toast.LENGTH_SHORT).show();
+					Log.i("MyLog", "mErrorText="+mErrorText);
+					break;
+				// 登陆成功
+				case 200:
+					Toast.makeText(FindPasswordActivity.this, "密码修改成功",
+							Toast.LENGTH_SHORT).show();
+					mNewPassword.setText("");
+					mNewPassword2.setText("");
+					Intent intent=new Intent();
+					intent.setClass(FindPasswordActivity.this, LoginActivity.class);
+					intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					startActivity(intent);
+					finish();
+					break;
+				// 通讯错误
+				default:
+					Toast.makeText(FindPasswordActivity.this, "通讯错误，请检查网络或稍后再试。",
+							Toast.LENGTH_SHORT).show();
+					break;
+			}
+			super.handleMessage(msg);
+		}
+
+	};
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			Intent intent = new Intent(FindPasswordActivity.this,
-					LoginActivity.class);
-			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-			startActivity(intent);
+
 			finish();
 			return true;
 		} else
@@ -63,23 +107,16 @@ public class FindPasswordActivity extends BaseActivity {
 			String decode = rsaEncryptor.decryptWithBase64(encode);
 			Log.i("MyLog", "decode=" + decode);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			Log.i("MyLog", e.getMessage());
 		}
 
 		// 初始化布局控件
 		initView();
-	//	initSMSSDK();
 		mTopbarLeft.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				Intent intent = new Intent(FindPasswordActivity.this,
-						UserCenterActivity.class);
-				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				startActivity(intent);
 				finish();
 			}
 		});
@@ -140,7 +177,7 @@ public class FindPasswordActivity extends BaseActivity {
 							Log.i("MyLog",
 									"rsaEncryptor=code="
 											+ rsaEncryptor
-													.encryptWithBase64(phoneNumber));
+											.encryptWithBase64(phoneNumber));
 							netInfo = remote.getPhoneCode(
 									FindPasswordActivity.this,
 									rsaEncryptor.encryptWithBase64(phoneNumber),
@@ -148,7 +185,7 @@ public class FindPasswordActivity extends BaseActivity {
 							Log.i("MyLog",
 									"rsaEncryptor=code="
 											+ rsaEncryptor
-													.encryptWithBase64(phoneNumber));
+											.encryptWithBase64(phoneNumber));
 							if (netInfo == null) {
 								handler.sendEmptyMessage(11);
 							} else {
@@ -188,51 +225,14 @@ public class FindPasswordActivity extends BaseActivity {
 			}
 		});
 
-		// MOB 获取验证码
-		/*
-		 * Register2_GetPhoneCode.setOnClickListener(new OnClickListener() {
-		 * 
-		 * @Override public void onClick(View arg0) { if
-		 * (Util.isEmpty(Register2_edit1)) {
-		 * Toast.makeText(getApplicationContext(), "请输入手机号。",
-		 * Toast.LENGTH_LONG).show(); } else { //
-		 * 下面的代码就是调用sdk的发送短信的方法，其中的“86”是官方中定义的，代表中国的意思 // 第二个参数表示的是需要发送短信的手机号
-		 * SMSSDK.getVerificationCode("86", Register2_edit1.getText()
-		 * .toString()); Log.i("MyLog", "phone=" +
-		 * Register2_edit1.getText().toString());
-		 * 
-		 * // 把按钮变成不可点击，并且显示倒计时（正在获取）
-		 * Register2_GetPhoneCode.setClickable(false);
-		 * Register2_GetPhoneCode.setText("重新发送(" + i + ")"); new Thread(new
-		 * Runnable() {
-		 * 
-		 * @Override public void run() { for (; i > 0; i--) {
-		 * handler.sendEmptyMessage(-9); if (i <= 0) { break; } try {
-		 * Thread.sleep(1000); } catch (InterruptedException e) {
-		 * e.printStackTrace(); } } handler.sendEmptyMessage(-8); } }).start();
-		 * 
-		 * }
-		 * 
-		 * } });
-		 */
 
 		/**
 		 * 提交验证码
 		 */
-		mRegisterButton.setOnClickListener(new OnClickListener() {
+		mConfirmButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View arg0) {
-				// SMSSDK.submitVerificationCode("86",
-				// Register2_edit1.getText().toString(),
-				// Register2_editcode.getText().toString());
-				// TODO Auto-generated method stub
-				/*
-				 * Intent intent=new Intent();
-				 * intent.setClass(FindPasswordActivity.this,
-				 * ModifyPasswordActivity.class); startActivity(intent);
-				 * finish();
-				 */
 
 				if (!TextUtils.isEmpty(Register2_editcode.getText().toString())) {
 					Thread getVerifyCodeThread = new Thread() {
@@ -244,12 +244,8 @@ public class FindPasswordActivity extends BaseActivity {
 									Register2_editcode.getText().toString());
 							if (netInfo.bSuccess) {
 								Log.i("MyLog", "验证成功");
-								// startRegistrNormal();
-								Intent intent = new Intent();
-								intent.setClass(FindPasswordActivity.this,
-										ModifyPasswordActivity.class);
-								startActivity(intent);
-								finish();
+								mConfirmButton.setOnClickListener(mConfirmListener);
+
 							} else {
 								handler.sendEmptyMessage(12);
 							}
@@ -269,6 +265,62 @@ public class FindPasswordActivity extends BaseActivity {
 		});
 	}
 
+	private final OnClickListener mConfirmListener = new OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			modifyPassword();
+		}
+	};
+
+
+
+	private void modifyPassword(){
+
+		if (Util.isEmpty(mNewPassword)
+				|| Util.isEmpty(mNewPassword2)) {
+			Toast.makeText(FindPasswordActivity.this,
+					R.string.error_password_cannot_be_empty, Toast.LENGTH_SHORT)
+					.show();
+			return;
+		} else if (!mNewPassword.getText().toString()
+				.equals(mNewPassword2.getText().toString())) {
+			Toast.makeText(FindPasswordActivity.this,
+					R.string.error_two_password_not_same, Toast.LENGTH_SHORT)
+					.show();
+			return;
+		} else {
+			String password1 = mNewPassword.getText().toString();
+			Pattern pat = Pattern.compile("^[a-z|0-9|A-Z]+$");
+			Matcher isOk = pat.matcher(password1);
+			if (!isOk.matches() || password1.length() < 6
+					|| password1.length() > 16) {
+				Toast.makeText(FindPasswordActivity.this,
+						R.string.warn_bad_format, Toast.LENGTH_SHORT).show();
+				return;
+			}
+		}
+
+		mProgressBar = ProgressDialog.show(FindPasswordActivity.this, null,
+				"处理中，请稍后......", true);
+		Thread modifyThread = new Thread() {
+			public void run() {
+				RemoteApi.User info = LocalStore.getUserInfo();
+				RemoteApiImpl remote = new RemoteApiImpl();
+				RemoteApi.NetInfo retInfo = remote.modifyPassword(
+						FindPasswordActivity.this, Register2_edit1.getText().toString(),
+						MD5.toMD5(mNewPassword.getText().toString()));
+
+				if (retInfo != null)
+					mErrorText = retInfo.desc;
+
+				Message msg = new Message();
+				msg.what = retInfo.code;
+				mHandler.sendMessage(msg);
+			}
+		};
+		modifyThread.start();
+
+	}
 
 
 	Handler handler = new Handler() {
@@ -288,32 +340,7 @@ public class FindPasswordActivity extends BaseActivity {
 			} else if (msg.what == 12) {
 				Toast.makeText(getApplicationContext(), "验证码错误",
 						Toast.LENGTH_SHORT).show();
-			} /*else {
-				int event = msg.arg1;
-				int result = msg.arg2;
-				Object data = msg.obj;
-				Log.e("event", "event=" + event);
-				if (result == SMSSDK.RESULT_COMPLETE) {
-					// 短信注册成功后，返回MainActivity,然后提示
-					if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {// 提交验证码成功
-						Toast.makeText(getApplicationContext(), "提交验证码成功",
-								Toast.LENGTH_SHORT).show();
-
-						Intent intent = new Intent(FindPasswordActivity.this,
-								ModifyPasswordActivity.class);
-						intent.putExtra("phone", Register2_edit1.getText()
-								.toString());
-						intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-						startActivity(intent);
-						finish();
-					} else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
-						Toast.makeText(getApplicationContext(), "验证码已经发送",
-								Toast.LENGTH_SHORT).show();
-					} else {
-						((Throwable) data).printStackTrace();
-					}
-				}
-			}*/
+			}
 		}
 	};
 
@@ -328,12 +355,13 @@ public class FindPasswordActivity extends BaseActivity {
 		Register2_editcode = (EditText) findViewById(R.id.Register2_editCode);
 		Register2_GetPhoneCode = (Button) findViewById(R.id.Register2_Button_GetPhoneCode);
 
-		mRegisterButton = (Button) findViewById(R.id.Register2_btn);
+		mNewPassword = (EditText) findViewById(R.id.newPassword);
+		mNewPassword2 = (EditText) findViewById(R.id.newPassword2);
+		mConfirmButton = (Button) findViewById(R.id.Register2_btn);
 	}
 
 	@Override
 	protected void onDestroy() {
-		// SMSSDK.unregisterAllEventHandler();
 		super.onDestroy();
 	}
 

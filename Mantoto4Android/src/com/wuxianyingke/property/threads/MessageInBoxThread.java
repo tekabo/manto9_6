@@ -1,3 +1,4 @@
+/*
 package com.wuxianyingke.property.threads;
 
 import java.util.List;
@@ -66,9 +67,11 @@ public class MessageInBoxThread extends Thread
 			msg.what = Constants.MSG_MESSAGE_IN_BOX_FINISH;
 			handler.sendMessage(msg);
 			
-		/*	if (!running) 
+		*/
+/*	if (!running)
 				return;
-			Radio3Activity.setAllowGetBoxAgain();*/
+			Radio3Activity.setAllowGetBoxAgain();*//*
+
 			
 		} catch(Exception ex) {
 			LogUtil.d(TAG, "ActivityThread::Run() error = "+ex.getMessage());
@@ -81,3 +84,4 @@ public class MessageInBoxThread extends Thread
 		}
 	}
 }
+*/

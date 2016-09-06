@@ -184,21 +184,21 @@ public abstract class BaseMainActivity extends ActivityGroup
 				Constants.RADIO_CHECKED=1;
 				mCurrentActivity = ActivityIndex.Radio1Activity;
 				mContainerLinear.removeAllViews();
-				mContainerLinear.addView(BaseMainActivity.this.getLocalActivityManager().startActivity("Radio1",
+				/*mContainerLinear.addView(BaseMainActivity.this.getLocalActivityManager().startActivity("Radio1",
 						new Intent(BaseMainActivity.this, Radio1Activity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP).putExtra("FromGroup", true))
-						.getDecorView(), LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
+						.getDecorView(), LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);*/
 
-			} 
+			}
 			else if (checkedId == mRadio2Button.getId())
 			{
 				Constants.RADIO_CHECKED=2;
 				mCurrentActivity = ActivityIndex.Radio2Activity;
 				mContainerLinear.removeAllViews();
 				mContainerLinear.addView(BaseMainActivity.this.getLocalActivityManager().startActivity("Radio2",
-						new Intent(BaseMainActivity.this, Radio2Activity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP).putExtra("FromGroup", true))
+						new Intent(BaseMainActivity.this, InformDetailActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP).putExtra("FromGroup", true))
 						.getDecorView(), LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
 			} 
-			else if (checkedId == mRadio3Button.getId())
+			/*else if (checkedId == mRadio3Button.getId())
 			{
 				Constants.RADIO_CHECKED=3;
 				mCurrentActivity = ActivityIndex.Radio3Activity;
@@ -206,15 +206,15 @@ public abstract class BaseMainActivity extends ActivityGroup
 				mContainerLinear.addView(BaseMainActivity.this.getLocalActivityManager().startActivity("Radio3",
 						new Intent(BaseMainActivity.this, Radio3Activity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP).putExtra("FromGroup", true))
 						.getDecorView(), LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
-			} 
+			} */
 			else if (checkedId == mRadio4Button.getId())
 			{
 				Constants.RADIO_CHECKED=4;
 				mCurrentActivity = ActivityIndex.Radio4Activity;
 				mContainerLinear.removeAllViews();
-				mContainerLinear.addView(BaseMainActivity.this.getLocalActivityManager().startActivity("Radio4",
+				/*mContainerLinear.addView(BaseMainActivity.this.getLocalActivityManager().startActivity("Radio4",
 						new Intent(BaseMainActivity.this, Radio4Activity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP).putExtra("FromGroup", true))
-						.getDecorView(), LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
+						.getDecorView(), LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);*/
 			} 
 			else if (checkedId == mRadio5Button.getId())
 			{
@@ -225,9 +225,9 @@ public abstract class BaseMainActivity extends ActivityGroup
 				Constants.RADIO_CHECKED=5;
 				mCurrentActivity = ActivityIndex.Radio5Activity;
 				mContainerLinear.removeAllViews();
-				mContainerLinear.addView(BaseMainActivity.this.getLocalActivityManager().startActivity("Radio5",
+				/*mContainerLinear.addView(BaseMainActivity.this.getLocalActivityManager().startActivity("Radio5",
 						new Intent(BaseMainActivity.this, Radio5Activity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP).putExtra("FromGroup", true))
-						.getDecorView(), LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
+						.getDecorView(), LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);*/
 			} 
 		}
 	};
@@ -337,7 +337,7 @@ public abstract class BaseMainActivity extends ActivityGroup
 		public void onClick(View v) {
 			if (popupWindow != null && popupWindow.isShowing())
 			{
-				Radio5Activity.mRecyleFlag[4] = false;
+				//Radio5Activity.mRecyleFlag[4] = false;
 				popupWindow.dismiss();
 			}
 
@@ -353,7 +353,7 @@ public abstract class BaseMainActivity extends ActivityGroup
 		mLinearQuitLogin = (LinearLayout) v.findViewById(R.id.QuitLoginLinearLayout);
 		mFleaListLinearLayout = (LinearLayout) v.findViewById(R.id.FleaListLinearLayout);
 		mMainLinearLayout.setOnClickListener(CloseClickListener);
-		mLinearCommonInformation.setOnClickListener(new OnClickListener() {
+		/*mLinearCommonInformation.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -366,9 +366,9 @@ public abstract class BaseMainActivity extends ActivityGroup
 				startActivity(intent);
 
 			}
-		});
+		});*/
 
-		mLinearPaidServices.setOnClickListener(new OnClickListener() {
+		/*mLinearPaidServices.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -381,9 +381,9 @@ public abstract class BaseMainActivity extends ActivityGroup
 				intent.setClass(BaseMainActivity.this, PaidServicesActivity.class);
 				startActivity(intent);
 			}
-		});
+		});*/
 
-		mLinearLivingCircle.setOnClickListener(new OnClickListener() {
+		/*mLinearLivingCircle.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -397,7 +397,7 @@ public abstract class BaseMainActivity extends ActivityGroup
 				startActivity(intent);
 
 			}
-		});
+		});*/
 
 		mLinearPropertyPhone.setOnClickListener(new OnClickListener() {
 
@@ -411,7 +411,7 @@ public abstract class BaseMainActivity extends ActivityGroup
 
 			}
 		});
-		mFleaListLinearLayout.setOnClickListener(new OnClickListener() {
+		/*mFleaListLinearLayout.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -423,8 +423,8 @@ public abstract class BaseMainActivity extends ActivityGroup
 						ProductListActivity.class);
 				startActivity(intent);
 			}
-		});
-		mLinearChangePassword.setOnClickListener(new OnClickListener() {
+		});*/
+		/*mLinearChangePassword.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -436,7 +436,7 @@ public abstract class BaseMainActivity extends ActivityGroup
 						ModifyPasswordActivity2.class);
 				startActivity(intent);
 			}
-		});
+		});*/
 
 		mLinearQuitLogin.setOnClickListener(new OnClickListener() {
 

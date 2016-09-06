@@ -150,8 +150,8 @@ public class AlarmService extends Service {
 		myNoti.flags = Notification.FLAG_AUTO_CANCEL;
 		/* 设置notification发生时同时发出默认声音 */
 		myNoti.defaults = Notification.DEFAULT_SOUND;
-		myNoti.setLatestEventInfo(AlarmService.this, "漫途社区", "漫途社区最新通知",
-				appIntent);
+//		myNoti.setLatestEventInfo(AlarmService.this, "漫途社区", "漫途社区最新通知",
+//				appIntent);
 		/* 送出Notification */
 		Random random = new Random(new Date().getTime());
 		myNotiManager.notify(random.nextInt(100000), myNoti);

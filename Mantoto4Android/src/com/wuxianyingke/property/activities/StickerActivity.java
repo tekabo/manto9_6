@@ -93,8 +93,7 @@ public class StickerActivity extends BaseActivity {
 		}
 	 });
 		  mLogsListView = (ListView) findViewById(R.id.bianqian_list_view);
-		  mLogsListView.setVerticalScrollBarEnabled(false);
-		  mLogsListView.setDivider(getResources().getDrawable(R.drawable.list_line));
+		  mLogsListView.setVerticalScrollBarEnabled(false);//实现滚动条隐藏
 	      showLogsListView(localstore.bianqian_List);
 		
      }

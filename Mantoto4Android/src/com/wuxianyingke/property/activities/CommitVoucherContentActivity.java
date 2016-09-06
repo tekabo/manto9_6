@@ -1,6 +1,7 @@
 package com.wuxianyingke.property.activities;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -32,6 +33,7 @@ import com.umeng.message.PushAgent;
 import com.wuxianyingke.property.adapter.GetVoucherQCodeListAdapter;
 import com.wuxianyingke.property.common.Constants;
 import com.wuxianyingke.property.common.SDCardUtils;
+import com.wuxianyingke.property.remote.RemoteApi;
 import com.wuxianyingke.property.threads.GetPromotionCodeThread;
 
 /**
@@ -45,8 +47,9 @@ public class CommitVoucherContentActivity extends BaseActivity {
 	private int mode; // 1:支付后的详情; 0:订单列表详情
 	/**订单名称，描述，单价，订单号码，*/
 	private TextView header, describe, price, promotionCodeFirst,
-			promotionCodeSecond;
+			promotionCodeSecond,orderCommitCodeId;
 	private String orderId;
+	private RemoteApi.PromotionCode mPromotionCode;
 	/**顶面图片*/
 	private ImageView image, DimisionCodeFirst, DimisionCodeSecond;
 	private long ordersequencenumber;
@@ -86,7 +89,10 @@ public class CommitVoucherContentActivity extends BaseActivity {
 				ordersequencenumber);
 		mThread.start();
 
-		
+		/*GetOrderListAdapter
+		intent.putExtra("ordersequencenumber",items.OrderSequenceNumber);
+
+		*/
 		String url = intent.getStringExtra("path");
 		header.setText(intent.getStringExtra("header"));
 		describe.setText(intent.getStringExtra("body"));
@@ -103,6 +109,7 @@ public class CommitVoucherContentActivity extends BaseActivity {
 		else {
 			new ImageAsyncTask().execute(url);
 		}
+
 		
 		// 左侧返回菜单处理事件
 		topbar_left.setOnClickListener(new OnClickListener() {
@@ -126,6 +133,7 @@ public class CommitVoucherContentActivity extends BaseActivity {
 		});
 //		//生成二维码的方法
 //		CreateImageCode();
+
 	}
 	
 	@Override
@@ -176,6 +184,8 @@ public class CommitVoucherContentActivity extends BaseActivity {
 		topbar_txt.setText("消费券详情");
 		topbar_left = (Button) findViewById(R.id.topbar_left);
 		topbar_left.setVisibility(View.VISIBLE);
+
+		orderCommitCodeId = (TextView) findViewById(R.id.order_Commit_CodeId);
 	}
 
 	class ImageAsyncTask extends AsyncTask<String, Void, Bitmap> {

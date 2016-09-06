@@ -103,18 +103,8 @@ public class LocationActivity extends BaseActivity {
 				finish();
 				break;
 
-			// 登陆成功
-			case 1:
-				// Toast.makeText(LocationActivity.this, "小区验证码验证成功",
-				// Toast.LENGTH_SHORT).show();
-				// Intent intent = new Intent();
-				// intent.setClass(LocationActivity.this, LoginActivity.class);
-				// startActivity(intent);
-				// finish();
-				break;
-
-			// 通讯错误
 			case 2:
+				//定位得到小区列表
 				propertysList = mThread.getPropertyList();
 				Intent intent2 = new Intent();
 				intent2.putExtra("key", propertysList);
@@ -150,12 +140,14 @@ public class LocationActivity extends BaseActivity {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.location_neighborhood);
-		setImmerseLayout(findViewById(R.id.common_back));
+
 		PushAgent.getInstance(getApplicationContext()).onAppStart();
 		/**
 		 * 初始化布局
 		 */
 		initWidgets();
+
+		setImmerseLayout(findViewById(R.id.common_back));
 		/**
 		 * 定位识别小区
 		 */
@@ -166,20 +158,7 @@ public class LocationActivity extends BaseActivity {
 		 */
 		initListening();
 		
-		topbar_left=(Button) findViewById(R.id.topbar_left);
-		topbar_left.setVisibility(View.VISIBLE);
-		topbar_left.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				Intent intent=new Intent();
-				intent.setClass(LocationActivity.this, SetMessageActivity.class);
-				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				startActivity(intent);
-				finish();
-				
-			}
-		});
+
 		
 		et_Input.setOnFocusChangeListener(new OnFocusChangeListener() {
 			
@@ -212,10 +191,10 @@ public class LocationActivity extends BaseActivity {
 	}
 
 	/**
-	 * 处理点击事件
+	 * 处理按钮点击事件
 	 */
 	private void initListening() {
-		// 通过定位识别小区
+		// 点击定位识别小区
 		btn_Loacation.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -234,7 +213,7 @@ public class LocationActivity extends BaseActivity {
 			
 			}
 		});
-
+		//点击查询小区
 		btn_Find.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -269,10 +248,31 @@ public class LocationActivity extends BaseActivity {
 	 * 初始化布局控件
 	 */
 	private void initWidgets() {
-		remind = (TextView) findViewById(R.id.tv_RemindMessage);
+		topbar_left=(Button) findViewById(R.id.topbar_left);
+		topbar_left.setVisibility(View.VISIBLE);
+		topbar_left.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View arg0) {
+				Intent intent=new Intent();
+				intent.setClass(LocationActivity.this, SetMessageActivity.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
+				finish();
+
+			}
+		});
+
+		topbar_txt = (TextView) findViewById(R.id.topbar_txt);
+		topbar_txt.setVisibility(View.VISIBLE);
+		topbar_txt.setText("小区管理");
+		topbar_txt.setTextSize(18);
+
+
+		remind = (TextView) findViewById(R.id.tv_RemindMessage);//上方提示语
 		btn_Loacation = (Button) findViewById(R.id.Location_Neborhood);// 定位
 		btn_Find = (Button) findViewById(R.id.Find_Neborhood);// 查找
-		et_Input = (EditText) findViewById(R.id.et_InputNeiborhoodNameId);// 输入模糊小区
+		et_Input = (EditText) findViewById(R.id.et_InputNeiborhoodNameId);// 输入模糊小区(门牌号)
 		/*
 		 * mListView = (ListView) findViewById(R.id.lv_PropertyList);// 小区列表
 		 * llRemindMessage = (LinearLayout) findViewById(R.id.ll_RemindMessage);

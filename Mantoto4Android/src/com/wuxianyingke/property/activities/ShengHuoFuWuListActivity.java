@@ -104,6 +104,7 @@ public class ShengHuoFuWuListActivity extends BaseActivity{
 					mNotification.setText(spannableString);
 				}else{
 					((TextView) findViewById(R.id.empty_tv)).setVisibility(View.GONE);
+					if(mThread!=null)
 				showLogsListView(mThread.getProductList());
 				}
 			case Constants.MSG_GET_CANYIN_LIST_EMPTY:
@@ -175,7 +176,7 @@ public class ShengHuoFuWuListActivity extends BaseActivity{
 		});
 		topbar_button_right = (Button) findViewById(R.id.topbar_button_right) ;
 		topbar_button_right.setVisibility(View.VISIBLE);
-		topbar_button_right.setBackgroundResource(R.drawable.no_shoucang);
+		topbar_button_right.setBackgroundResource(R.drawable.shop_collection_clicked);
 		
 		topbar_button_right.setOnClickListener(new OnClickListener() {
 			
@@ -220,7 +221,7 @@ public class ShengHuoFuWuListActivity extends BaseActivity{
 			mThread = new GetCanYinListThread(ShengHuoFuWuListActivity.this,
 					mHandler, propertyid,flag, mPageNum,LocalStore.getLatitude(getApplicationContext()),LocalStore.getLongitude(getApplicationContext()));
 			mThread.start();
-			LogUtil.d("MyTag", "Radio2Activity.this onNewIntent");
+			LogUtil.d("MyTag", "InformDetailActivity.this onNewIntent");
 		}
 		super.onNewIntent(intent);
 	}
@@ -368,12 +369,13 @@ public class ShengHuoFuWuListActivity extends BaseActivity{
 		{
 			if (mListAdapter != null && lastItem >= (mListAdapter.getCount()-2))
 			{
-				LogUtil.d("MyTag", "Radio2Activity.this mAllowGetLogAgain="+mAllowGetLogAgain);
+				LogUtil.d("MyTag", "InformDetailActivity.this mAllowGetLogAgain="+mAllowGetLogAgain);
 				if (!mAllowGetLogAgain)
 					return;
 				mAllowGetLogAgain = false;
 				mPageNum++;
-				LogUtil.d("MyTag", "Radio2Activity.this onScrollStateChanged");
+				LogUtil.d("MyTag", "InformDetailActivity.this onScrollStateChanged");
+				//得到生活项目列表
 				mThread = new GetCanYinListThread(ShengHuoFuWuListActivity.this,
 						mHandler, propertyid,flag, mPageNum,LocalStore.getLatitude(getApplicationContext()),LocalStore.getLongitude(getApplicationContext()));
 				mThread.start();
@@ -399,7 +401,7 @@ public class ShengHuoFuWuListActivity extends BaseActivity{
 	}
 	void initResource() {
 		// TODO Auto-generated method stub
-		LogUtil.d("MyTag", "Radio2Activity.this initResource");
+		LogUtil.d("MyTag", "InformDetailActivity.this initResource");
 		freeResource() ;
 		if (mThread == null) 
 		showDialog();

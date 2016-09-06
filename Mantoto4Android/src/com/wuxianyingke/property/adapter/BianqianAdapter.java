@@ -1,39 +1,24 @@
 package com.wuxianyingke.property.adapter;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import com.mantoto.property.R;
 import com.wuxianyingke.property.activities.AddBianqianActivity;
 import com.wuxianyingke.property.activities.NormalDialog;
-import com.wuxianyingke.property.activities.ProductDetailActivity;
-import com.wuxianyingke.property.activities.Radio3Activity;
 import com.wuxianyingke.property.activities.StickerActivity;
 import com.wuxianyingke.property.activities.NormalDialog.NormalDialogListener;
-import com.wuxianyingke.property.adapter.MessageOutBoxAdapter.ActivityItem;
-import com.wuxianyingke.property.common.Constants;
 import com.wuxianyingke.property.common.LocalStore;
 import com.wuxianyingke.property.common.LocalStore.bianqian;
-import com.wuxianyingke.property.remote.RemoteApi.AppPopularize;
-import com.wuxianyingke.property.remote.RemoteApi.Flea;
-import com.wuxianyingke.property.remote.RemoteApi.MessageInfo;
-
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.BitmapDrawable;
-import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
-import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 

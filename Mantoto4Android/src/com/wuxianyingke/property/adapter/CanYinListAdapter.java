@@ -14,12 +14,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.mantoto.property.R;
 import com.wuxianyingke.property.activities.CanyinDetailActivity;
-import com.wuxianyingke.property.activities.CanyinDetailOwnActivity;
 import com.wuxianyingke.property.activities.CanyinOwnDetailActivity;
 import com.wuxianyingke.property.common.Constants;
 import com.wuxianyingke.property.remote.RemoteApi.LivingItem;
@@ -33,16 +31,16 @@ public class CanYinListAdapter extends BaseAdapter {
 	private boolean mIsOnEdit;
 	private int mCount;
 	private int shoucang_flag;
-	private int favorite_flat;
+	private int favorite_flag;
 
-	public CanYinListAdapter(Context ctx, List<LivingItem> list, Handler handler,int shoucang_flag , int favorite_flat) {
+	public CanYinListAdapter(Context ctx, List<LivingItem> list, Handler handler,int shoucang_flag , int favorite_flag) {
 		this.mContext = ctx;
 		this.mList = list;
 		this.mHandler = handler;
 		this.mStoped = false;
 		this.shoucang_flag=shoucang_flag;
 		this.mCount = mList.size();
-		this.favorite_flat = favorite_flat;
+		this.favorite_flag = favorite_flag;
 	}
 
 	public void freeDrawable() {
@@ -109,16 +107,17 @@ public class CanYinListAdapter extends BaseAdapter {
 			productItem.mName = (TextView) v.findViewById(R.id.item_name);
 			productItem.mLeixing = (TextView) v.findViewById(R.id.item_leixing);
 			productItem.mJuli = (TextView) v.findViewById(R.id.item_juli);
-			productItem.mItemBackground = (RelativeLayout) v
+			productItem.mItemBackground = (LinearLayout)v
 					.findViewById(R.id.product_list_item_bg);
 			productItem.mTuan = (ImageView) v.findViewById(R.id.TuanImageView);
 			productItem.mJuan = (ImageView) v.findViewById(R.id.JuanImageView);
 			productItem.mHui = (ImageView) v.findViewById(R.id.HuiImageView);
-			
+			productItem.mPeiSong = (ImageView) v.findViewById(R.id.support_distribution);
+
 			productItem.mRenjun = (TextView) v.findViewById(R.id.item_renjun);
 			productItem.mDizhi = (TextView) v.findViewById(R.id.item_dizhi);
 
-			v.setTag(productItem);
+ 			v.setTag(productItem);
 			convertView = v;
 		} else {
 			productItem = (ProductItem) convertView.getTag();
@@ -152,6 +151,9 @@ public class CanYinListAdapter extends BaseAdapter {
 		}
 		else
 			productItem.mJuan.setVisibility(View.GONE);
+
+
+
 		if (info.has_activity > 0){
 			productItem.mHui.setImageResource(R.drawable.hui);
 			productItem.mHui.setVisibility(View.VISIBLE);
@@ -159,7 +161,18 @@ public class CanYinListAdapter extends BaseAdapter {
 		else
 			productItem.mHui.setVisibility(View.GONE);
 
-		
+
+	/*
+	这样写运行结果默认都支持派送
+	if(info.ForExpress=true){
+			productItem.mPeiSong.setImageResource(R.drawable.support_distribution);
+			productItem.mPeiSong.setVisibility(View.VISIBLE);
+		}
+		else
+			productItem.mPeiSong.setVisibility(View.GONE);
+*/
+
+
 		productItem.mName.setText(info.LivingItemName);
 		productItem.mLeixing.setText(info.categories);
 		productItem.mDizhi.setText(info.address);
@@ -176,7 +189,8 @@ public class CanYinListAdapter extends BaseAdapter {
 			productItem.mJuli.setText(""+String.valueOf(price)+"km");
 		}
 
-		if(info.source.equals("own")){
+		if(info.source.equals("own")){//信息来源于本系统，是收费店铺
+			//点击每个条目的全背景
 			productItem.mItemBackground.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
@@ -185,7 +199,7 @@ public class CanYinListAdapter extends BaseAdapter {
 					intent.putExtra(Constants.CANYIN_ID_ACTION, info.LivingItemID);
 					intent.putExtra(Constants.CANYIN_SOURCE_ACTION, info.source);
 					intent.putExtra(Constants.SHOUCANG_FLAT, shoucang_flag);
-					intent.putExtra(Constants.FAVORITE_FLAT, favorite_flat);
+					intent.putExtra(Constants.FAVORITE_FLAT, favorite_flag);
 
 					mContext.startActivity(intent);
 				}
@@ -194,13 +208,13 @@ public class CanYinListAdapter extends BaseAdapter {
 		else{
 			productItem.mItemBackground.setOnClickListener(new OnClickListener() {
 				@Override
-				public void onClick(View v) {//除了鱼多多外的其他商店
+				public void onClick(View v) {
 					Intent intent = new Intent(mContext,
 							CanyinDetailActivity.class);
 					intent.putExtra(Constants.CANYIN_ID_ACTION, info.LivingItemID);
 					intent.putExtra(Constants.CANYIN_SOURCE_ACTION, info.source);
 					intent.putExtra(Constants.SHOUCANG_FLAT, shoucang_flag);
-					intent.putExtra(Constants.FAVORITE_FLAT, favorite_flat);
+					intent.putExtra(Constants.FAVORITE_FLAT, favorite_flag);
 					mContext.startActivity(intent);
 				}
 			});
@@ -209,7 +223,7 @@ public class CanYinListAdapter extends BaseAdapter {
 	}
 
 	class ProductItem {
-		RelativeLayout mItemBackground;
+		LinearLayout mItemBackground;
 		ImageView mIcon;
 		TextView mName;
 		TextView mLeixing;
@@ -219,5 +233,7 @@ public class CanYinListAdapter extends BaseAdapter {
 		ImageView mTuan;
 		ImageView mJuan;
 		ImageView mHui;
+		ImageView mPeiSong;
+
 	}
 }

@@ -26,17 +26,27 @@ public class GetCanyinOwnListThread extends Thread {
 	private int fleaid;
 	private int propertyid;
 	private String source;
+	private int promotionTypeID;
 	public ArrayList<Drawable> imgDwList = new ArrayList<Drawable>();
 
 	public GetCanyinOwnListThread(Context context, Handler handler,
-			int mPropertyid,int mFleaid,String mSource) {
+			int mFleaid) {
+		this.mContext = context;
+		this.mHandler = handler;
+		this.fleaid = mFleaid;
+
+
+		Log.d("MyTag","GetCanyinOwnListThread=fleaid="+fleaid+"/propertyid="+propertyid);
+	}
+
+	/*public GetCanyinOwnListThread(Context context,Handler handler,
+			int mPropertyid,int mFleaid,String mSource	){
 		this.mContext = context;
 		this.mHandler = handler;
 		this.fleaid = mFleaid;
 		this.source = mSource;
 		this.propertyid = mPropertyid;
-		Log.d("MyTag","GetCanyinOwnListThread=fleaid="+fleaid+"/propertyid="+propertyid);
-	}
+	}*/
 
 	public PromotionList getProductDetail() {
 		return mProductItem;
@@ -53,7 +63,9 @@ public class GetCanyinOwnListThread extends Thread {
 
 	public void run() {
 		RemoteApiImpl rai = new RemoteApiImpl();
+		//商品列表
 		mProductItem = rai.getProductByLivingItemId(mContext, fleaid);
+		//商品活动
 		mActivityItem = rai.getActicityByLivingItemId(mContext, fleaid);
 		if (!isRuning)
 			return;

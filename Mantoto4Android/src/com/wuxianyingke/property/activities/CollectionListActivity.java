@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,10 +13,14 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -25,8 +31,10 @@ import com.wuxianyingke.property.common.Constants;
 import com.wuxianyingke.property.common.LocalStore;
 import com.wuxianyingke.property.common.LogUtil;
 import com.wuxianyingke.property.common.Util;
+import com.wuxianyingke.property.remote.RemoteApi;
 import com.wuxianyingke.property.remote.RemoteApi.Flea;
 import com.wuxianyingke.property.remote.RemoteApi.LivingItem;
+import com.wuxianyingke.property.remote.RemoteApiImpl;
 import com.wuxianyingke.property.threads.GetCollectionListThread;
 
 public class CollectionListActivity extends BaseActivity{
@@ -63,6 +71,7 @@ public class CollectionListActivity extends BaseActivity{
 				}
 				if(mThread!=null)
 					showLogsListView(mThread.getProductList());
+
 				break;
 			case Constants.MSG_GET_CANYIN_LIST_EMPTY:
 				if (mProgressDialog != null && mProgressDialog.isShowing()) {
@@ -135,15 +144,13 @@ public class CollectionListActivity extends BaseActivity{
 		mThread.start();
 		
 	}
-	protected void onRestart()
-	{
+	protected void onRestart(){
 		if(mLogsListView!=null)
 			mLogsListView.invalidateViews();
 		super.onRestart();
 	}
 	@Override
-	protected void onNewIntent(Intent intent)
-	{
+	protected void onNewIntent(Intent intent){
 		Boolean needInit = intent.getBooleanExtra("FromGroup", false);
 		if(needInit)
 		{
@@ -153,14 +160,13 @@ public class CollectionListActivity extends BaseActivity{
 			mThread = new GetCollectionListThread(CollectionListActivity.this,
 					mHandler, propertyid,choucang_flag);
 			mThread.start();
-			LogUtil.d("MyTag", "Radio2Activity.this onNewIntent");
+			LogUtil.d("MyTag", "InformDetailActivity.this onNewIntent");
 		}
 		super.onNewIntent(intent);
 	}
 	
 	@Override
-	protected void onDestroy()
-	{
+	protected void onDestroy(){
 		endChildrenThreads();
 		super.onDestroy();
 	}
@@ -197,12 +203,12 @@ public class CollectionListActivity extends BaseActivity{
 		endChildrenThreads();
 	}
 
-	public void showLogsListView(List<LivingItem> list) 
-	{
-		if (list == null)
-		{
-			if (mProgressDialog != null)
-			{
+	public void showLogsListView(List<LivingItem> list){
+
+		if (list == null){
+
+			if (mProgressDialog != null){
+
 				mProgressDialog.dismiss();
 				mProgressDialog = null;
 				
@@ -210,11 +216,12 @@ public class CollectionListActivity extends BaseActivity{
 			return;
 		}
 		mLogsListView.setVisibility(View.VISIBLE);
-			mListAdapter = new CanYinListAdapter(this, list,mHandler,choucang_flag,1);
+		mListAdapter = new CanYinListAdapter(this, list,mHandler,choucang_flag,1);
 
 //		JSONArray ja = new JSONArray(list);
 		LogUtil.d("MyTag","CollectionList-list"+list);
-		for (int i = 0; i < list.size(); i++) {
+
+		for (int i = 0; i < list.size(); i++){
 			LogUtil.d("MyTag", "CollectionList-list distance" + list.get(i).distance);
 			LogUtil.d("MyTag", "CollectionList-list LivingItemID" + list.get(i).LivingItemID);
 			LogUtil.d("MyTag", "CollectionList-list LivingItemName" + list.get(i).LivingItemName);
@@ -222,22 +229,63 @@ public class CollectionListActivity extends BaseActivity{
 			LogUtil.d("MyTag", "CollectionList-list telephone" + list.get(i).telephone);
 
 		}
-			LogUtil.d("MyTag","CollectionList-mItemSum mPageNum == 1  mLogAdapter.getCount()="+mListAdapter.getCount());
-			if (mProgressDialog != null)
-			{
+
+		LogUtil.d("MyTag","CollectionList-mItemSum mPageNum == 1  mLogAdapter.getCount()="+mListAdapter.getCount());
+			if (mProgressDialog != null){
 				mProgressDialog.dismiss();
 				mProgressDialog = null;
 			}
 			mLogsListView.setAdapter(mListAdapter);
+		    mListAdapter.notifyDataSetChanged();
+
+		mLogsListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+			@Override
+			public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+				LayoutInflater inflater =LayoutInflater.from(getApplicationContext());
+				LinearLayout layout = (LinearLayout) inflater.inflate(R.layout.user_address_dialog,null);
+				final Dialog dialog = new AlertDialog.Builder(CollectionListActivity.this).create();
+				dialog.setCancelable(false);
+				dialog.show();
+				dialog.getWindow().setContentView(layout);
+				WindowManager.LayoutParams params =
+						dialog.getWindow().getAttributes();
+				params.width = 700;
+				params.height = 700;
+				dialog.getWindow().setAttributes(params);
+
+				TextView dialog_msg = (TextView) layout.findViewById(R.id.remind_messagesId);
+				TextView btnOK = (TextView) layout.findViewById(R.id.btn_yesId);
+				btnOK.setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View view) {
+						Thread deleteThread = new Thread(){
+							@Override
+							public void run() {
+								RemoteApiImpl rai = new RemoteApiImpl();
+								RemoteApi.NetInfo netInfo = rai.deleteFromFavorite(CollectionListActivity.this
+								,LocalStore.getUserInfo().userId,propertyid);
+								mThread = new GetCollectionListThread(CollectionListActivity.this,
+										mHandler, propertyid,choucang_flag);
+								mThread.start();
+							}
+						};
+						deleteThread.start();
+						dialog.dismiss();
+					}
+				});
+
+				return true;
+			}
+		});
+
 	}
 	
 
 	
-	private void endChildrenThreads()
-	{
+	private void endChildrenThreads(){
 
-		if (mThread != null)
-		{
+		if (mThread != null){
+
 			mThread.stopRun();
 			mThread = null;
 		}
@@ -245,9 +293,10 @@ public class CollectionListActivity extends BaseActivity{
 		mLogsListView.setAdapter(null);
 		
 	}
+
 	void initResource() {
-		// TODO Auto-generated method stub
-		LogUtil.d("MyTag", "Radio2Activity.this initResource");
+
+		LogUtil.d("MyTag", "InformDetailActivity.this initResource");
 		freeResource() ;
 		if (mThread == null) 
 		showDialog();

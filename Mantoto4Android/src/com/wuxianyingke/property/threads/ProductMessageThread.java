@@ -1,3 +1,4 @@
+/*
 package com.wuxianyingke.property.threads;
 
 import java.util.List;
@@ -6,7 +7,7 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 
-import com.wuxianyingke.property.activities.Radio2Activity;
+import com.wuxianyingke.property.activities.InformDetailActivity;
 import com.wuxianyingke.property.common.Constants;
 import com.wuxianyingke.property.common.LogUtil;
 import com.wuxianyingke.property.remote.RemoteApi.ProductMessage;
@@ -66,7 +67,7 @@ public class ProductMessageThread extends Thread
 			
 			if (!running) 
 				return;
-			Radio2Activity.setAllowGetPageAgain();
+			InformDetailActivity.setAllowGetPageAgain();
 			
 		} catch(Exception ex) {
 			LogUtil.d(TAG, "ActivityThread::Run() error = "+ex.getMessage());
@@ -78,3 +79,4 @@ public class ProductMessageThread extends Thread
 		}
 	}
 }
+*/

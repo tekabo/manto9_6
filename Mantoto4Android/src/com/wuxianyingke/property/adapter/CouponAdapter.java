@@ -78,13 +78,13 @@ public class CouponAdapter extends BaseAdapter {
 			activityItem.mBEtime = (TextView) v.findViewById(R.id.mBEtime);
 			activityItem.mCouponPrice = (TextView) v.findViewById(R.id.couponPrice);
 			activityItem.mCouponTime = (TextView) v.findViewById(R.id.couponTime);
-			activityItem.mRechargeUse = (TextView) v.findViewById(R.id.reachargeUse);
+			activityItem.mRechargeUse = (TextView) v.findViewById(R.id.reachargeUse);//立即使用
 			activityItem.mCouponLinearLayout=(LinearLayout)v.findViewById(R.id.couponLinerLayout);
 			activityItem.mCouponNormalImage=(ImageView)v.findViewById(R.id.couponNormalImage);
 			activityItem.mCouponImage=(ImageView)v.findViewById(R.id.couponImage);
 			activityItem.mCouponOverdue=(ImageView)v.findViewById(R.id.couponOverdue);
 			activityItem.mCouponCancelImage=(ImageView)v.findViewById(R.id.couponcancel);
-			activityItem.mCouponUseedImage=(ImageView)v.findViewById(R.id.couponuseed);
+			activityItem.mCouponUseedImage=(ImageView)v.findViewById(R.id.couponuseed);//已过期
 //			activityItem.mMainRadio4ListItemLinearLayout = (LinearLayout) v.findViewById(R.id.MainRadio4ListItemLinearLayout);
 			v.setTag(activityItem);
 			convertView = v;
@@ -96,12 +96,13 @@ public class CouponAdapter extends BaseAdapter {
 		activityItem.mCouponPrice.setText(""+activity.cashCoupon.ParValue);
 		activityItem.mBEtime.setText(activity.BTime+" 至 "+activity.ETime);
 		if (activity.cashCouponStatus.CashCouponStatusID==1) {
+
 			activityItem.mRechargeUse.setVisibility(View.VISIBLE);
 			activityItem.mRechargeUse.getPaint().setFlags(Paint. UNDERLINE_TEXT_FLAG);
 			if (selectIndex==position) {
 				
-				activityItem.mCouponLinearLayout.setBackgroundResource(R.drawable.bg_stroke_item);
-				activityItem.mCouponUseedImage.setVisibility(View.GONE);
+				  activityItem.mCouponLinearLayout.setBackgroundResource(R.drawable.bg_stroke_item);
+				  activityItem.mCouponUseedImage.setVisibility(View.GONE);
 			}else{
 				activityItem.mCouponLinearLayout.setBackgroundResource(R.drawable.white_btn_list);
 				activityItem.mCouponUseedImage.setVisibility(View.GONE);
@@ -110,72 +111,6 @@ public class CouponAdapter extends BaseAdapter {
 			activityItem.mRechargeUse.setVisibility(View.GONE);
 			activityItem.mCouponUseedImage.setVisibility(View.VISIBLE);
 		}
-		
-//		activityItem.mCouponTime.setText("有效日期:" + activity.BTime+"～"+activity.ETime);
-/*
-		if (activity.cashCouponStatus.CashCouponStatusID==1)
-		{
-			if (selectIndex==position){
-				Log.i("MyLog","position="+position);
-				activityItem.mCouponImage.setVisibility(View.VISIBLE);
-				activityItem.mCouponNormalImage.setVisibility(View.GONE);
-//				LocalStore.setCouponTime(mContext, activity.ETime);
-			}else{
-				activityItem.mCouponImage.setVisibility(View.GONE);
-			activityItem.mCouponNormalImage.setVisibility(View.VISIBLE);
-			activityItem.mCouponOverdue.setVisibility(View.GONE);
-			activityItem.mCouponUseedImage.setVisibility(View.GONE);
-			activityItem.mCouponCancelImage.setVisibility(View.GONE);}
-		}
-		else if(activity.cashCouponStatus.CashCouponStatusID==2)
-		{
-			activityItem.mCouponImage.setVisibility(View.GONE);
-			activityItem.mCouponNormalImage.setVisibility(View.GONE);
-			activityItem.mCouponOverdue.setVisibility(View.VISIBLE);
-			activityItem.mCouponCancelImage.setVisibility(View.GONE);
-			activityItem.mCouponUseedImage.setVisibility(View.GONE);
-		}	else if(activity.cashCouponStatus.CashCouponStatusID==3){
-			activityItem.mCouponImage.setVisibility(View.GONE);
-			activityItem.mCouponCancelImage.setVisibility(View.VISIBLE);
-			activityItem.mCouponOverdue.setVisibility(View.GONE);
-			activityItem.mCouponUseedImage.setVisibility(View.GONE);
-			activityItem.mCouponNormalImage.setVisibility(View.GONE);
-		}else{
-			activityItem.mCouponImage.setVisibility(View.GONE);
-			activityItem.mCouponUseedImage.setVisibility(View.VISIBLE);
-			activityItem.mCouponOverdue.setVisibility(View.GONE);
-			activityItem.mCouponNormalImage.setVisibility(View.GONE);
-			activityItem.mCouponCancelImage.setVisibility(View.GONE);
-		}
-*/
-
-		/*activityItem.mCouponLinearLayout.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-			activityItem.mCouponImage.setVisibility(View.VISIBLE);
-			activityItem.mCouponNormalImage.setVisibility(View.GONE);
-			LocalStore.setCouponTime(mContext, activity.ETime);
-			Log.i("Mylog", "ctime=" + LocalStore.getCouponTime(mContext));
-			}
-		});*/
-/*		activityItem.mMainRadio4ListItemLinearLayout.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent intent=new Intent();
-				intent.setClass(mContext, MessageInfoActivity.class);
-				intent.putExtra("productMessageInfoTitle", activity.header);
-				intent.putExtra("productMessageInfoTime", activity.cTime);
-				intent.putExtra("productMessageInfoContent", activity.body);
-				intent.putExtra("productMessageInfoType", activity.type.messageTypeID);
-				intent.putExtra("productMessageInfoSignature", activity.isRead);
-				intent.putExtra("productMessageInfoRootID", activity.messageID);
-				
-				mContext.startActivity(intent);
-			}
-		});*/
-		
 		return convertView;
 	}
 

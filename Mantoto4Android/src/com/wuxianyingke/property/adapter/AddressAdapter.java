@@ -71,6 +71,7 @@ public class AddressAdapter extends BaseAdapter {
 		Log.d("MyTag","CanYinListAdapter--position="+position);
 
 		final AddressItem info = mList.get(position);
+
 		if (convertView == null) {
 			productItem = new ProductItem();
   		   View v = LayoutInflater.from(mContext).inflate(
@@ -81,8 +82,8 @@ public class AddressAdapter extends BaseAdapter {
 			productItem.mItemBackground = (LinearLayout) v
 					.findViewById(R.id.product_list_item_bg);
 			//productItem.addressEdit = (LinearLayout) v.findViewById(R.id.address_edit);
-			//productItem.deladdressbtn = (Button) v.findViewById(R.id.user_address_delete);
-			//productItem.getaddressbtn = (Button) v.findViewById(R.id.user_address_get);
+			productItem.deladdressbtn = (Button) v.findViewById(R.id.user_address_delete);
+			productItem.getaddressbtn = (Button) v.findViewById(R.id.user_address_get);
 			v.setTag(productItem);
 			convertView = v;
 
@@ -199,8 +200,11 @@ public class AddressAdapter extends BaseAdapter {
 
 
 
+
+
 		return convertView;
 	}
+
 
 
 	class ProductItem {
@@ -209,8 +213,8 @@ public class AddressAdapter extends BaseAdapter {
 		TextView mPhoneNumber;
 		TextView mAddress;
 		//LinearLayout addressEdit;
-		/*Button deladdressbtn;
-		Button getaddressbtn;*/
+		Button deladdressbtn;
+		Button getaddressbtn;
 	}
 
 

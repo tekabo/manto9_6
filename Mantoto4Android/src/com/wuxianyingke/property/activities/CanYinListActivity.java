@@ -101,6 +101,9 @@ public class CanYinListActivity extends BaseActivity{
 
 						spannableString.setSpan(new ForegroundColorSpan(Color.parseColor("#FF7E00")), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 						mNotification.setText(spannableString);
+
+
+
 					}else{
 						((TextView) findViewById(R.id.empty_tv)).setVisibility(View.GONE);
 					     showLogsListView(mThread.getProductList());
@@ -243,7 +246,7 @@ public class CanYinListActivity extends BaseActivity{
 			mThread = new GetCanYinListThread(CanYinListActivity.this,
 					mHandler, propertyid,flag, mPageNum,LocalStore.getLatitude(getApplicationContext()),LocalStore.getLongitude(getApplicationContext()));
 			mThread.start();
-			LogUtil.d("MyTag", "Radio2Activity.this onNewIntent");
+			LogUtil.d("MyTag", "InformDetailActivity.this onNewIntent");
 		}
 		super.onNewIntent(intent);
 	}
@@ -378,12 +381,12 @@ public class CanYinListActivity extends BaseActivity{
 		@Override
 		public void onScrollStateChanged(AbsListView view, int scrollState){
 			if (mListAdapter != null && lastItem >= (mListAdapter.getCount()-2)){
-				LogUtil.d("MyTag", "Radio2Activity.this mAllowGetLogAgain="+mAllowGetLogAgain);
+				LogUtil.d("MyTag", "InformDetailActivity.this mAllowGetLogAgain="+mAllowGetLogAgain);
 				if (!mAllowGetLogAgain)
 					return;
 				mAllowGetLogAgain = false;
 				mPageNum++;
-				LogUtil.d("MyTag", "Radio2Activity.this onScrollStateChanged");
+				LogUtil.d("MyTag", "InformDetailActivity.this onScrollStateChanged");
 				mThread = new GetCanYinListThread(CanYinListActivity.this,
 						mHandler, propertyid,flag, mPageNum,LocalStore.getLatitude(getApplicationContext()),LocalStore.getLongitude(getApplicationContext()));
 				mThread.start();
@@ -407,7 +410,7 @@ public class CanYinListActivity extends BaseActivity{
 
 	void initResource() {
 		// TODO Auto-generated method stub
-		LogUtil.d("MyTag", "Radio2Activity.this initResource");
+		LogUtil.d("MyTag", "InformDetailActivity.this initResource");
 		freeResource() ;
 		if (mThread == null) 
 		showDialog();

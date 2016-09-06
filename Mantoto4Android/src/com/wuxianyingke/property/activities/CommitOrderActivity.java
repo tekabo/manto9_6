@@ -39,11 +39,12 @@ public class CommitOrderActivity extends BaseActivity {
 	private TextView goodsName, tvPrice, count, totalPrice, address;
 	/**增加减少商品数量*/
 	private ImageView minusImg, addImg, rightImg;
+	private  LinearLayout addReceiveAddress;
 	/**联系人，手机号，联系人地址，选择联系人*/
 	private TextView linkMan, phoneNumber, linkedManAddress, selectLinkman;
 	/**需要隐藏的布局*/
 	private LinearLayout llNameAndPhone, llAddress;
-	private LinearLayout llAddressManger;
+	private LinearLayout llAddressManger,ll_Address_MangerId;
 	/**提交订单*/
 	private Button commitImg;
 	/**传递过来的商品名称*/
@@ -211,7 +212,7 @@ public class CommitOrderActivity extends BaseActivity {
 			@Override
 			public void onClick(View v) {
 				if (countNum<=1) {
-					minusImg.setBackgroundResource(R.drawable.order_commit_minus);
+					minusImg.setBackgroundResource(R.drawable.num_minus);
 				} else {
 					--countNum;
 					count.setText("" + countNum);
@@ -233,12 +234,12 @@ public class CommitOrderActivity extends BaseActivity {
 				totalPrices = countNum * price;
 				DecimalFormat df = new DecimalFormat("0.00");
 				totalPrice.setText("" + df.format(totalPrices) + "元");
-				minusImg.setBackgroundResource(R.drawable.order_commit_minus6);
+				minusImg.setBackgroundResource(R.drawable.num_minus);
 			}
 		});
 
 		// 点击进入地址选择界面
-		rightImg.setOnClickListener(new OnClickListener() {
+		addReceiveAddress.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 
@@ -292,7 +293,8 @@ public class CommitOrderActivity extends BaseActivity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		if (requestCode == REQUEST_CODE && resultCode == Result_CODE) {
-			selectLinkman.setVisibility(View.GONE);
+			//selectLinkman.setVisibility(View.GONE);
+			llAddressManger.setVisibility(View.GONE);
 			llAddress.setVisibility(View.VISIBLE);
 			llNameAndPhone.setVisibility(View.VISIBLE);
 			// int indexs=bundle.getInt("indexs");
@@ -325,6 +327,7 @@ public class CommitOrderActivity extends BaseActivity {
 		minusImg = (ImageView) findViewById(R.id.order_Commit_MinusId);// 减少商品数量
 		addImg = (ImageView) findViewById(R.id.order_Commit_AddId);// 增加商品数量
 		rightImg = (ImageView) findViewById(R.id.order_Commit_RightId);// 地址栏
+		addReceiveAddress = (LinearLayout) findViewById(R.id.add_receive_address);//添加收货地址
 		commitImg = (Button) findViewById(R.id.order_CommitId);// 提交订单按钮
 		address = (TextView) findViewById(R.id.order_Commit_AddressId);// 选择地址
 		selectLinkman = (TextView) findViewById(R.id.order_Commit_Select_LinkmanId);// 请选择联系人

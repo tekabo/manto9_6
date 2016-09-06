@@ -1,3 +1,4 @@
+/*
 package com.wuxianyingke.property.threads;
 
 import android.content.Context;
@@ -77,3 +78,4 @@ public class RepairLogThread extends Thread
 		}
 	}
 }
+*/

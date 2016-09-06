@@ -1,3 +1,4 @@
+/*
 package com.wuxianyingke.property.widget;
 
 import java.util.LinkedList;
@@ -19,13 +20,15 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.Scroller;
 
+*/
 /**
  * 
  * @author xiaanming
  * 
  * @blog http://blog.csdn.net/xiaanming
  * 
- */
+ *//*
+
 public class SwipeBackLayout extends FrameLayout {
 	private static final String TAG = SwipeBackLayout.class.getSimpleName();
 	private View mContentView;
@@ -74,9 +77,11 @@ public class SwipeBackLayout extends FrameLayout {
 		mContentView = (View) decorChild.getParent();
 	}
 
-	/**
+	*/
+/**
 	 * 事件拦截操作
-	 */
+	 *//*
+
 	@Override
 	public boolean onInterceptTouchEvent(MotionEvent ev) {
 		// 处理ViewPager冲突问题
@@ -136,12 +141,14 @@ public class SwipeBackLayout extends FrameLayout {
 		return true;
 	}
 
-	/**
+	*/
+/**
 	 * 获取SwipeBackLayout里面的ViewPager的集合
 	 * 
 	 * @param mViewPagers
 	 * @param parent
-	 */
+	 *//*
+
 	private void getAlLViewPager(List<ViewPager> mViewPagers, ViewGroup parent) {
 		int childCount = parent.getChildCount();
 		for (int i = 0; i < childCount; i++) {
@@ -154,13 +161,15 @@ public class SwipeBackLayout extends FrameLayout {
 		}
 	}
 
-	/**
+	*/
+/**
 	 * 返回我们touch的ViewPager
 	 * 
 	 * @param mViewPagers
 	 * @param ev
 	 * @return
-	 */
+	 *//*
+
 	private ViewPager getTouchViewPager(List<ViewPager> mViewPagers,
 			MotionEvent ev) {
 		if (mViewPagers == null || mViewPagers.size() == 0) {
@@ -205,9 +214,11 @@ public class SwipeBackLayout extends FrameLayout {
 
 	}
 
-	/**
+	*/
+/**
 	 * 滚动出界面
-	 */
+	 *//*
+
 	private void scrollRight() {
 		final int delta = (viewWidth + mContentView.getScrollX());
 		// 调用startScroll方法来设置一些滚动的参数，我们在computeScroll()方法中调用scrollTo来滚动item
@@ -216,9 +227,11 @@ public class SwipeBackLayout extends FrameLayout {
 		postInvalidate();
 	}
 
-	/**
+	*/
+/**
 	 * 滚动到起始位置
-	 */
+	 *//*
+
 	private void scrollOrigin() {
 		int delta = mContentView.getScrollX();
 		mScroller.startScroll(mContentView.getScrollX(), 0, -delta, 0,
@@ -240,3 +253,4 @@ public class SwipeBackLayout extends FrameLayout {
 	}
 
 }
+*/

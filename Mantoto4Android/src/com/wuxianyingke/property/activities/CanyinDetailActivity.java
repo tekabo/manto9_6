@@ -157,7 +157,7 @@ public class CanyinDetailActivity extends BaseActivity implements OnClickListene
 		PushAgent.getInstance(getApplicationContext()).onAppStart();
 		setContentView(R.layout.canyin_detail) ;
 
-		setImmerseLayout(findViewById(R.id.common_back));
+
 		mLivingItemID = getIntent().getIntExtra(Constants.CANYIN_ID_ACTION , 0) ;
 
 //		SharedPreferences saving = this.getSharedPreferences(
@@ -168,9 +168,10 @@ public class CanyinDetailActivity extends BaseActivity implements OnClickListene
 		topbar_left=(Button)findViewById(R.id.topbar_left);
 		topbar_left.setVisibility(View.VISIBLE);
 
+
 		favorite_flag = getIntent().getIntExtra(Constants.FAVORITE_FLAT , 0) ;
 		Log.d("MyTag", "GanyinDetailOwn favorite_flag="+favorite_flag);
-		setImmerseLayout(findViewById(R.id.common_back));
+
 		topbar_left.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -191,20 +192,12 @@ public class CanyinDetailActivity extends BaseActivity implements OnClickListene
 			}
 		});
 
-//		topbar_left.setOnClickListener(new OnClickListener() {
-//
-//			@Override
-//			public void onClick(View v) {
-//				// TODO Auto-generated method stub
-//				finish();
-//			}
-//		});
-//
+
 		topbar_button_right = (Button) findViewById(R.id.topbar_button_right) ;
 		topbar_button_right.setVisibility(View.VISIBLE);
 		LivingDB db = new LivingDB(this);
 		shoucangStatus=db.getOneItem(mLivingItemID);
-//		Log.d("MyTag","--------shoucangStatus="+shoucangStatus);
+
 		db.close();	
 		if(-1!=shoucangStatus){
 			topbar_button_right.setBackgroundResource(R.drawable.shop_collection_clicked);
@@ -397,7 +390,7 @@ public class CanyinDetailActivity extends BaseActivity implements OnClickListene
 		mPopDownloadBtn = (Button) mImgView.findViewById(R.id.pop_download_btn);
 		mPopDownloadBtn.setOnClickListener(CloseClickListener);
 
-		RelativeLayout popRl = (RelativeLayout) mImgView.findViewById(R.id.app_pop_rl);
+		/*RelativeLayout popRl = (RelativeLayout) mImgView.findViewById(R.id.app_pop_rl);
 		popRl.setOnClickListener(new OnClickListener()
 		{
 
@@ -411,7 +404,7 @@ public class CanyinDetailActivity extends BaseActivity implements OnClickListene
 					mMyGallery.setSelection(popGalleryIndex);
 				}
 			}
-		});
+		});*/
 
 		mImgPop.setAnimationStyle(R.style.AnimationPreview);
 

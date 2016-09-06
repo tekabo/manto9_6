@@ -207,29 +207,7 @@
         android:background="#dfdfdf" >
     </LinearLayout>
     
-    
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
-        android:visibility="gone"
-        >
-
-       <Button
-            android:id="@+id/order_Commit2Id"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_weight="1"
-            android:background="@drawable/blue_btn_login"
-            android:onClick="commit"
-            android:textSize="26sp" />
-    </LinearLayout>
-    
     <include
         android:id="@+id/view_network_error"
         layout="@layout/network_error"

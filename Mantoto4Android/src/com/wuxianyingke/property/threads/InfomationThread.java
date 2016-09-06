@@ -1,3 +1,4 @@
+/*
 package com.wuxianyingke.property.threads;
 
 import java.util.List;
@@ -76,3 +77,4 @@ public class InfomationThread extends Thread
 		}
 	}
 }
+*/

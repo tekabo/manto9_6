@@ -163,7 +163,7 @@ public class UnCompleteOrderActivity extends BaseActivity {
 			searchLayout.setVisibility(View.VISIBLE);
 			mThread = new GetUnOrderListThread(getApplicationContext(), mHandler, userid, mPageNum);
 			mThread.start();
-			LogUtil.d("MyTag", "Radio2Activity.this onNewIntent");
+			LogUtil.d("MyTag", "InformDetailActivity.this onNewIntent");
 		}
 		super.onNewIntent(intent);
 	}
@@ -317,12 +317,12 @@ public class UnCompleteOrderActivity extends BaseActivity {
 		{
 			if (mAdapter != null && lastItem >= (mAdapter.getCount()-2))
 			{
-				LogUtil.d("MyTag", "Radio2Activity.this mAllowGetLogAgain="+mAllowGetLogAgain);
+				LogUtil.d("MyTag", "InformDetailActivity.this mAllowGetLogAgain="+mAllowGetLogAgain);
 				if (!mAllowGetLogAgain)
 					return;
 				mAllowGetLogAgain = false;
 				mPageNum++;
-				LogUtil.d("MyTag", "Radio2Activity.this onScrollStateChanged");
+				LogUtil.d("MyTag", "InformDetailActivity.this onScrollStateChanged");
 				mThread = new GetUnOrderListThread(getApplicationContext(), mHandler, scrollState, mPageNum);
 				mThread.start();
 			}
@@ -338,7 +338,7 @@ public class UnCompleteOrderActivity extends BaseActivity {
 
 	void initResource() {
 		// TODO Auto-generated method stub
-		LogUtil.d("MyTag", "Radio2Activity.this initResource");
+		LogUtil.d("MyTag", "InformDetailActivity.this initResource");
 		freeResource() ;
 		if (mThread == null) 
 		startProgressDialog();

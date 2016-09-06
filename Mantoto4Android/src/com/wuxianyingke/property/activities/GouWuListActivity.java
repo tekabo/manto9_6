@@ -104,7 +104,8 @@ public class GouWuListActivity extends BaseActivity{
 					mNotification.setText(spannableString);
 				}else{
 					((TextView) findViewById(R.id.empty_tv)).setVisibility(View.GONE);
-				showLogsListView(mThread.getProductList());
+					if(mThread!=null)
+					showLogsListView(mThread.getProductList());
 				}
 				break;
 			case Constants.MSG_GET_CANYIN_LIST_EMPTY:
@@ -176,7 +177,7 @@ public class GouWuListActivity extends BaseActivity{
 		});
 		topbar_button_right = (Button) findViewById(R.id.topbar_button_right) ;
 		topbar_button_right.setVisibility(View.VISIBLE);
-		topbar_button_right.setBackgroundResource(R.drawable.no_shoucang);
+		topbar_button_right.setBackgroundResource(R.drawable.shop_collection_clicked);
 		
 		topbar_button_right.setOnClickListener(new OnClickListener() {
 			
@@ -224,7 +225,7 @@ public class GouWuListActivity extends BaseActivity{
 			mThread = new GetCanYinListThread(GouWuListActivity.this,
 					mHandler, propertyid,flag, mPageNum,LocalStore.getLatitude(getApplicationContext()),LocalStore.getLongitude(getApplicationContext()));
 			mThread.start();
-			LogUtil.d("MyTag", "Radio2Activity.this onNewIntent");
+			LogUtil.d("MyTag", "InformDetailActivity.this onNewIntent");
 		}
 		super.onNewIntent(intent);
 	}
@@ -371,12 +372,12 @@ public class GouWuListActivity extends BaseActivity{
 		{
 			if (mListAdapter != null && lastItem >= (mListAdapter.getCount()-2))
 			{
-				LogUtil.d("MyTag", "Radio2Activity.this mAllowGetLogAgain="+mAllowGetLogAgain);
+				LogUtil.d("MyTag", "InformDetailActivity.this mAllowGetLogAgain="+mAllowGetLogAgain);
 				if (!mAllowGetLogAgain)
 					return;
 				mAllowGetLogAgain = false;
 				mPageNum++;
-				LogUtil.d("MyTag", "Radio2Activity.this onScrollStateChanged");
+				LogUtil.d("MyTag", "InformDetailActivity.this onScrollStateChanged");
 				mThread = new GetCanYinListThread(GouWuListActivity.this,
 						mHandler, propertyid,flag, mPageNum,LocalStore.getLatitude(getApplicationContext()),LocalStore.getLongitude(getApplicationContext()));
 				mThread.start();
@@ -402,7 +403,7 @@ public class GouWuListActivity extends BaseActivity{
 	}
 	void initResource() {
 		// TODO Auto-generated method stub
-		LogUtil.d("MyTag", "Radio2Activity.this initResource");
+		LogUtil.d("MyTag", "InformDetailActivity.this initResource");
 		freeResource() ;
 		if (mThread == null) 
 		showDialog();

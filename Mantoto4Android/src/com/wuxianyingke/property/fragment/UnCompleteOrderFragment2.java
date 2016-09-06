@@ -1,3 +1,4 @@
+/*
 package com.wuxianyingke.property.fragment;
 
 import java.util.ArrayList;
@@ -33,19 +34,27 @@ import com.wuxianyingke.property.threads.MessageOutBoxThread;
 
 public class UnCompleteOrderFragment2 extends ListFragment {
 	
-	/** 订单列表适配器 */
+	*/
+/** 订单列表适配器 *//*
+
 	private static GetOrderListAdapter2 mAdapter;
-	/** 订单列表线程用于获得订单数据 */
+	*/
+/** 订单列表线程用于获得订单数据 *//*
+
 	private GetUnOrderListThread mThread;
-	/**
+	*/
+/**
 	 * 分页相关成员
-	 */
+	 *//*
+
 	private int pageIndex=1;
 	private int pageCount;
 	private ProgressDialog mProgressDialog = null;
-	/**
+	*/
+/**
 	 * 加载数据相关成员
-	 */
+	 *//*
+
 	private boolean isLoading = false;
 	private LoadingDialog loadingDialog;
 	private NetworkUtils nUtils; 
@@ -60,7 +69,9 @@ public class UnCompleteOrderFragment2 extends ListFragment {
 					return;
 				}
 				Log.i("MyLog", "getOrders"+mdata);
-					/**显示信息列表*/
+					*/
+/**显示信息列表*//*
+
 					showLogsListView(mdata);
 				break;
 			case Constants.MSG_NETWORK_ERROR:
@@ -194,12 +205,12 @@ public class UnCompleteOrderFragment2 extends ListFragment {
 		{
 			if (mAdapter != null && lastItem >= (mAdapter.getCount()-2))
 			{
-				LogUtil.d("MyTag", "Radio2Activity.this mAllowGetLogAgain="+mAllowGetLogAgain);
+				LogUtil.d("MyTag", "InformDetailActivity.this mAllowGetLogAgain="+mAllowGetLogAgain);
 				if (!mAllowGetLogAgain)
 					return;
 				mAllowGetLogAgain = false;
 				mPageNum++;
-				LogUtil.d("MyTag", "Radio2Activity.this onScrollStateChanged");
+				LogUtil.d("MyTag", "InformDetailActivity.this onScrollStateChanged");
 				mThread = new GetUnOrderListThread(getActivity(), mHandler, LocalStore.getUserInfo().userId, scrollState);
 				mThread.start();
 			}
@@ -207,3 +218,4 @@ public class UnCompleteOrderFragment2 extends ListFragment {
 	};
 
 }
+*/

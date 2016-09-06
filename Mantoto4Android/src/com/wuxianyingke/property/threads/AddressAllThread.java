@@ -39,7 +39,7 @@ public class AddressAllThread extends Thread {
 		try {
 			running = true;
 			RemoteApiImpl remoteApi = new RemoteApiImpl();
-//			mAddressList = remoteApi.getAllAddress(ctx, uid);
+	//	mAddressList = remoteApi.getAllAddress(ctx, uid);
 			if (mAddressList == null) {
 				Message msg = new Message();
 				msg.what = Constants.MSG_NETWORK_ERROR;

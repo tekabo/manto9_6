@@ -1,3 +1,4 @@
+/*
 package com.wuxianyingke.property.threads;
 
 import android.content.Context;
@@ -11,9 +12,11 @@ import com.wuxianyingke.property.remote.RemoteApiImpl;
 
 import java.util.ArrayList;
 
+*/
 /**
  * Created by mackcyl on 15/5/23.
- */
+ *//*
+
 public class GetRepairTypeThread extends Thread{
     private final static String TAG = "GetRepairLogLastThread";
     private Context mContext;
@@ -43,3 +46,4 @@ public class GetRepairTypeThread extends Thread{
         }
     }
 }
+*/

@@ -120,7 +120,7 @@ public class GetOrderListAdapter extends BaseAdapter {
 		Log.i("MyLog", "items="+items.OrderSequenceNumber);
 		if (convertView == null) { // 创建新的itemView
 			convertView = LayoutInflater.from(mContext).inflate(
-					R.layout.order_commit_list_item, null); // 加载item布局并生成View对象
+					R.layout.discount_list_item, null); // 加载item布局并生成View对象
 			
 			vHolder = new ViewHolder();
 			vHolder.body = (TextView) convertView.findViewById(R.id.tv_goodId);
@@ -131,6 +131,7 @@ public class GetOrderListAdapter extends BaseAdapter {
 
 			vHolder.status = (TextView) convertView.findViewById(R.id.tv_PriceId);
 			vHolder.mRelativeLayout= (LinearLayout) convertView.findViewById(R.id.ItemRelativeLayout);
+			vHolder.couponCodeDetails = (TextView) convertView.findViewById(R.id.coupon_code_detail);
 			convertView.setTag(vHolder);
 		} else { // 复用ListView滚出屏幕的itemView
 
@@ -166,8 +167,8 @@ public class GetOrderListAdapter extends BaseAdapter {
 				download(url);
 			}
 		}
-		
-	vHolder.mRelativeLayout.setOnClickListener(new OnClickListener() {
+
+		vHolder.couponCodeDetails.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View arg0) {
@@ -253,6 +254,7 @@ public class GetOrderListAdapter extends BaseAdapter {
 		public  TextView orderNumber;//订单序号
 		public  TextView status;//订单状态
 		public LinearLayout mRelativeLayout;
+		public TextView couponCodeDetails;
 	}
 
 }
